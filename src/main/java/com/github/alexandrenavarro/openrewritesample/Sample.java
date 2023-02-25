@@ -46,5 +46,8 @@ public class Sample {
     // org.openrewrite.java.format.RemoveTrailingWhitespace
     void methodWithTrailingSpace() {
     }
+    
+    // org.openrewrite.java.format.SingleLineComments
+    //Single line Comment with space after //
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile

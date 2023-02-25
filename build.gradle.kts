@@ -44,8 +44,8 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")				// ,-1, yes, don't care, break all the formating notably gradle.build, don't use it absolutely
 ////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks") 		// ,-1, no, no, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
 //activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces") 		// ,10, yes, don't care
-activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace") 	// ,10, yes, don't care
-//activeRecipe("org.openrewrite.java.format.SingleLineComments") 			// ,10, yes?, don't care, just a space after a single line comment
+//activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace") 	// ,10, yes, don't care
+activeRecipe("org.openrewrite.java.format.SingleLineComments") 			// ,10, yes?, don't care, just a space after a single line comment
 //activeRecipe("org.openrewrite.java.format.Spaces") 						// ,10, yes, don't care
 ////activeRecipe("org.openrewrite.java.format.TabsAndIndents") 				// ,-1, yes, don't care, do not format like intellij (1 or 2 indent for continuation)
 //
