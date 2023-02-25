@@ -28,8 +28,8 @@ dependencies {
 rewrite {
 	// Recipe, Comment, Note (10 formating; 9; 8; 7; tech migration;  0 note -1 do not use it, Check by checkstyle, Check by Sonar
 
-	activeRecipe("org.openrewrite.java.cleanup.EmptyBlock") // Remove empty blocks that effectively do nothing code cleanup 2/18, 10, yes, don't care
-//	activeRecipe("org.openrewrite.java.cleanup.MethodParamPad") // code cleanup 6/18, format method, impact code sematic yes, check check by checkystle yes, check by sonar no?
+//	activeRecipe("org.openrewrite.java.cleanup.EmptyBlock") // Remove empty blocks that effectively do nothing code cleanup 2/18, 10, yes, don't care
+	activeRecipe("org.openrewrite.java.cleanup.MethodParamPad") // code cleanup 6/18, format method, impact code sematic yes, check check by checkystle yes, check by sonar no?
 //	activeRecipe("org.openrewrite.java.cleanup.ModifierOrder")
 
 //	activeRecipe("org.openrewrite.java.cleanup.NeedBraces") // code cleanup 15/18, impact code sematic yes, check check by checkystle yes, check by sonar yes?

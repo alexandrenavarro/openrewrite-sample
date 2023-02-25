@@ -5,4 +5,8 @@ public class Sample {
     {
 
     }
+
+    // MethodParamPad
+    void methodParamPad () {
+    }
 }
