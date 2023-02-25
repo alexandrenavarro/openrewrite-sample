@@ -28,6 +28,10 @@ public class Sample {
             return -1;
         }
 
+        if ((true)) {
+            return 1;
+        }
+
         // org.openrewrite.java.cleanup.NoWhitespaceBefore
         return Math.max(0 ,1);
     }
