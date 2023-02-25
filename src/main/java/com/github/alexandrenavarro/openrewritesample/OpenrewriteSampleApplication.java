@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Slf4j
 public class OpenrewriteSampleApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(OpenrewriteSampleApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(OpenrewriteSampleApplication.class, args);
+    }
 
 }

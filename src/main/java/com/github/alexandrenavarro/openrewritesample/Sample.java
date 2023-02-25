@@ -38,4 +38,9 @@ public class Sample {
     // org.openrewrite.java.format.BlankLines
     void aMethodWithoutBlankLineBefore() {
     }
+
+    // org.openrewrite.java.format.NormalizeTabsOrSpaces
+    	void methodWithTab() {
+    }
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile

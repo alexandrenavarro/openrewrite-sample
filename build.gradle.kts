@@ -40,10 +40,10 @@ rewrite {
 //
 ////activeRecipe("org.openrewrite.java.format.AutoFormat") 					// ,-1, yes, don't care, don't not format correct compared to intellij
 //activeRecipe("org.openrewrite.java.format.BlankLines") 					// ,10, no, no, Add some blank like between method
-activeRecipe("org.openrewrite.java.format.EmptyNewlineAtEndOfFile") 	// ,10, yes, don't care
+//activeRecipe("org.openrewrite.java.format.EmptyNewlineAtEndOfFile") 	// ,10, yes, don't care
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")				// ,-1, yes, don't care, break all the formating notably gradle.build, don't use it absolutely
-//activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks") 		// ,10, no, no, Normalize LF / CRLF,
-//activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces") 		// ,10, yes, don't care
+////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks") 		// ,-1, no, no, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
+activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces") 		// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace") 	// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.format.SingleLineComments") 			// ,10, yes?, don't care, just a space after a single line comment
 //activeRecipe("org.openrewrite.java.format.Spaces") 						// ,10, yes, don't care
