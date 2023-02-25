@@ -11,11 +11,17 @@ public class Sample {
     }
 
     // org.openrewrite.java.cleanup.MethodParamPad
-    int methodParamPad (boolean param) {
+    int methodParamPad (int param) {
         // org.openrewrite.java.cleanup.NeedBraces
-        if (param)
-            return 0;
+        if (param == 1)
+            return 1;
 
-        return -1;
+        // org.openrewrite.java.cleanup.NoWhitespaceAfter
+        if (! true) {
+            return -1;
+        }
+
+        // org.openrewrite.java.cleanup.NoWhitespaceBefore
+        return Math.max(0 ,1);
     }
 }
