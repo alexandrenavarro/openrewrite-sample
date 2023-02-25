@@ -1,5 +1,8 @@
 package com.github.alexandrenavarro.openrewritesample;
 
+// org.openrewrite.java.RemoveUnusedImports
+import java.util.Set;
+
 public class Sample {
 
     // org.openrewrite.java.cleanup.ModifierOrder
@@ -44,7 +47,11 @@ public class Sample {
     }
 
     // org.openrewrite.java.format.RemoveTrailingWhitespace
-    void methodWithTrailingSpace() {
+    boolean methodWithTrailingSpace() {
+        if(true) {
+           return true; 
+        }
+        return false;
     }
     
     // org.openrewrite.java.format.SingleLineComments
