@@ -43,4 +43,8 @@ public class Sample {
     	void methodWithTab() {
     }
 
+    // org.openrewrite.java.format.RemoveTrailingWhitespace
+    void methodWithTrailingSpace() {
+    }
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile
