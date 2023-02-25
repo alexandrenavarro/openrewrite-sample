@@ -28,7 +28,7 @@ dependencies {
 rewrite {
 	// Recipe, Comment, Note (10 formating; 9; 8; 7; tech migration;  0 note -1 do not use it, Check by checkstyle, Check by Sonar
 
-//	activeRecipe("org.openrewrite.java.cleanup.EmptyBlock") // Remove empty blocks that effectively do nothing code cleanup 2/18, 10, yes, don't care
+	activeRecipe("org.openrewrite.java.cleanup.EmptyBlock") // Remove empty blocks that effectively do nothing code cleanup 2/18, 10, yes, don't care
 //	activeRecipe("org.openrewrite.java.cleanup.MethodParamPad") // code cleanup 6/18, format method, impact code sematic yes, check check by checkystle yes, check by sonar no?
 //	activeRecipe("org.openrewrite.java.cleanup.ModifierOrder")
 
@@ -39,16 +39,16 @@ rewrite {
 //	activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad") // code cleanup 10/18, impact code sematic no, check check by checkystle yes, check by sonar no?
 //	activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") // code cleanup 17/18, operator wrap impact code sematic no, check check by checkystle yes, check by sonar ?
 //
-//activeRecipe("org.openrewrite.java.format.AutoFormat") // format 3/11 -1
+////activeRecipe("org.openrewrite.java.format.AutoFormat") // format 3/11 -1
 //	activeRecipe("org.openrewrite.java.format.BlankLines") //format 1/11 add some line between method for instance, impact code sematic no, check by checkystle no, check by sonar no
 //	activeRecipe("org.openrewrite.java.format.EmptyNewlineAtEndOfFile") //format 2/11 impact code sematic no, check by checkystle yes, check by sonar ?
-//	activeRecipe("org.openrewrite.java.format.NormalizeFormat") // format 4/11 -1
+////activeRecipe("org.openrewrite.java.format.NormalizeFormat") // format 4/11 -1
 //	activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks") // format 5/11 impact code sematic no,  check by checkystle no, check by sonar no
 //	activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces") // format 6/11 impact code sematic no, check check by checkystle yes, check by sonar no?
 //	activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace") // format 7/11, impact code sematic no, check check by checkystle yes, check by sonar no?
 //	activeRecipe("org.openrewrite.java.format.SingleLineComments") // format 8/11, add space after comment impact code sematic no, check check by checkystle ?, check by sonar no
 //	activeRecipe("org.openrewrite.java.format.Spaces") // format 9/11, spaces, code semantic no, check by checkstyle yes, check by sonar no.
-//	activeRecipe("org.openrewrite.java.format.TabsAndIndents") // format 10/11, -1
+////activeRecipe("org.openrewrite.java.format.TabsAndIndents") // format 10/11, -1
 //
 //	activeRecipe("org.openrewrite.java.RemoveUnusedImports")
 
