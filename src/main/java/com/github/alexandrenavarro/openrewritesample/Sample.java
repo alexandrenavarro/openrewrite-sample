@@ -35,7 +35,7 @@ public class Sample {
         // org.openrewrite.java.cleanup.NoWhitespaceBefore
         return Math.max(0 ,1);
     }
-    //org.openrewrite.java.format.BlankLines
+    // org.openrewrite.java.format.BlankLines
     void aMethodWithoutBlankLineBefore() {
     }
-}
+} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile
