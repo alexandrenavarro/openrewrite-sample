@@ -7,11 +7,18 @@ public class Sample {
     
     // org.openrewrite.java.cleanup.EmptyBlock
     {
-
     }
 
     // org.openrewrite.java.cleanup.MethodParamPad
     int methodParamPad (int param) {
+
+        // org.openrewrite.java.cleanup.OperatorWrap
+        final String helloWorld = "Hello " +
+                "world";
+
+        // org.openrewrite.java.cleanup.TypecastParenPad
+        final String test = ( String) helloWorld; 
+
         // org.openrewrite.java.cleanup.NeedBraces
         if (param == 1)
             return 1;

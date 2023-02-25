@@ -34,9 +34,9 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NeedBraces") 				// ,10, yes, don't care
 
 //activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceAfter")			// ,10, yes, don't care
-activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceBefore") 		// ,10, yes, don't care
+//activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceBefore") 		// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.cleanup.OperatorWrap")				// ,10, yes, don't care
-//activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad") 			// ,10, yes, don't care
+activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad") 			// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") 	// ,10, yes, don't care
 //
 ////activeRecipe("org.openrewrite.java.format.AutoFormat") 					// ,-1, yes, don't care, don't not format correct compared to intellij
