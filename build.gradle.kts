@@ -32,15 +32,14 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.MethodParamPad") 			// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.cleanup.ModifierOrder") 			// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.cleanup.NeedBraces") 				// ,10, yes, don't care
-
 //activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceAfter")		// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceBefore") 		// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.cleanup.OperatorWrap")				// ,10, yes, don't care
 //activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad") 		// ,10, yes, don't care
-activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") 	// ,10, yes, don't care
+//activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") 	// ,10, yes, don't care
 //
 ////activeRecipe("org.openrewrite.java.format.AutoFormat") 					// ,-1, yes, don't care, don't not format correct compared to intellij
-//activeRecipe("org.openrewrite.java.format.BlankLines") 					// ,10, no, no, Add some blank like between method
+activeRecipe("org.openrewrite.java.format.BlankLines") 					// ,10, no, no, Add some blank like between method
 //activeRecipe("org.openrewrite.java.format.EmptyNewlineAtEndOfFile") 	// ,10, yes, don't care
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")				// ,-1, yes, don't care, break all the formating notably gradle.build, don't use it absolutely
 //activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks") 		// ,10, no, no, Normalize LF / CRLF,
