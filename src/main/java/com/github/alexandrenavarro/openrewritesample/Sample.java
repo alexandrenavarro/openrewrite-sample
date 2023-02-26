@@ -46,8 +46,8 @@ public class Sample {
     	void methodWithTab() {
     }
 
-    // org.openrewrite.java.format.RemoveTrailingWhitespace
     boolean methodWithTrailingSpace() {
+        // org.openrewrite.java.format.RemoveTrailingWhitespace
         if(true) {
            return true; 
         }
