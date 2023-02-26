@@ -37,6 +37,7 @@ public class Sample {
             return -1;
         }
 
+        // org.openrewrite.java.cleanup.UnnecessaryParentheses
         if ((true)) {
             return 1;
         }
@@ -57,6 +58,8 @@ public class Sample {
         try (Scanner scanner = new Scanner(new File("test.txt"));) {
         } catch (FileNotFoundException fnfe) {
         }
+
+
         // org.openrewrite.java.format.RemoveTrailingWhitespace
         if(true) {
            return true; 
