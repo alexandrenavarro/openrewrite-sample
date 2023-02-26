@@ -54,12 +54,12 @@ public class Sample {
     }
 
     boolean methodWithTrailingSpace() {
-        //org.openrewrite.java.cleanup.RemoveExtraSemicolons
+        // org.openrewrite.java.cleanup.RemoveExtraSemicolons
         try (Scanner scanner = new Scanner(new File("test.txt"));) {
         } catch (FileNotFoundException fnfe) {
         }
 
-        //
+        // org.openrewrite.java.cleanup.RemoveUnneededBlock
         {
             String s = "";
         }
