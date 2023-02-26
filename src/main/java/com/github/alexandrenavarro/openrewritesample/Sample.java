@@ -59,6 +59,10 @@ public class Sample {
         } catch (FileNotFoundException fnfe) {
         }
 
+        //
+        {
+            String s = "";
+        }
 
         // org.openrewrite.java.format.RemoveTrailingWhitespace
         if(true) {
