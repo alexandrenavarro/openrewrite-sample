@@ -46,7 +46,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceAfter")						// ,10, yes, no
 //activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceBefore") 						// ,10, yes, no
 //activeRecipe("org.openrewrite.java.cleanup.OperatorWrap")								// ,10, yes, no
-//activeRecipe("org.openrewrite.java.cleanup.RemoveExtraSemicolons")					// ,10, yes, ?
+//activeRecipe("org.openrewrite.java.cleanup.RemoveExtraSemicolons")			// ,10, ?, ?
 //activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad") 						// ,10, yes, no
 
     // Java Format
@@ -68,8 +68,8 @@ rewrite {
 
     // Java Cleanup
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") 					// ,10, yes, ?
-//activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                  // ,9, yes, ?
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededBlock")                      // ,10, yes, ?
+// activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                  // ,9, yes, ?
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                        // ,9, yes, ?
 //activeRecipe("org.openrewrite.java.cleanup.UseDiamondOperator")                       // ,9, yes, ?
 //activeRecipe("org.openrewrite.java.cleanup.PadEmptyForLoopComponents") 				// ,0, ?, ?, no effect on a big project, to be tested

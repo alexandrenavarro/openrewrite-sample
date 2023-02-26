@@ -1,6 +1,9 @@
 package com.github.alexandrenavarro.openrewritesample;
 
 // org.openrewrite.java.RemoveUnusedImports
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import java.util.Set;
 
 public class Sample {
@@ -10,6 +13,9 @@ public class Sample {
     
     // org.openrewrite.java.cleanup.EmptyBlock
     {
+    }
+
+    public Sample() throws FileNotFoundException {
     }
 
     // org.openrewrite.java.cleanup.MethodParamPad
@@ -47,6 +53,10 @@ public class Sample {
     }
 
     boolean methodWithTrailingSpace() {
+        //org.openrewrite.java.cleanup.RemoveExtraSemicolons
+        try (Scanner scanner = new Scanner(new File("test.txt"));) {
+        } catch (FileNotFoundException fnfe) {
+        }
         // org.openrewrite.java.format.RemoveTrailingWhitespace
         if(true) {
            return true; 
@@ -57,4 +67,6 @@ public class Sample {
     // org.openrewrite.java.format.SingleLineComments
     //Single line Comment with space after //
 
-} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile
+
+
+} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile 
