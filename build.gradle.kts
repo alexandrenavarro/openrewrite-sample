@@ -132,6 +132,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.IndexOfReplaceableByContains")             // ,0, ?, ?
 //activeRecipe("org.openrewrite.java.cleanup.MinimumSwitchCases")                       // ,0, ?, ?
 
+
 //activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                         // ,0, ?, ?
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")               // ,0, ?, ?
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateFields")                // ,0, ?, ?
