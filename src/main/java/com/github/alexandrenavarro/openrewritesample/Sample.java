@@ -7,12 +7,19 @@ import java.util.Set;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.List;
 import java.util.Scanner;
-
+import java.net.*; //[AvoidStarImport]
+import sun.misc.Unsafe; //[IllegalImport]
+/**
+ * @author
+ * @version abc
+ * @unknownTag value [JavadocType]
+ */
 public final class Sample
 // [LeftCurly]
 {
-    // [ConstantName]
+    // [ConstantName] [JavadocVariable]
     public static final double pi = 3.141592;
 
     // org.openrewrite.java.cleanup.ModifierOrder [ModifierOrder]
@@ -20,14 +27,22 @@ public final class Sample
 
     // org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase [MemberName]
     private String NAME;
-    
+
+    // [StaticVariableName]
+    private static String STATIC_NAME;
+    // "org.openrewrite.java.format.RemoveTrailingWhitespace" [RegexpSingleline]
+
     // org.openrewrite.java.cleanup.EmptyBlock
     {
     }
 
+    // [MissingJavadocMethod]
     public Sample() throws FileNotFoundException {
     }
 
+    /**
+     * Some description here [JavadocStyle]
+     */
     // org.openrewrite.java.cleanup.MethodParamPad  [MethodParamPad]
     int methodParamPad (int param) {
 
@@ -59,7 +74,7 @@ public final class Sample
     void aMethodWithoutBlankLineBefore() {
     }
 
-    // org.openrewrite.java.format.NormalizeTabsOrSpaces
+    // org.openrewrite.java.format.NormalizeTabsOrSpaces [FileTabCharacter]
     	void methodWithTab() {
     }
 
@@ -120,6 +135,29 @@ public final class Sample
         else {
             return false;
         }
+    }
+
+    // org.openrewrite.java.cleanup.MethodNameCasing [MethodName]
+    void WrongMethodName() {
+    }
+
+    // [ParameterName]
+    void wrongParameter(String Toto) {
+        // [LineLength]
+        // Really long line, 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+    }
+
+    @Deprecated
+    /**
+     * [InvalidJavadocPosition]
+     */
+    void invalidJavadocPosition() {
+    }
+
+    /**
+     * [JavadocMethod]
+     */
+    void javadoc(String arg1) {
     }
 
 

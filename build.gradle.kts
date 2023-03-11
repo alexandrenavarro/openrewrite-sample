@@ -87,7 +87,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.RemoveUnusedImports")							                                           	    // ,format, yes, 10, yes, yes,
 //activeRecipe("org.openrewrite.java.format.Spaces")                                                                                // ,format, yes, 10, WhitespaceAround ParenPad WhitespaceAfter GenericWhitespace, no, caution problem reformat with gradle, do exclusion of gradle file
 //activeRecipe("org.openrewrite.java.cleanup.PadEmptyForLoopComponents")                                                            // ,format, yes, 10, EmptyForIteratorPad, ?,
-//activeRecipe("org.openrewrite.java.format.AutoFormat")                                                                            // ,format, no, -1, no, no, don't not format correct compared to intellij
+////activeRecipe("org.openrewrite.java.format.AutoFormat")                                                                          // ,format, no, -1, no, no, don't not format correct compared to intellij
 ////activeRecipe("org.openrewrite.java.format.TabsAndIndents")                                                                      // ,format, no, -1, no, no, do not format like intellij (1 or 2 indent for continuation)
 ////activeRecipe("org.openrewrite.java.format.WrappingAndBraces")                                                                   // ,format, no, -1, no, no, break all the formatting notably gradle.build, don't use it absolutely
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")                                                                     // ,format, no, -1, no, no, do nothing except some stuff in the gradle.build
@@ -96,17 +96,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                      // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                       // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                     // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
-
-//    <module name="PackageName"/>
-//
-//    <module name="MethodName"/>
-//activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                     // ,?, not yet, 0, ?, ?,
-
-
-//activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")
-//    <module name="ParameterName"/>
-//    <module name="StaticVariableName"/>
-//    <module name="TypeName"/>
+//activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                     // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
 //    <module name="EmptyStatement"/>
 //    <module name="EqualsHashCode"/>
@@ -130,6 +120,10 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.HideUtilityClassConstructor")                                                          // ,cleanup, not yet, 9, ?, ? vs @Utility
 //    <module name="InterfaceIsType"/>
 //    <module name="VisibilityModifier"/>
+//    <module name="ArrayTypeStyle"/>
+//    <module name="FinalParameters"/>
+//    <module name="TodoComment"/>
+//    <module name="UpperEll"/>
 
 //activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, not yet, 9, ?, ?,
