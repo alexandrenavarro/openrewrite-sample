@@ -93,8 +93,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")                                                                     // ,format, no, -1, no, no, do nothing except some stuff in the gradle.build
 ////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks")                                                                 // ,format, no, -1, no, ?, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
 
-//    <module name="LeftCurly"/>
-//    <module name="RightCurly"/>
 
 //    <!-- Checks for Naming Conventions.                  -->
 //    <!-- See https://checkstyle.org/config_naming.html -->

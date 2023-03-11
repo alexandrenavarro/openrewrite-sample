@@ -1,13 +1,15 @@
 package com.github.alexandrenavarro.openrewritesample;
 
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Sample
+public final class Sample
 // [LeftCurly]
 {
 
@@ -77,7 +79,8 @@ public class Sample
     // org.openrewrite.java.format.SingleLineComments
     //Single line Comment with space after //
 
-    boolean methodWithSpaceErrors() {
+    // [RedundantModifier]
+    final boolean methodWithSpaceErrors() {
 
         // org.openrewrite.java.cleanup.PadEmptyForLoopComponents [EmptyForIteratorPad]
         for (Iterator it = Map.of().entrySet().iterator(); it.hasNext(); );
@@ -93,6 +96,12 @@ public class Sample
         if ( true) {
             return true;
         }
+
+        if (true) {
+            // [Indentation]
+          return true;
+        }
+
         // org.openrewrite.java.format.Spaces [WhitespaceAfter]
         if(true) {
             return true;

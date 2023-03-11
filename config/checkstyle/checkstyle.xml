@@ -144,6 +144,7 @@
         <module name="TypecastParenPad"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad")  -->
         <module name="WhitespaceAfter"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
         <module name="WhitespaceAround"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
+        <module name="Indentation"/>
 
         <!-- Modifier Checks                                    -->
         <!-- See https://checkstyle.org/config_modifier.html -->
