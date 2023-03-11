@@ -134,7 +134,7 @@
 
         <!-- Checks for whitespace                               -->
         <!-- See https://checkstyle.org/config_whitespace.html -->
-        <module name="EmptyForIteratorPad"/>
+        <module name="EmptyForIteratorPad"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.PadEmptyForLoopComponents")  -->
         <module name="GenericWhitespace"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
         <module name="MethodParamPad"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.MethodParamPad")  -->
         <module name="NoWhitespaceAfter"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceAfter")  -->

@@ -78,6 +78,10 @@ public class Sample
     //Single line Comment with space after //
 
     boolean methodWithSpaceErrors() {
+
+        // org.openrewrite.java.cleanup.PadEmptyForLoopComponents [EmptyForIteratorPad]
+        for (Iterator it = Map.of().entrySet().iterator(); it.hasNext(); );
+
         // org.openrewrite.java.format.Spaces [GenericWhitespace]
         List< String> l;
 
