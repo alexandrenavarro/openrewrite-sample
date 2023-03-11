@@ -97,12 +97,9 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                       // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                     // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                     // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
+//activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                          // ,cleanup, yes, ?, HiddenField, ?, ?, to be rested on a big project
 
-//    <module name="EmptyStatement"/>
-//    <module name="EqualsHashCode"/>
-//activeRecipe("org.openrewrite.java.cleanup.CovariantEquals")
-//    <module name="HiddenField"/>
-//activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                          // ,?, not yet, 0, ?, ?,
+                                                                        // ,?, not yet, 0, ?, ?,
 //    <module name="IllegalInstantiation"/>
 //    <module name="InnerAssignment"/>
 //    <module name="MagicNumber"/>
@@ -241,7 +238,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.Cleanup")                                                                              // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.DeclarationSiteTypeVariance")                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.FixSerializableFields")                                                                // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.JavaApiBestPractices")                                                                 // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                            // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,?, not yet, 0, ?, ?,

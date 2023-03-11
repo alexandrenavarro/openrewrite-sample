@@ -3,6 +3,7 @@ package com.github.alexandrenavarro.openrewritesample;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,12 +26,14 @@ public final class Sample
     // org.openrewrite.java.cleanup.ModifierOrder [ModifierOrder]
     public final static double PI = 3.141592;
 
-    // org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase [MemberName]
-    private String NAME;
-
     // [StaticVariableName]
     private static String STATIC_NAME;
     // "org.openrewrite.java.format.RemoveTrailingWhitespace" [RegexpSingleline]
+
+    // org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase [MemberName]
+    private String NAME;
+
+    private String field1;
 
     // org.openrewrite.java.cleanup.EmptyBlock
     {
@@ -56,6 +59,9 @@ public final class Sample
         // org.openrewrite.java.cleanup.NeedBraces [NeedBraces]
         if (param == 1)
             return 1;
+
+        // [EmptyStatement]
+        if (param == 1);
 
         // org.openrewrite.java.cleanup.NoWhitespaceAfter [NoWhitespaceAfter]
         if (! true) {
@@ -158,6 +164,18 @@ public final class Sample
      * [JavadocMethod]
      */
     void javadoc(String arg1) {
+    }
+
+    @Override
+    // [EqualsHashCode]
+    public boolean equals(Object obj) {
+        return Objects.equals(this, obj);
+    }
+
+    void defaultField1() {
+        //  [HiddenField]
+        final String field1 = "default";
+        this.field1 = field1;
     }
 
 
