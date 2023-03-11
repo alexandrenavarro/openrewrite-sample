@@ -183,5 +183,19 @@ public final class Sample
         Boolean bo = new Boolean(Boolean.TRUE);
     }
 
+    void innerAssignment() {
+        int a;
+        int b;
+        // [InnerAssignment] [MagicNumber]
+        a = b = 5;
+    }
+
+    void switchWithoutDefault(String s) {
+        // [MissingSwitchDefault]
+        switch (s) {
+            case "a" : System.out.println("a");
+        }
+    }
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

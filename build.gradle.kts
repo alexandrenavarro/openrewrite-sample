@@ -100,10 +100,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                          // ,cleanup, yes, ?, HiddenField, ?, ?, to be rested on a big project
 //activeRecipe("org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf")                                            // ,cleanup, yes, 9, IllegalInstantiation, ?,
 
-                                                                        // ,?, not yet, 0, ?, ?,
-//    <module name="IllegalInstantiation"/>
-//    <module name="InnerAssignment"/>
-//    <module name="MagicNumber"/>
 //    <module name="MissingSwitchDefault"/>
 //    <module name="MultipleVariableDeclarations"/>
 //activeRecipe("org.openrewrite.java.cleanup.MultipleVariableDeclarations")                                                         // ,cleanup, not yet, 9, ?, ?
