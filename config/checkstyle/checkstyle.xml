@@ -111,9 +111,9 @@
         <module name="ConstantName"/>
         <module name="LocalFinalVariableName"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")  -->
         <module name="LocalVariableName"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")  -->
-        <module name="MemberName"/>
+        <module name="MemberName"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")  -->
         <module name="MethodName"/>
-        <module name="PackageName"/>
+        <module name="PackageName"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")  -->
         <module name="ParameterName"/>
         <module name="StaticVariableName"/>
         <module name="TypeName"/>

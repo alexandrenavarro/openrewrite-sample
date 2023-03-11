@@ -89,20 +89,20 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.PadEmptyForLoopComponents")                                                            // ,format, yes, 10, EmptyForIteratorPad, ?,
 //activeRecipe("org.openrewrite.java.format.AutoFormat")                                                                            // ,format, no, -1, no, no, don't not format correct compared to intellij
 ////activeRecipe("org.openrewrite.java.format.TabsAndIndents")                                                                      // ,format, no, -1, no, no, do not format like intellij (1 or 2 indent for continuation)
-//activeRecipe("org.openrewrite.java.format.WrappingAndBraces")                                                                     // ,format, no, -1, no, no, break all the formatting notably gradle.build, don't use it absolutely
+////activeRecipe("org.openrewrite.java.format.WrappingAndBraces")                                                                   // ,format, no, -1, no, no, break all the formatting notably gradle.build, don't use it absolutely
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")                                                                     // ,format, no, -1, no, no, do nothing except some stuff in the gradle.build
 ////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks")                                                                 // ,format, no, -1, no, ?, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
 
-//activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                      // ,cleanup, yes, -1, ?, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
+//activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                      // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
+//activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                       // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
+//activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                     // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
 
-
-//activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                               // ,format, yes, 10, , ?,
-//    <module name="LocalFinalVariableName"/>
-//    <module name="LocalVariableName"/>
-
-//    <module name="MemberName"/>
-//    <module name="MethodName"/>
 //    <module name="PackageName"/>
+//
+//    <module name="MethodName"/>
+//activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                     // ,?, not yet, 0, ?, ?,
+
+
 //activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")
 //    <module name="ParameterName"/>
 //    <module name="StaticVariableName"/>
@@ -194,14 +194,12 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.IndexOfReplaceableByContains")                                                         // ,cleanup, not yet, 0, ?, ?
 //activeRecipe("org.openrewrite.java.cleanup.MinimumSwitchCases")                                                                   // ,cleanup, not yet,9, ?, ?, ok
 
-//activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                     // ,cleanup, not yet,1, ?, ?, can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, not yet,8, ?, ?, is it ok always?
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateFields")                                                            // ,cleanup, not yet,?, ?, ?,, NotFound, can break notably in unit or Autowired field
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods")                                                           // ,cleanup, not yet,?, ?, ?, ? can break on private constructor on jackson ?
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, not yet,?, ?, ?, set only on private class, seems ok?
 //activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                               // ,cleanup, not yet,?, ?, ?, contreversial, have some problem like finalvar on a big project
 //activeRecipe("org.openrewrite.java.cleanup.FinalizePrivateFields")                                                                // ,cleanup, not yet,?, ?, ?, nonFound
-//activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                       // ,cleanup, not yet,?, ?, ?,    can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes")                                                          // ,cleanup, not yet,?, ?, ?, do we want to do it (personally yes but controversial)
 //activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet,?, ?, ? --i -> i--
 
@@ -251,7 +249,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.FixSerializableFields")                                                                // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.JavaApiBestPractices")                                                                 // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                     // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                            // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceDeprecatedRuntimeExecMethods")                                                  // ,?, not yet, 0, ?, ?,

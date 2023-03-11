@@ -17,6 +17,9 @@ public final class Sample
 
     // org.openrewrite.java.cleanup.ModifierOrder [ModifierOrder]
     public final static double PI = 3.141592;
+
+    // org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase [MemberName]
+    private String NAME;
     
     // org.openrewrite.java.cleanup.EmptyBlock
     {
@@ -86,6 +89,7 @@ public final class Sample
 
         // org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase [LocalFinalVariableName]
         final double FINAL_LOCAL_PI = 3.14;
+
         // org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase [LocalVariableName]
         double LOCAL_PI = 3.14;
 
