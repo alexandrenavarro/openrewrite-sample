@@ -76,13 +76,18 @@ public class Sample {
 
     boolean methodW() {
         // org.openrewrite.java.format.Spaces
-        if        (true){
+        if  (true){
             return true;
         }
         // org.openrewrite.java.format.Spaces
-        if (          true) {
+        if ( true) {
             return true;
         }
+        // org.openrewrite.java.format.Spaces
+        if(true) {
+            return true;
+        }
+
         return false;
     }
 

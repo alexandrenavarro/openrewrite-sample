@@ -142,7 +142,7 @@
         <module name="OperatorWrap"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.OperatorWrap")  -->
         <module name="ParenPad"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
         <module name="TypecastParenPad"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad")  -->
-        <module name="WhitespaceAfter"/>
+        <module name="WhitespaceAfter"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
         <module name="WhitespaceAround"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
 
         <!-- Modifier Checks                                    -->
