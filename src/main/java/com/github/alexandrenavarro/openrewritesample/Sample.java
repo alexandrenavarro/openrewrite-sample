@@ -79,6 +79,10 @@ public class Sample {
         if        (true){
             return true;
         }
+        // org.openrewrite.java.format.Spaces
+        if (          true) {
+            return true;
+        }
         return false;
     }
 

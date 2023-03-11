@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OpenrewriteSampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OpenrewriteSampleApplication.class, args);
+        SpringApplication.run(OpenrewriteSampleApplication.class,args);
     }
 
 }
