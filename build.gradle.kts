@@ -93,14 +93,11 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")                                                                     // ,format, no, -1, no, no, do nothing except some stuff in the gradle.build
 ////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks")                                                                 // ,format, no, -1, no, ?, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
 
+//activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                      // ,cleanup, yes, -1, ?, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
 
-//    <!-- Checks for Naming Conventions.                  -->
-//    <!-- See https://checkstyle.org/config_naming.html -->
-//    <module name="ConstantName"/>
-//    activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")
+
+//activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                               // ,format, yes, 10, , ?,
 //    <module name="LocalFinalVariableName"/>
-
-//    activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")
 //    <module name="LocalVariableName"/>
 
 //    <module name="MemberName"/>
@@ -204,7 +201,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, not yet,?, ?, ?, set only on private class, seems ok?
 //activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                               // ,cleanup, not yet,?, ?, ?, contreversial, have some problem like finalvar on a big project
 //activeRecipe("org.openrewrite.java.cleanup.FinalizePrivateFields")                                                                // ,cleanup, not yet,?, ?, ?, nonFound
-//activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                      // ,cleanup, not yet, -1, ?, ?, generated not corrected not    can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                       // ,cleanup, not yet,?, ?, ?,    can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes")                                                          // ,cleanup, not yet,?, ?, ?, do we want to do it (personally yes but controversial)
 //activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet,?, ?, ? --i -> i--

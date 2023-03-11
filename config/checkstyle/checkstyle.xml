@@ -109,8 +109,8 @@
         <!-- Checks for Naming Conventions.                  -->
         <!-- See https://checkstyle.org/config_naming.html -->
         <module name="ConstantName"/>
-        <module name="LocalFinalVariableName"/>
-        <module name="LocalVariableName"/>
+        <module name="LocalFinalVariableName"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")  -->
+        <module name="LocalVariableName"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")  -->
         <module name="MemberName"/>
         <module name="MethodName"/>
         <module name="PackageName"/>

@@ -12,6 +12,8 @@ import java.util.Scanner;
 public final class Sample
 // [LeftCurly]
 {
+    // [ConstantName]
+    public static final double pi = 3.141592;
 
     // org.openrewrite.java.cleanup.ModifierOrder [ModifierOrder]
     public final static double PI = 3.141592;
@@ -81,6 +83,11 @@ public final class Sample
 
     // [RedundantModifier]
     final boolean methodWithSpaceErrors() {
+
+        // org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase [LocalFinalVariableName]
+        final double FINAL_LOCAL_PI = 3.14;
+        // org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase [LocalVariableName]
+        double LOCAL_PI = 3.14;
 
         // org.openrewrite.java.cleanup.PadEmptyForLoopComponents [EmptyForIteratorPad]
         for (Iterator it = Map.of().entrySet().iterator(); it.hasNext(); );
