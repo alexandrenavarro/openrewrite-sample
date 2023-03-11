@@ -62,7 +62,7 @@
 
     <!-- Checks whether files end with a new line.                        -->
     <!-- See https://checkstyle.org/config_misc.html#NewlineAtEndOfFile -->
-    <module name="NewlineAtEndOfFile"/>
+    <module name="NewlineAtEndOfFile"/> <!-- managed by activeRecipe("org.openrewrite.java.format.EmptyNewlineAtEndOfFile")  -->
 
     <!-- Checks that property files contain the same keys.         -->
     <!-- See https://checkstyle.org/config_misc.html#Translation -->
@@ -77,11 +77,11 @@
 
     <!-- Checks for whitespace                               -->
     <!-- See https://checkstyle.org/config_whitespace.html -->
-    <module name="FileTabCharacter"/>
+    <module name="FileTabCharacter"/>  <!-- managed by activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces") -->
 
     <!-- Miscellaneous other checks.                   -->
     <!-- See https://checkstyle.org/config_misc.html -->
-    <module name="RegexpSingleline">
+    <module name="RegexpSingleline">  <!-- managed by activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace") -->
         <property name="format" value="\s+$"/>
         <property name="minimum" value="0"/>
         <property name="maximum" value="0"/>
@@ -123,7 +123,7 @@
         <module name="AvoidStarImport"/>
         <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
         <module name="RedundantImport"/>
-        <module name="UnusedImports">
+        <module name="UnusedImports"> <!-- managed by activeRecipe("org.openrewrite.java.RemoveUnusedImports")  -->
             <property name="processJavadoc" value="false"/>
         </module>
 
@@ -136,26 +136,26 @@
         <!-- See https://checkstyle.org/config_whitespace.html -->
         <module name="EmptyForIteratorPad"/>
         <module name="GenericWhitespace"/>
-        <module name="MethodParamPad"/>
-        <module name="NoWhitespaceAfter"/>
-        <module name="NoWhitespaceBefore"/>
-        <module name="OperatorWrap"/>
+        <module name="MethodParamPad"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.MethodParamPad")  -->
+        <module name="NoWhitespaceAfter"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceAfter")  -->
+        <module name="NoWhitespaceBefore"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NoWhitespaceBefore")  -->
+        <module name="OperatorWrap"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.OperatorWrap")  -->
         <module name="ParenPad"/>
-        <module name="TypecastParenPad"/>
+        <module name="TypecastParenPad"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad")  -->
         <module name="WhitespaceAfter"/>
         <module name="WhitespaceAround"/>
 
         <!-- Modifier Checks                                    -->
         <!-- See https://checkstyle.org/config_modifier.html -->
-        <module name="ModifierOrder"/>
+        <module name="ModifierOrder"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ModifierOrder")  -->
         <module name="RedundantModifier"/>
 
         <!-- Checks for blocks. You know, those {}'s         -->
         <!-- See https://checkstyle.org/config_blocks.html -->
-        <module name="AvoidNestedBlocks"/>
-        <module name="EmptyBlock"/>
+        <module name="AvoidNestedBlocks"/> <!-- managed by //activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededBlock") -->
+        <module name="EmptyBlock"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.EmptyBlock") -->
         <module name="LeftCurly"/>
-        <module name="NeedBraces"/>
+        <module name="NeedBraces"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NeedBraces") -->
         <module name="RightCurly"/>
 
         <!-- Checks for common coding problems               -->
