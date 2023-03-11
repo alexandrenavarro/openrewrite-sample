@@ -98,6 +98,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                     // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                     // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 //activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                          // ,cleanup, yes, ?, HiddenField, ?, ?, to be rested on a big project
+//activeRecipe("org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf")                                            // ,cleanup, yes, 9, IllegalInstantiation, ?,
 
                                                                         // ,?, not yet, 0, ?, ?,
 //    <module name="IllegalInstantiation"/>
@@ -177,7 +178,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UseStringReplace")                                                                     // ,cleanup, not yet, ?, ?, ?, replaceAll -> replace
 //activeRecipe("org.openrewrite.java.cleanup.UseSystemLineSeparator")                                                               // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.NoEqualityInForCondition")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-//activeRecipe("org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf")                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal")                                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ForLoopIncrementInUpdate")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested

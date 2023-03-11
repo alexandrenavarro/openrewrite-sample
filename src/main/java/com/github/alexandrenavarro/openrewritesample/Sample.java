@@ -178,5 +178,10 @@ public final class Sample
         this.field1 = field1;
     }
 
+    void illegal() {
+        // [IllegalInstantiation]
+        Boolean bo = new Boolean(Boolean.TRUE);
+    }
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

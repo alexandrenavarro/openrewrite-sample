@@ -164,7 +164,9 @@
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
         <module name="HiddenField"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.HiddenField") -->
-        <module name="IllegalInstantiation"/>
+        <module name="IllegalInstantiation"> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf") -->
+            <property name="classes" value="java.lang.Boolean, java.lang.Integer"/>
+        </module>
         <module name="InnerAssignment"/>
         <module name="MagicNumber"/>
         <module name="MissingSwitchDefault"/>
