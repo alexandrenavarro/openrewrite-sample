@@ -74,7 +74,8 @@ public class Sample {
     // org.openrewrite.java.format.SingleLineComments
     //Single line Comment with space after //
 
-    boolean meth() {
+    boolean methodW() {
+        // org.openrewrite.java.format.Spaces
         if        (true){
             return true;
         }
