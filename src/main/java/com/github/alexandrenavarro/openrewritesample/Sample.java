@@ -3,8 +3,8 @@ package com.github.alexandrenavarro.openrewritesample;
 // org.openrewrite.java.RemoveUnusedImports
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Sample {
 
@@ -87,6 +87,8 @@ public class Sample {
         if(true) {
             return true;
         }
+        // org.openrewrite.java.format.Spaces
+        List< String> l;
 
         return false;
     }

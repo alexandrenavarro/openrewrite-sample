@@ -85,7 +85,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace")                                                              // ,format, yes, 10, RegexpSingleline, no,
 //activeRecipe("org.openrewrite.java.format.SingleLineComments")                                                                    // ,format, yes, 10, no, no, just a space after a single line comment
 //activeRecipe("org.openrewrite.java.RemoveUnusedImports")							                                           	    // ,format, yes, 10, yes, yes,
-//activeRecipe("org.openrewrite.java.format.Spaces")                                                                         // ,format, yes, 10, WhitespaceAround ParenPad WhitespaceAfter, no, caution problem reformat with gradle, do exclusion of gradle file
+//activeRecipe("org.openrewrite.java.format.Spaces")                                                                         // ,format, yes, 10, WhitespaceAround ParenPad WhitespaceAfter GenericWhitespace, no, caution problem reformat with gradle, do exclusion of gradle file
 ////activeRecipe("org.openrewrite.java.format.AutoFormat")                                                                          // ,format, no, -1, no, no, don't not format correct compared to intellij
 ////activeRecipe("org.openrewrite.java.format.TabsAndIndents")                                                                      // ,format, no, -1, no, no, do not format like intellij (1 or 2 indent for continuation)
 ////activeRecipe("org.openrewrite.java.format.WrappingAndBraces")                                                                   // ,format, no, -1, no, no, break all the formatting notably gradle.build, don't use it absolutely
@@ -94,8 +94,6 @@ rewrite {
 
     ////activeRecipe("org.openrewrite.java.format.Spaces")
 //    <module name="GenericWhitespace"/>
-//    <module name="WhitespaceAfter"/>
-//    <module name="WhitespaceAround"/>
 //    <module name="LeftCurly"/>
 //    <module name="RightCurly"/>
 
