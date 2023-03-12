@@ -213,7 +213,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.CatchClauseOnlyRethrows")                                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument")                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 
-
 //activeRecipe("org.openrewrite.java.AddApache2LicenseHeader")                                                                      // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.AddLicenseHeader")                                                                             // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.AddOrUpdateAnnotationAttribute")                                                               // ,?, not yet, 0, ?, ?,
