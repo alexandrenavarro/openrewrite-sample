@@ -412,10 +412,10 @@ public final class Sample implements Serializable
     }
 
     void method() throws IOException {
-        // org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources [UnnecessarySemicolonInTryWithResources]
+        // org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources
         try(Reader r1 = new PipedReader();){
-
-        }
+            r1.close();
+        } 
     }
 
 
