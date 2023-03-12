@@ -14,8 +14,7 @@ public class VeryLongClass {
             String a7,
             String a8,
             String a9,
-            String a10
-            ) {
+            String a10) {
     }
 
 
@@ -2014,6 +2013,6 @@ public void veryLongMethod() {
 
 
 
-}
+    }
 
 }
