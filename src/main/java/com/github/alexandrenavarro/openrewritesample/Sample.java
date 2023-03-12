@@ -1,6 +1,7 @@
 package com.github.alexandrenavarro.openrewritesample;
 
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
@@ -284,6 +285,17 @@ public final class Sample
     // [InterfaceIsType]
     public interface Test1 { // violation
         int a = 3;
+    }
+
+    // org.openrewrite.java.cleanup.NoDoubleBraceInitialization
+    public void noDoubleBraceInit() {
+
+        // org.openrewrite.java.cleanup.NoDoubleBraceInitialization [AvoidDoubleBraceInitialization]
+        Map<String, Integer> map = new HashMap<>(){{
+            put("one", 1);
+            put("tow", 2);
+        }};
+
     }
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

@@ -175,6 +175,8 @@
         <module name="SimplifyBooleanExpression"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanExpression") -->
         <module name="SimplifyBooleanReturn"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanReturn") -->
 
+        <module name="AvoidDoubleBraceInitialization"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NoDoubleBraceInitialization") -->
+
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->
         <module name="DesignForExtension"/>
