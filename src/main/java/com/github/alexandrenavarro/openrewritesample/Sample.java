@@ -333,6 +333,8 @@ public final class Sample
 
         // org.openrewrite.java.cleanup.RemoveUnusedLocalVariables
         String s = "toto";
+        // [MultipleStringLiterals]
+        String s2 = "toto";
     }
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

@@ -183,6 +183,7 @@
         <module name="UnnecessaryParentheses"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") -->
         <module name="IllegalType"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces") -->
 <!--        <module name="UnusedLocalVariable"/> &lt;!&ndash; managed by activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables") &ndash;&gt;-->
+        <module name="MultipleStringLiterals"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals") -->
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->
