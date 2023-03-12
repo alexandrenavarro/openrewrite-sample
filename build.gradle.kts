@@ -103,7 +103,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.MultipleVariableDeclarations")                                                         // ,cleanup, yes, 9, MultipleVariableDeclarations, ?
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanExpression")                                                            // ,cleanup, yes, 9, SimplifyBooleanExpression, ?,
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanReturn")                                                                // ,cleanup, yes, 9, SimplifyBooleanReturn, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                              // ,cleanup, yes, 9, UpperEll, ?, NotFound
+//activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                             // ,cleanup, yes, 9, UpperEll, ?, NotFound
 
 //    <module name="DesignForExtension"/>
 //    <module name="FinalClass"/>
@@ -115,7 +115,6 @@ rewrite {
 //    <module name="ArrayTypeStyle"/>
 //    <module name="FinalParameters"/>
 //    <module name="TodoComment"/>
-//    <module name="UpperEll"/>
 
 //activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, not yet, 9, ?, ?,

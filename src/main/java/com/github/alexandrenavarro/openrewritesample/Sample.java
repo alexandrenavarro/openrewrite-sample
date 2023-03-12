@@ -200,14 +200,14 @@ public final class Sample
     }
 
     boolean simplifyExpression(boolean a) {
-        // [SimplifyBooleanExpression]
+        // org.openrewrite.java.cleanup.SimplifyBooleanExpression [SimplifyBooleanExpression]
         if (a == true) {
         }
 
-        // [UpperEll]
+        // org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes [UpperEll]
         long l = 100l;
 
-        // [SimplifyBooleanReturn]
+        // org.openrewrite.java.cleanup.SimplifyBooleanReturn [SimplifyBooleanReturn]
         if (a == true) {
             return true;
         } else {
