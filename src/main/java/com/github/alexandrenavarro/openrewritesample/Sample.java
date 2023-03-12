@@ -367,7 +367,7 @@ public final class Sample implements Serializable
     }
 
     // org.openrewrite.java.cleanup.NestedEnumsAreNotStatic
-    enum Currency {
+    public static enum Currency {
         EUR, USD, GBP
     }
 
