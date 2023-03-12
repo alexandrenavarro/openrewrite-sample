@@ -107,9 +107,9 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable")                                                    // ,cleanup, yes, 9, no, ?, does not generate the uid, weird?
 //activeRecipe("org.openrewrite.java.cleanup.CompareEnumsWithEqualityOperator")                                                     // ,cleanup, yes, 9, no, ?,
 //activeRecipe("org.openrewrite.java.cleanup.NestedEnumsAreNotStatic")                                                              // ,cleanup, yes, 9, no, ?,
-
 //activeRecipe("org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface")                                                      // ,cleanup, yes, 9, no, ?,
 //activeRecipe("org.openrewrite.java.cleanup.NoRedundantJumpStatements")                                                            // ,cleanup, yes, 9, no, ?,
+
 
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8?, UnusedLocalVariable  (not by default, present in doc but does not work?), ?, is it ok always?, TODO to be tested on a big project
 

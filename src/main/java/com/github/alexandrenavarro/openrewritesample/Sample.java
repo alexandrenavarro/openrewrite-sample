@@ -13,12 +13,12 @@ import java.util.Set;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
+// [RedundantImport]
 import java.util.List;
 import java.util.Scanner;
 import java.net.*; //[AvoidStarImport]
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
-import java.util.function.Supplier;
+import java.util.function.Predicate;
 
 import sun.misc.Unsafe; //[IllegalImport]
 
@@ -362,6 +362,18 @@ public final class Sample implements Serializable
 
     // org.openrewrite.java.cleanup.StaticMethodNotFinal
     public static final boolean staticFinalMethod() {
+        List.of("a")
+                .stream()
+                // org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface
+                .filter(new Predicate<String>() {
+                    @Override
+                    public boolean test(String s) {
+                        return (s.startsWith("a"));
+                    }
+                })
+                .toList();
+
+
         // org.openrewrite.java.cleanup.CompareEnumsWithEqualityOperator
         return TimeUnit.DAYS.equals(TimeUnit.MINUTES);
     }
