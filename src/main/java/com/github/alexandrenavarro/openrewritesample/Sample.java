@@ -4,6 +4,7 @@ package com.github.alexandrenavarro.openrewritesample;
 import java.io.Serializable;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.List;
 import java.util.Scanner;
 import java.net.*; //[AvoidStarImport]
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -360,7 +362,8 @@ public final class Sample implements Serializable
 
     // org.openrewrite.java.cleanup.StaticMethodNotFinal
     public static final boolean staticFinalMethod() {
-        return true;
+        // org.openrewrite.java.cleanup.CompareEnumsWithEqualityOperator
+        return TimeUnit.DAYS.equals(TimeUnit.MINUTES)
     }
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
