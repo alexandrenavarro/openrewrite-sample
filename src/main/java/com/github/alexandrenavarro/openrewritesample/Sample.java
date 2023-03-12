@@ -226,4 +226,33 @@ public final class Sample
     }
 
 
+
+    public abstract class Plant {
+        private String roots;
+        private String trunk;
+
+        protected void validate() {
+            if (roots == null) throw new IllegalArgumentException("No roots!");
+            if (trunk == null) throw new IllegalArgumentException("No trunk!");
+        }
+
+        public abstract void grow();
+    }
+
+    public class Tree extends Plant {
+        private List leaves;
+
+        @Override
+        protected void validate() {
+            super.validate();
+            if (leaves == null) throw new IllegalArgumentException("No leaves!");
+        }
+
+        // [DesignForExtension]
+        public void grow() {
+            validate();
+        }
+    }
+
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

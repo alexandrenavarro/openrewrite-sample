@@ -90,7 +90,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanExpression")                                                            // ,cleanup, yes, 9, SimplifyBooleanExpression, ?,
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanReturn")                                                                // ,cleanup, yes, 9, SimplifyBooleanReturn, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                             // ,cleanup, yes, 9, UpperEll, ?,
-
+//activeRecipe("org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations")                                                        // ,cleanup, yes, 9, ArrayTypeStyle, ?
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, `, FinalParameters, ?, available 7.38
 ////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, ?, HiddenField, ?, ?, to be rested on a big project
@@ -98,19 +98,12 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
-
-
-////activeRecipe("org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations")                                                      // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-
-
-//    <module name="DesignForExtension"/>
 //    <module name="FinalClass"/>
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, not yet,?, ?, ?, set only on private class, seems ok?
 //    <module name="HideUtilityClassConstructor"/>
 //activeRecipe("org.openrewrite.java.cleanup.HideUtilityClassConstructor")                                                          // ,cleanup, not yet, 9, ?, ? vs @Utility
 //    <module name="InterfaceIsType"/>
 //    <module name="VisibilityModifier"/>
-//    <module name="ArrayTypeStyle"/>
 
 //activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, not yet, 9, ?, ?,
