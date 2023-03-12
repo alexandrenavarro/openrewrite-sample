@@ -59,7 +59,7 @@ rewrite {
 
 // Recipe, Category, Note, Tested in the sample, Violation in checkstyle, Violation in Sonar, Comment,
 
-//activeRecipe("org.openrewrite.java.cleanup.EmptyBlock") 								                                            // ,format, yes, 10, EmptyBlock, java:S108 (Nested blocks of code should not be left empty),
+//activeRecipe("org.openrewrite.java.cleanup.EmptyBlock")                                                                           // ,format, yes, 10, EmptyBlock, java:S108 (Nested blocks of code should not be left empty),
 //activeRecipe("org.openrewrite.java.cleanup.MethodParamPad")                                                                       // ,format, yes, 10, MethodParamPad, no,
 //activeRecipe("org.openrewrite.java.cleanup.ModifierOrder")                                                                        // ,format, yes, 10, ModifierOrder, java:S1124 (Reorder the modifiers to comply with the Java Language Specification),
 //activeRecipe("org.openrewrite.java.cleanup.NeedBraces")                                                                           // ,format, yes, 10, NeedBraces, no,
@@ -75,7 +75,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces")                                                                 // ,format, yes, 10, FileTabCharacter, no,
 //activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace")                                                              // ,format, yes, 10, RegexpSingleline, no,
 //activeRecipe("org.openrewrite.java.format.SingleLineComments")                                                                    // ,format, yes, 10, no, no, just a space after a single line comment
-//activeRecipe("org.openrewrite.java.RemoveUnusedImports")							                                           	    // ,format, yes, 10, yes, yes,
+//activeRecipe("org.openrewrite.java.RemoveUnusedImports")                                                                          // ,format, yes, 10, yes, yes,
 //activeRecipe("org.openrewrite.java.format.Spaces")                                                                                // ,format, yes, 10, WhitespaceAround ParenPad WhitespaceAfter GenericWhitespace, no, caution problem reformat with gradle, do exclusion of gradle file TODO to be tested on a big project
 //activeRecipe("org.openrewrite.java.cleanup.PadEmptyForLoopComponents")                                                            // ,format, yes, 10, EmptyForIteratorPad, ?,
 ////activeRecipe("org.openrewrite.java.format.AutoFormat")                                                                          // ,format, no, -1, no, no, don't not format correct compared to intellij TODO to be tested on a big project
@@ -108,9 +108,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.CompareEnumsWithEqualityOperator")                                                     // ,cleanup, yes, 9, no, ?,
 //activeRecipe("org.openrewrite.java.cleanup.NestedEnumsAreNotStatic")                                                              // ,cleanup, yes, 9, no, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface")                                                      // ,cleanup, yes, 9, no, ?,
-//activeRecipe("org.openrewrite.java.cleanup.NoRedundantJumpStatements")                                                            // ,cleanup, yes, 9, no, ?,
-
-
+//activeRecipe("org.openrewrite.java.cleanup.NoRedundantJumpStatements")                                                            // ,cleanup, yes, 9, no, ?, TODO refind a exemple
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8?, UnusedLocalVariable  (not by default, present in doc but does not work?), ?, is it ok always?, TODO to be tested on a big project
 
 ////activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                         // ,cleanup, yes, ?, FinalClass, ?, ?, set only on private class or private constructor, seems ok?,TODO to be tested on a big project
