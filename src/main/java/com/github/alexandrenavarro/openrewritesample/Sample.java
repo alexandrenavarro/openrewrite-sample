@@ -23,7 +23,7 @@ import sun.misc.Unsafe; //[IllegalImport]
  * @version abc
  * @unknownTag value [JavadocType]
  */
-public final class Sample implements Supplier<String>
+public final class Sample
 
 // [LeftCurly]
 {
@@ -238,12 +238,6 @@ public final class Sample implements Supplier<String>
         // TODO:
     }
 
-    // org.openrewrite.java.cleanup.MissingOverrideAnnotation
-    public String get() {
-        return "get";
-    }
-
-
     public abstract class Plant {
         private String roots;
         private String trunk;
@@ -265,7 +259,7 @@ public final class Sample implements Supplier<String>
             if (leaves == null) throw new IllegalArgumentException("No leaves!");
         }
 
-        // [DesignForExtension]
+        // org.openrewrite.java.cleanup.MissingOverrideAnnotation [DesignForExtension]
         public void grow() {
             validate();
         }
