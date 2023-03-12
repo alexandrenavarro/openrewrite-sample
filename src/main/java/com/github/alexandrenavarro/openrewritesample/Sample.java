@@ -295,7 +295,7 @@ public final class Sample
     public void noDoubleBraceInit() {
 
         // org.openrewrite.java.cleanup.NoDoubleBraceInitialization [AvoidDoubleBraceInitialization]
-        Map<String, Integer> map = new HashMap<>(){{
+        Map<String, Integer> map = new HashMap<>() {{
             put("one", 1);
             put("tow", 2);
         }};
@@ -344,7 +344,7 @@ public final class Sample
     // org.openrewrite.java.cleanup.UnnecessaryThrows
     public String inlineString() throws FileNotFoundException {
         // org.openrewrite.java.cleanup.UseDiamondOperator
-        // Map<String, String> map = new HashMap<String, String>();
+        Map<String, String> map = new HashMap<String, String>();
 
         // org.openrewrite.java.cleanup.InlineVariable
         String ret = "Return";
