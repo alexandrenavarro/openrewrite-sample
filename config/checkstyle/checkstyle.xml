@@ -169,10 +169,10 @@
         </module>
         <module name="InnerAssignment"/>
         <module name="MagicNumber"/>
-        <module name="MissingSwitchDefault"/>
-        <module name="MultipleVariableDeclarations"/>
-        <module name="SimplifyBooleanExpression"/>
-        <module name="SimplifyBooleanReturn"/>
+        <module name="MissingSwitchDefault"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.MinimumSwitchCases") -->
+        <module name="MultipleVariableDeclarations"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.MultipleVariableDeclarations") -->
+        <module name="SimplifyBooleanExpression"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanExpression") -->
+        <module name="SimplifyBooleanReturn"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanReturn") -->
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->

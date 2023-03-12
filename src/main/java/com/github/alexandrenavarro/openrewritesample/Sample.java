@@ -188,12 +188,27 @@ public final class Sample
         int b;
         // [InnerAssignment] [MagicNumber]
         a = b = 5;
+        // org.openrewrite.java.cleanup.MultipleVariableDeclarations [MultipleVariableDeclarations]
+        int c, d;
     }
 
     void switchWithoutDefault(String s) {
-        // [MissingSwitchDefault]
+        // org.openrewrite.java.cleanup.MinimumSwitchCases [MissingSwitchDefault]
         switch (s) {
             case "a" : System.out.println("a");
+        }
+    }
+
+    boolean simplifyExpression(boolean a) {
+        // [SimplifyBooleanExpression]
+        if (a == true) {
+        }
+
+        // [SimplifyBooleanReturn]
+        if (a == true) {
+            return true;
+        } else {
+            return false;
         }
     }
 
