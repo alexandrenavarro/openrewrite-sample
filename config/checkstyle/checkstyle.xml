@@ -176,6 +176,7 @@
         <module name="SimplifyBooleanReturn"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanReturn") -->
 
         <module name="AvoidDoubleBraceInitialization"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NoDoubleBraceInitialization") -->
+        <module name="CovariantEquals"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.CovariantEquals") -->
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->

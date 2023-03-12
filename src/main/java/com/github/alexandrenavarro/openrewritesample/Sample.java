@@ -298,4 +298,12 @@ public final class Sample
 
     }
 
+    class Test {
+
+        // org.openrewrite.java.cleanup.CovariantEquals [CovariantEquals]
+        public boolean equals(Test i) {  // violation
+            return false;
+        }
+    }
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

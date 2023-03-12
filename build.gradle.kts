@@ -92,7 +92,8 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                             // ,cleanup, yes, 9, UpperEll, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations")                                                        // ,cleanup, yes, 9, ArrayTypeStyle, ?
 //activeRecipe("org.openrewrite.java.cleanup.HideUtilityClassConstructor")                                                          // ,cleanup, yes, 9, HideUtilityClassConstructor, ? vs @Utility
-//activeRecipe("org.openrewrite.java.cleanup.NoDoubleBraceInitialization")                                                          // ,cleanup, yes, 9, AvoidDoubleBraceInitialization, ?,
+//activeRecipe("org.openrewrite.java.cleanup.NoDoubleBraceInitialization")                                                          // ,cleanup, yes, 9, AvoidDoubleBraceInitialization (not by default), ?,
+//activeRecipe("org.openrewrite.java.cleanup.CovariantEquals")                                                                      // ,cleanup, yes, 9, CovariantEquals  (not by default), ?, no effect on a big project, to be tested
 
 
 ////activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                         // ,cleanup, yes, ?, FinalClass, ?, ?, set only on private class or private constructor, seems ok?,to to be retested on a big project
@@ -102,6 +103,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                     // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
+
 
 
 
@@ -122,7 +124,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.CombineSemanticallyEqualCatchBlocks")                                                  // ,cleanup, not yet, -1, ?, ? error in comments in source code
 //activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")                                                                 // ,cleanup, not yet, -1, ?, ? group some others receipe, some are not ok
 //activeRecipe("org.openrewrite.java.cleanup.ControlFlowIndentation")                                                               // ,cleanup, not yet, -1, ?, ? reformat code incorrectly
-//activeRecipe("org.openrewrite.java.cleanup.CovariantEquals")                                                                      // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+
 //activeRecipe("org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor")                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.FixStringFormatExpressions")                                                           // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.InlineVariable")                                                                       // ,cleanup, not yet, 9, ?, ?
