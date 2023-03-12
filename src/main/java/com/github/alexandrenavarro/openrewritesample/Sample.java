@@ -1,6 +1,7 @@
 package com.github.alexandrenavarro.openrewritesample;
 
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -324,6 +325,11 @@ public final class Sample
     public boolean equalsAvoidsNull(String s) {
         //org.openrewrite.java.cleanup.EqualsAvoidsNull EqualsAvoidNull
         return s.equals("42");
+    }
+
+    public void illegalType() {
+        // org.openrewrite.java.cleanup.UseCollectionInterfaces [IllegalType]
+        HashMap<String, String> map = new HashMap();
     }
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

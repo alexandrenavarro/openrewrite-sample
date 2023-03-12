@@ -69,7 +69,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.RemoveExtraSemicolons")                                                                // ,format, yes, 10, no, no,
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededBlock")                                                                  // ,format, yes, 10, AvoidNestedBlocks, java:S1199 (Extract this nested code block into a method.),
 //activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad")                                                                     // ,format, yes, 10, TypecastParenPad, java:S1905 (Remove this unnecessary cast to "String"),
-//activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses")                                                               // ,format, yes, 10, UnnecessaryParentheses, no,
+//activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses")                                                               // ,format, yes, 10, UnnecessaryParentheses (not by default), no,
 //activeRecipe("org.openrewrite.java.format.BlankLines")                                                                            // ,format, yes, 10, no, no, Add some blank like between method
 //activeRecipe("org.openrewrite.java.format.EmptyNewlineAtEndOfFile")                                                               // ,format, yes, 10, NewlineAtEndOfFile, no,
 //activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces")                                                                 // ,format, yes, 10, FileTabCharacter, no,
@@ -97,18 +97,19 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast")                                                                     // ,cleanup, yes, 9, DefaultComesLast (not by default), ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.EqualsAvoidsNull")                                                                     // ,cleanup, yes, 9, EqualsAvoidNull (not by default), ?,
 //activeRecipe("org.openrewrite.java.cleanup.ExplicitInitialization")                                                               // ,cleanup, yes, 9, ExplicitInitialization (not by default), ?,
+//activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces")                                                              // ,cleanup, yes, 9, IllegalType (not by default), ?
+
 
 ////activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                         // ,cleanup, yes, ?, FinalClass, ?, ?, set only on private class or private constructor, seems ok?,to to be retested on a big project
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, ?, FinalParameters, ?, available 7.38, vs ParameterAssignment
 ////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, ?, HiddenField, ?, ?, to be rested on a big project
+
 ////activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                     // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
 
-//IllegalType
-//activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces")                                                              // ,cleanup, not yet, 9, ?, ?
 // UnusedLocalVariable
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, not yet,8, ?, ?, is it ok always?
 //MultipleStringLiterals

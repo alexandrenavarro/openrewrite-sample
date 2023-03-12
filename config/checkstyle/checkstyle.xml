@@ -181,7 +181,7 @@
         <module name="EqualsAvoidNull"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.EqualsAvoidsNull") -->
         <module name="ExplicitInitialization"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ExplicitInitialization") -->
         <module name="UnnecessaryParentheses"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") -->
-
+        <module name="IllegalType"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces") -->
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->
