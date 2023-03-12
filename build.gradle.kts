@@ -1,8 +1,6 @@
 plugins {
     java
     checkstyle
-    id("org.springframework.boot") version "3.0.4"
-    id("io.spring.dependency-management") version "1.1.0"
     id("org.openrewrite.rewrite") version "5.37.1"
     id("org.sonarqube") version "4.0.0.2929"
     id("com.github.ben-manes.versions") version "0.46.0"
@@ -22,10 +20,6 @@ java {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
-    compileOnly("org.projectlombok:lombok")
-    annotationProcessor("org.projectlombok:lombok")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 dependencies {
