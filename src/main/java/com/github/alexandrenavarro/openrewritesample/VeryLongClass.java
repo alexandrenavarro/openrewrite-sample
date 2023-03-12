@@ -1,10 +1,11 @@
 // [FileLength]
 package com.github.alexandrenavarro.openrewritesample;
 
+// [HideUtilityClassConstructor]
 public class VeryLongClass {
 
     // [MethodLength]
-    public void veryLongMethod() {
+    public static void veryLongMethod() {
 
 
 

@@ -91,6 +91,8 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanReturn")                                                                // ,cleanup, yes, 9, SimplifyBooleanReturn, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                             // ,cleanup, yes, 9, UpperEll, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations")                                                        // ,cleanup, yes, 9, ArrayTypeStyle, ?
+//activeRecipe("org.openrewrite.java.cleanup.HideUtilityClassConstructor")                                                          // ,cleanup, yes, 9, HideUtilityClassConstructor, ? vs @Utility
+
 ////activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                         // ,cleanup, yes, ?, FinalClass, ?, ?, set only on private class or private constructor, seems ok?,to to be retested on a big project
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, ?, FinalParameters, ?, available 7.38
@@ -99,9 +101,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
-//    <module name="FinalClass"/>
-//activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, not yet,?, ?, ?, set only on private class, seems ok?
-//    <module name="HideUtilityClassConstructor"/>
+
 //activeRecipe("org.openrewrite.java.cleanup.HideUtilityClassConstructor")                                                          // ,cleanup, not yet, 9, ?, ? vs @Utility
 //    <module name="InterfaceIsType"/>
 //    <module name="VisibilityModifier"/>
@@ -121,7 +121,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NoRedundantJumpStatements")                                                            // ,cleanup, not yet, 9, ?, ?
 //activeRecipe("org.openrewrite.java.cleanup.NestedEnumsAreNotStatic")                                                              // ,cleanup, not yet, 9, ?, ?
 //activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces")                                                              // ,cleanup, not yet, 9, ?, ?
-//activeRecipe("org.openrewrite.java.cleanup.HideUtilityClassConstructor")                                                          // ,cleanup, not yet, 9, ?, ? vs @Utility
 //activeRecipe("org.openrewrite.java.cleanup.CombineSemanticallyEqualCatchBlocks")                                                  // ,cleanup, not yet, -1, ?, ? error in comments in source code
 //activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")                                                                 // ,cleanup, not yet, -1, ?, ? group some others receipe, some are not ok
 //activeRecipe("org.openrewrite.java.cleanup.ControlFlowIndentation")                                                               // ,cleanup, not yet, -1, ?, ? reformat code incorrectly
