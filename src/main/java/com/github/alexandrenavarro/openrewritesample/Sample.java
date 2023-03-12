@@ -363,7 +363,13 @@ public final class Sample implements Serializable
     // org.openrewrite.java.cleanup.StaticMethodNotFinal
     public static final boolean staticFinalMethod() {
         // org.openrewrite.java.cleanup.CompareEnumsWithEqualityOperator
-        return TimeUnit.DAYS.equals(TimeUnit.MINUTES)
+        return TimeUnit.DAYS.equals(TimeUnit.MINUTES);
     }
+
+    // org.openrewrite.java.cleanup.NestedEnumsAreNotStatic
+    enum Currency {
+        EUR, USD, GBP
+    }
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
