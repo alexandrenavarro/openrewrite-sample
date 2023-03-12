@@ -145,7 +145,7 @@
         <module name="WhitespaceAfter"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
         <module name="WhitespaceAround"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
 
-        <module name="Indentation"/> <!-- Add to manage indent of 4 spaces-->
+
 
         <!-- Modifier Checks                                    -->
         <!-- See https://checkstyle.org/config_modifier.html -->
@@ -180,6 +180,8 @@
         <module name="DefaultComesLast"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast") -->
         <module name="EqualsAvoidNull"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.EqualsAvoidsNull") -->
         <module name="ExplicitInitialization"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ExplicitInitialization") -->
+        <module name="UnnecessaryParentheses"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") -->
+
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->
@@ -195,6 +197,8 @@
         <module name="FinalParameters"/>  <!-- managed by  activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")  -->
         <module name="TodoComment"/>
         <module name="UpperEll"/>  <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes") -->
+
+        <module name="Indentation"/> <!-- Add to manage indent of 4 spaces-->
 
         <!-- https://checkstyle.org/config_filters.html#SuppressionXpathFilter -->
         <module name="SuppressionXpathFilter">

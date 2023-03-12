@@ -76,7 +76,7 @@ public final class Sample
             return -1;
         }
 
-        // org.openrewrite.java.cleanup.UnnecessaryParentheses
+        // org.openrewrite.java.cleanup.UnnecessaryParentheses [UnnecessaryParentheses]
         if ((true)) {
             return 1;
         }
