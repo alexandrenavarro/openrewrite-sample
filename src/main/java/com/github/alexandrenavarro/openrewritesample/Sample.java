@@ -30,7 +30,7 @@ import sun.misc.Unsafe; //[IllegalImport]
  * @version abc
  * @unknownTag value [JavadocType]
  */
-
+// org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable
 public final class Sample implements Serializable
 
 // [LeftCurly]
@@ -202,7 +202,7 @@ public final class Sample implements Serializable
     }
 
     void illegal() {
-        // [IllegalInstantiation]
+        // org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf [IllegalInstantiation]
         Boolean bo = new Boolean(Boolean.TRUE);
     }
 
@@ -211,7 +211,7 @@ public final class Sample implements Serializable
         int b;
         // [InnerAssignment] [MagicNumber]
         a = b = 5;
-        // org.openrewrite.java.cleanup.MultipleVariableDeclarations [MultipleVariableDeclarations]
+        // org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals [MultipleVariableDeclarations]
         int c, d;
     }
 
