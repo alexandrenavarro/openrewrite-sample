@@ -84,17 +84,24 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")                                                                     // ,format, no, -1, no, no, do nothing except some stuff in the gradle.build
 ////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks")                                                                 // ,format, no, -1, no, ?, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
 
-//activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                      // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
-//activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                       // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
-//activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                     // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
-//activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                     // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
-//activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                          // ,cleanup, yes, ?, HiddenField, ?, ?, to be rested on a big project
 //activeRecipe("org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf")                                            // ,cleanup, yes, 9, IllegalInstantiation, ?,
 //activeRecipe("org.openrewrite.java.cleanup.MinimumSwitchCases")                                                                   // ,cleanup, yes, 9, MissingSwitchDefault, ?, ok
 //activeRecipe("org.openrewrite.java.cleanup.MultipleVariableDeclarations")                                                         // ,cleanup, yes, 9, MultipleVariableDeclarations, ?
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanExpression")                                                            // ,cleanup, yes, 9, SimplifyBooleanExpression, ?,
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanReturn")                                                                // ,cleanup, yes, 9, SimplifyBooleanReturn, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                             // ,cleanup, yes, 9, UpperEll, ?, NotFound
+//activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                             // ,cleanup, yes, 9, UpperEll, ?,
+
+////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
+////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, `, FinalParameters, ?, available 7.38
+////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, ?, HiddenField, ?, ?, to be rested on a big project
+////activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                     // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
+////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
+////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
+
+
+
+////activeRecipe("org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations")                                                      // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+
 
 //    <module name="DesignForExtension"/>
 //    <module name="FinalClass"/>
@@ -104,7 +111,6 @@ rewrite {
 //    <module name="InterfaceIsType"/>
 //    <module name="VisibilityModifier"/>
 //    <module name="ArrayTypeStyle"/>
-//    <module name="FinalParameters"/>
 
 //activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, not yet, 9, ?, ?,
@@ -192,7 +198,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededAssertion")                                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources")                                                 // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments")                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations")                                                      // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast")                                                                     // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.FallThrough")                                                                        // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition")                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested

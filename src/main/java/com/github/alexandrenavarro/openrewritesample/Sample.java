@@ -200,7 +200,7 @@ public final class Sample
         }
     }
 
-    // [FinalParameters]
+    // org.openrewrite.java.cleanup.FinalizeMethodArguments [FinalParameters]
     boolean simplifyExpression(boolean a) {
         // org.openrewrite.java.cleanup.SimplifyBooleanExpression [SimplifyBooleanExpression]
         if (a == true) {
@@ -209,12 +209,18 @@ public final class Sample
         // org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes [UpperEll]
         long l = 100l;
 
+        // "org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations" [ArrayTypeStyle]
+        String strings[];
+
         // org.openrewrite.java.cleanup.SimplifyBooleanReturn [SimplifyBooleanReturn]
         if (a == true) {
             return true;
         } else {
             return false;
         }
+
+
+
         // [TodoComment]
         // TODO:
     }
