@@ -98,6 +98,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.EqualsAvoidsNull")                                                                     // ,cleanup, yes, 9, EqualsAvoidNull (not by default), ?,
 //activeRecipe("org.openrewrite.java.cleanup.ExplicitInitialization")                                                               // ,cleanup, yes, 9, ExplicitInitialization (not by default), ?,
 //activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces")                                                              // ,cleanup, yes, 9, IllegalType (not by default), ?
+//activeRecipe("org.openrewrite.java.cleanup.StringLiteralEquality")                                                                // ,cleanup, yes, 9, StringLiteralEquality, ?,
 //activeRecipe("org.openrewrite.java.cleanup.InlineVariable")                                                                       // ,cleanup, yes, 9, no, ?,
 //activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, yes, 9, no, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, yes, 9, no, ?,
@@ -115,16 +116,13 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, TODO to be tested on a big project generated not corrected not  can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, ?, FinalParameters, ?, available 7.38, vs ParameterAssignment
 ////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, ?, HiddenField, ?, ?, TODO to be tested on a big project
-////activeRecipe("org.openrewrite.java.cleanup.NoFinalizer")                                                                          // ,cleanup, yes, ?, No, NoFinalizer,
+////activeRecipe("org.openrewrite.java.cleanup.NoFinalizer")                                                                          // ,cleanup, yes, ?, No, NoFinalizer, Remove code.
 
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals")                                                       // ,cleanup, yes, 1?, MultipleStringLiterals, ?, create String final and reference it on all,?, TODO to be tested on a big project
 ////activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                     // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, ?, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
-
-//StringLiteralEquality
-////activeRecipe("org.openrewrite.java.cleanup.StringLiteralEquality")                                                              // ,cleanup, not yet, 0, ?, ?, no effect on a big project,
 //FallThrough
 ////activeRecipe("org.openrewrite.java.cleanup.FallThrough")                                                                        // ,cleanup, not yet, 0, ?, ?, no effect on a big project,
 //FinalLocalVariable
@@ -142,6 +140,13 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes")                                                          // ,cleanup, not yet,?, ?, ?, do we want to do it (personally yes but controversial)
 //activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet,?, ?, ? --i -> i--
 
+////activeRecipe("org.openrewrite.java.cleanup.SimplifyConsecutiveAssignments")                                                     // ,cleanup, not yet, -1, ?, ?, generate error in the code with comment
+////activeRecipe("org.openrewrite.java.cleanup.LambdaBlockToExpression")                                                            // ,cleanup, not yet, -1, ?, ?, do not use, reformat gradle.build
+////activeRecipe("org.openrewrite.java.cleanup.ReplaceLambdaWithMethodReference")                                                   // ,cleanup, not yet, -1, ?, problem if 2 classes with the same for the class
+////activeRecipe("org.openrewrite.java.cleanup.CombineSemanticallyEqualCatchBlocks")                                                // ,cleanup, not yet, -1, ?, ? error in comments in source code
+////activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")                                                               // ,cleanup, not yet, -1, ?, ? group some others receipe, some are not ok
+////activeRecipe("org.openrewrite.java.cleanup.ControlFlowIndentation")                                                             // ,cleanup, not yet, -1, ?, ? reformat code incorrectly
+////activeRecipe("org.openrewrite.java.cleanup.RenameExceptionInEmptyCatch")                                                        // ,cleanup, not yet, -1, ?, ? error in comments in source code
 
 //activeRecipe("org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor")                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.FixStringFormatExpressions")                                                           // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
@@ -191,18 +196,10 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart")                                                      // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.UseListSort")                                                                          // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.UseForEachRemoveInsteadOfSetRemoveAll")                                                // ,cleanup, not yet, 0, ?, ?, not found
-////activeRecipe("org.openrewrite.java.cleanup.UseSystemLineSeparator")                                                             // ,cleanup, not yet, 0, ?, ?, not found
-////activeRecipe("org.openrewrite.java.cleanup.SimplifyDurationCreationUnits")                                                      // ,cleanup, not yet, 0, ?, ?, NotFound
-////activeRecipe("org.openrewrite.java.cleanup.InstanceOfPatternMatch")                                                             // ,cleanup, not yet, 0, ?, ?, NotFound
-////activeRecipe("org.openrewrite.java.cleanup.ReplaceTextBlockWithString")                                                         // ,cleanup, not yet, 0, ?, ?, NotFound
-
-////activeRecipe("org.openrewrite.java.cleanup.SimplifyConsecutiveAssignments")                                                     // ,cleanup, not yet, -1, ?, ?, generate error in the code with comment
-////activeRecipe("org.openrewrite.java.cleanup.LambdaBlockToExpression")                                                            // ,cleanup, not yet, -1, ?, ?, do not use, reformat gradle.build
-//activeRecipe("org.openrewrite.java.cleanup.ReplaceLambdaWithMethodReference")                                                     // ,cleanup, not yet, -1, ?, problem if 2 classes with the same for the class
-//activeRecipe("org.openrewrite.java.cleanup.CombineSemanticallyEqualCatchBlocks")                                                  // ,cleanup, not yet, -1, ?, ? error in comments in source code
-//activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")                                                                 // ,cleanup, not yet, -1, ?, ? group some others receipe, some are not ok
-//activeRecipe("org.openrewrite.java.cleanup.ControlFlowIndentation")                                                               // ,cleanup, not yet, -1, ?, ? reformat code incorrectly
-//activeRecipe("org.openrewrite.java.cleanup.RenameExceptionInEmptyCatch")                                                          // ,cleanup, not yet, -1, ?, ? error in comments in source code
+//activeRecipe("org.openrewrite.java.cleanup.UseSystemLineSeparator")                                                               // ,cleanup, not yet, 0, ?, ?, not found
+//activeRecipe("org.openrewrite.java.cleanup.SimplifyDurationCreationUnits")                                                        // ,cleanup, not yet, 0, ?, ?, not found
+//activeRecipe("org.openrewrite.java.cleanup.InstanceOfPatternMatch")                                                               // ,cleanup, not yet, 0, ?, ?, not found
+//activeRecipe("org.openrewrite.java.cleanup.ReplaceTextBlockWithString")                                                           // ,cleanup, not yet, 0, ?, ?, not found
 
 
 //activeRecipe("org.openrewrite.java.AddApache2LicenseHeader")                                                                      // ,?, not yet, 0, ?, ?,

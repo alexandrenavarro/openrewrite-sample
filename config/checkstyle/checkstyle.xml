@@ -185,6 +185,7 @@
 <!--        <module name="UnusedLocalVariable"/> &lt;!&ndash; managed by activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables") &ndash;&gt;-->
         <module name="MultipleStringLiterals"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals") -->
         <module name="NoFinalizer"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NoFinalizer") -->
+        <module name="StringLiteralEquality"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.StringLiteralEquality") -->
 
 
         <!-- Checks for class design                         -->

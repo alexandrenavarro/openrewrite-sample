@@ -346,6 +346,10 @@ public final class Sample implements Serializable
         final String s2 = "aString";
         final String s3 = "aString";
 
+        // org.openrewrite.java.cleanup.StringLiteralEquality [StringLiteralEquality]
+        if (s2 == "aString") {
+        }
+
         // org.openrewrite.java.cleanup.RemoveRedundantTypeCast
         final String s4 = (String) "aString4";
     }
