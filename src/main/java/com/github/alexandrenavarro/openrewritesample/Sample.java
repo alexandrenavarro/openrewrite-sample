@@ -332,10 +332,10 @@ public final class Sample
         HashMap<String, String> map = new HashMap();
 
         // org.openrewrite.java.cleanup.RemoveUnusedLocalVariables
-        String s = "aString";
+        final String s = "aString";
         // [MultipleStringLiterals]
-        String s2 = "aString";
-        String s3 = "aString";
+        final String s2 = "aString";
+        final String s3 = "aString";
     }
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
