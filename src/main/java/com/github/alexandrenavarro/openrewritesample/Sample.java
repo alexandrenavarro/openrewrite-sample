@@ -1,6 +1,9 @@
 package com.github.alexandrenavarro.openrewritesample;
 
 
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.Reader;
 import java.io.Serializable;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
 import java.util.ArrayList;
@@ -106,7 +109,6 @@ public final class Sample implements Serializable
     boolean methodWithTrailingSpace() {
         // org.openrewrite.java.cleanup.RemoveExtraSemicolons
         ;
-        // org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources [UnnecessarySemicolonInTryWithResources]
         try (Scanner scanner = new Scanner(new File("test.txt"));) {
         } catch (FileNotFoundException fnfe) {
         }
@@ -406,6 +408,13 @@ public final class Sample implements Serializable
                 i++;
                 break;
             default:
+        }
+    }
+
+    void method() throws IOException {
+        // org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources [UnnecessarySemicolonInTryWithResources]
+        try(Reader r1 = new PipedReader();){
+
         }
     }
 
