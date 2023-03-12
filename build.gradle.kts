@@ -117,7 +117,8 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, TODO to be tested on a big project generated not corrected not  can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, ?, FinalParameters, ?, available 7.38, vs ParameterAssignment
 ////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, ?, HiddenField, ?, ?, TODO to be tested on a big project
-////activeRecipe("org.openrewrite.java.cleanup.NoFinalizer")                                                                          // ,cleanup, yes, ?, No, NoFinalizer, Remove code.
+////activeRecipe("org.openrewrite.java.cleanup.NoFinalizer")                                                                        // ,cleanup, yes, ?, No, NoFinalizer, Remove code.
+////activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                             // ,cleanup, yes, ?, FinalLocalVariable, ?, ?, contreversial, have some problem like finalvar on a big project TODO to be tested on a big project
 
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals")                                                       // ,cleanup, yes, 1?, MultipleStringLiterals, ?, create String final and reference it on all,?, TODO to be tested on a big project
 ////activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                     // ,cleanup, yes, 1, MemberName, ?,  can break if the project is a lib.
@@ -125,8 +126,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
 
-//FinalLocalVariable
-//activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                               // ,cleanup, not yet,?, ?, ?, contreversial, have some problem like finalvar on a big project TODO to be tested on a big project
 //UnnecessarySemicolonInTryWithResources
 ////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources")                                                 // ,cleanup, not yet, 0, ?, ?, no effect on a big project,
 //IllegalCatch

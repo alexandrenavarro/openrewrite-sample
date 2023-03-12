@@ -359,6 +359,9 @@ public final class Sample implements Serializable
         // org.openrewrite.java.cleanup.UseDiamondOperator
         Map<String, String> map = new HashMap<String, String>();
 
+        // org.openrewrite.java.cleanup.FinalizeLocalVariables [FinalLocalVariable]
+        String aNonFinalString = "aNonFinalString";
+
         // org.openrewrite.java.cleanup.InlineVariable
         String ret = "Return";
         return ret;
