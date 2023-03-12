@@ -330,6 +330,9 @@ public final class Sample
     public void illegalType() {
         // org.openrewrite.java.cleanup.UseCollectionInterfaces [IllegalType]
         HashMap<String, String> map = new HashMap();
+
+        // org.openrewrite.java.cleanup.RemoveUnusedLocalVariables
+        String s = "toto";
     }
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

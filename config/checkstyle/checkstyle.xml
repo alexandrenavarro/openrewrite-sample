@@ -182,6 +182,7 @@
         <module name="ExplicitInitialization"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ExplicitInitialization") -->
         <module name="UnnecessaryParentheses"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UnnecessaryParentheses") -->
         <module name="IllegalType"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces") -->
+<!--        <module name="UnusedLocalVariable"/> &lt;!&ndash; managed by activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables") &ndash;&gt;-->
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->
