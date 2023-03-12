@@ -1,7 +1,7 @@
 // [FileLength]
 package com.github.alexandrenavarro.openrewritesample;
 
-// [HideUtilityClassConstructor]
+// org.openrewrite.java.cleanup.HideUtilityClassConstructor [HideUtilityClassConstructor]
 public class VeryLongClass {
 
     // [MethodLength]
