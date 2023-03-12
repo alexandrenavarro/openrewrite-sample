@@ -203,7 +203,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources")                                                 // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments")                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations")                                                      // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast")                                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast")                                                                     // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.FallThrough")                                                                        // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition")                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet")                                                       // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
