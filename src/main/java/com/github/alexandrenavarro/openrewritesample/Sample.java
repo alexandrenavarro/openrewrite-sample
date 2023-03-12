@@ -318,4 +318,9 @@ public final class Sample
         }
     }
 
+    public boolean equalsAvoidsNull(String s) {
+        //org.openrewrite.java.cleanup.EqualsAvoidsNull EqualsAvoidNull
+        return s.equals("42");
+    }
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

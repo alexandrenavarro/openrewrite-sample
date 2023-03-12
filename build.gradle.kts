@@ -95,7 +95,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NoDoubleBraceInitialization")                                                          // ,cleanup, yes, 9, AvoidDoubleBraceInitialization (not by default), ?,
 //activeRecipe("org.openrewrite.java.cleanup.CovariantEquals")                                                                      // ,cleanup, yes, 9, CovariantEquals  (not by default), ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast")                                                                     // ,cleanup, yes, 9, DefaultComesLast (not by default), ?, no effect on a big project, to be tested
-
+//activeRecipe("org.openrewrite.java.cleanup.EqualsAvoidsNull")                                                                     // ,cleanup, yes, 9, EqualsAvoidNull (not by default), ?,
 
 ////activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                         // ,cleanup, yes, ?, FinalClass, ?, ?, set only on private class or private constructor, seems ok?,to to be retested on a big project
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, to be retested on a big project generated not corrected not  can break if the project is a lib.
@@ -114,7 +114,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ExplicitInitialization")                                                               // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.StaticMethodNotFinal")                                                                 // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.MissingOverrideAnnotation")                                                            // ,cleanup, not yet, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.EqualsAvoidsNull")                                                                     // ,cleanup, not yet, 9, ?, ?,
+
 //activeRecipe("org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable")                                                    // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface")                                                      // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceLambdaWithMethodReference")                                                     // ,cleanup, not yet, -1, ?, problem if 2 classes with the same for the class
