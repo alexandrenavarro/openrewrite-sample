@@ -94,7 +94,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.HideUtilityClassConstructor")                                                          // ,cleanup, yes, 9, HideUtilityClassConstructor, ? vs @Utility
 //activeRecipe("org.openrewrite.java.cleanup.NoDoubleBraceInitialization")                                                          // ,cleanup, yes, 9, AvoidDoubleBraceInitialization (not by default), ?,
 //activeRecipe("org.openrewrite.java.cleanup.CovariantEquals")                                                                      // ,cleanup, yes, 9, CovariantEquals  (not by default), ?, no effect on a big project, to be tested
-//activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast")                                                                     // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast")                                                                     // ,cleanup, yes, 9, DefaultComesLast (not by default), ?, no effect on a big project, to be tested
 
 
 ////activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                         // ,cleanup, yes, ?, FinalClass, ?, ?, set only on private class or private constructor, seems ok?,to to be retested on a big project
