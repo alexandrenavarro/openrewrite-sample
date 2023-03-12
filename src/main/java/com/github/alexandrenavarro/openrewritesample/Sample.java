@@ -351,4 +351,9 @@ public final class Sample
         return ret;
     }
 
+    // org.openrewrite.java.cleanup.StaticMethodNotFinal
+    public static final boolean staticFinalMethod() {
+        return true;
+    }
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
