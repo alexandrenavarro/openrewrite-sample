@@ -144,7 +144,8 @@
         <module name="TypecastParenPad"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.TypecastParenPad")  -->
         <module name="WhitespaceAfter"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
         <module name="WhitespaceAround"/> <!-- managed by activeRecipe("org.openrewrite.java.format.Spaces")  -->
-        <module name="Indentation"/>
+
+        <module name="Indentation"/> <!-- Add to manage indent of 4 spaces-->
 
         <!-- Modifier Checks                                    -->
         <!-- See https://checkstyle.org/config_modifier.html -->
@@ -187,7 +188,7 @@
         <module name="ArrayTypeStyle"/>
         <module name="FinalParameters"/>
         <module name="TodoComment"/>
-        <module name="UpperEll"/>
+        <module name="UpperEll"/>  <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes") -->
 
         <!-- https://checkstyle.org/config_filters.html#SuppressionXpathFilter -->
         <module name="SuppressionXpathFilter">

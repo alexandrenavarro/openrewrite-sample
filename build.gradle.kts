@@ -105,7 +105,6 @@ rewrite {
 //    <module name="VisibilityModifier"/>
 //    <module name="ArrayTypeStyle"/>
 //    <module name="FinalParameters"/>
-//    <module name="TodoComment"/>
 
 //activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, not yet, 9, ?, ?,

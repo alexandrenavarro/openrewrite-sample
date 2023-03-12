@@ -199,6 +199,7 @@ public final class Sample
         }
     }
 
+    // [FinalParameters]
     boolean simplifyExpression(boolean a) {
         // org.openrewrite.java.cleanup.SimplifyBooleanExpression [SimplifyBooleanExpression]
         if (a == true) {
