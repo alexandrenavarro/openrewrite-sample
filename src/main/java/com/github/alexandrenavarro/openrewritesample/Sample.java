@@ -384,4 +384,5 @@ public final class Sample implements Serializable
     }
 
 
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
