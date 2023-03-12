@@ -99,9 +99,10 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ExplicitInitialization")                                                               // ,cleanup, yes, 9, ExplicitInitialization (not by default), ?,
 //activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces")                                                              // ,cleanup, yes, 9, IllegalType (not by default), ?
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8?, UnusedLocalVariable  (not by default, present in doc but does not work?), ?, is it ok always?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.cleanup.InlineVariable")                                                                       // ,cleanup, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.InlineVariable")                                                                       // ,cleanup, yes, 9, No, ?,
+//activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, yes, 9, No, ?,
+//activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, yes, 9, No, ?,
+//activeRecipe("org.openrewrite.java.cleanup.UseDiamondOperator")                                                                   // ,cleanup, yes, 9, No, ?,
 
 ////activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                         // ,cleanup, yes, ?, FinalClass, ?, ?, set only on private class or private constructor, seems ok?,TODO to be tested on a big project
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, ?, TODO to be tested on a big project generated not corrected not  can break if the project is a lib.
@@ -114,7 +115,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
 
-//activeRecipe("org.openrewrite.java.cleanup.UseDiamondOperator")                                                                   // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.StaticMethodNotFinal")                                                                 // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.MissingOverrideAnnotation")                                                            // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable")                                                    // ,cleanup, not yet, 9, ?, ?,
