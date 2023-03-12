@@ -341,9 +341,8 @@ public final class Sample
         final String s4 = (String) "aString4";
     }
 
-    public String inlineString() {
-
-
+    // org.openrewrite.java.cleanup.UnnecessaryThrows
+    public String inlineString() throws FileNotFoundException {
         // org.openrewrite.java.cleanup.InlineVariable
         String ret = "Return";
         return ret;
