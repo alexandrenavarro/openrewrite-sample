@@ -383,6 +383,9 @@ public final class Sample implements Serializable
         EUR, USD, GBP
     }
 
+    // org.openrewrite.java.cleanup.NoFinalizer [NoFinalizer]
+    protected void finalize() {
+    }
 
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

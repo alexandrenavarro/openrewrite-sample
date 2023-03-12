@@ -184,6 +184,8 @@
         <module name="IllegalType"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces") -->
 <!--        <module name="UnusedLocalVariable"/> &lt;!&ndash; managed by activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables") &ndash;&gt;-->
         <module name="MultipleStringLiterals"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals") -->
+        <module name="NoFinalizer"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NoFinalizer") -->
+
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->
