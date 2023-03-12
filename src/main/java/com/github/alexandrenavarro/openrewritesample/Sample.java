@@ -336,9 +336,14 @@ public final class Sample
         // [MultipleStringLiterals]
         final String s2 = "aString";
         final String s3 = "aString";
+
+        // org.openrewrite.java.cleanup.RemoveRedundantTypeCast
+        final String s4 = (String) "aString4";
     }
 
     public String inlineString() {
+
+
         // org.openrewrite.java.cleanup.InlineVariable
         String ret = "Return";
         return ret;
