@@ -338,4 +338,10 @@ public final class Sample
         final String s3 = "aString";
     }
 
+    public String inlineString() {
+        // org.openrewrite.java.cleanup.InlineVariable
+        String ret = "Return";
+        return ret;
+    }
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
