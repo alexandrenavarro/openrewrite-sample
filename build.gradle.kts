@@ -20,9 +20,6 @@ java {
 }
 
 dependencies {
-}
-
-dependencies {
     rewrite(platform("org.openrewrite:rewrite-bom:7.37.3"))
     rewrite("org.openrewrite:rewrite-core")
     rewrite("org.openrewrite:rewrite-gradle")
