@@ -105,6 +105,8 @@ public final class Sample implements Serializable
 
     boolean methodWithTrailingSpace() {
         // org.openrewrite.java.cleanup.RemoveExtraSemicolons
+        ;
+        // org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources [UnnecessarySemicolonInTryWithResources]
         try (Scanner scanner = new Scanner(new File("test.txt"));) {
         } catch (FileNotFoundException fnfe) {
         }

@@ -100,6 +100,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UseCollectionInterfaces")                                                              // ,cleanup, yes, 9, IllegalType (not by default), ?
 //activeRecipe("org.openrewrite.java.cleanup.StringLiteralEquality")                                                                // ,cleanup, yes, 9, StringLiteralEquality, ?,
 //activeRecipe("org.openrewrite.java.cleanup.FallThrough")                                                                          // ,cleanup, yes, 9, FallThrough, ?,
+//activeRecipe("org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources")                                                   // ,cleanup, yes, 9, UnnecessarySemicolonInTryWithResources, ?,
 //activeRecipe("org.openrewrite.java.cleanup.InlineVariable")                                                                       // ,cleanup, yes, 9, no, ?,
 //activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, yes, 9, no, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, yes, 9, no, ?,
@@ -126,8 +127,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
 
-//UnnecessarySemicolonInTryWithResources
-////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources")                                                 // ,cleanup, not yet, 0, ?, ?, no effect on a big project,
 //IllegalCatch
 ////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryCatch")                                                                   // ,cleanup, not yet, -1, IllegalCatch, ?, do not use, change the behaviour if NPE occurs for instance
 
