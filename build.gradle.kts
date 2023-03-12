@@ -103,6 +103,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.MultipleVariableDeclarations")                                                         // ,cleanup, yes, 9, MultipleVariableDeclarations, ?
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanExpression")                                                            // ,cleanup, yes, 9, SimplifyBooleanExpression, ?,
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyBooleanReturn")                                                                // ,cleanup, yes, 9, SimplifyBooleanReturn, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                              // ,cleanup, yes, 9, UpperEll, ?, NotFound
 
 //    <module name="DesignForExtension"/>
 //    <module name="FinalClass"/>
@@ -190,7 +191,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.SimplifyDurationCreationUnits")                                                      // ,cleanup, not yet, 0, ?, ?, NotFound
 ////activeRecipe("org.openrewrite.java.cleanup.InstanceOfPatternMatch")                                                             // ,cleanup, not yet, 0, ?, ?, NotFound
 ////activeRecipe("org.openrewrite.java.cleanup.ReplaceTextBlockWithString")                                                         // ,cleanup, not yet, 0, ?, ?, NotFound
-////activeRecipe("org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes")                                                           // ,cleanup, not yet, 0, ?, ?, NotFound
+
 
 ////activeRecipe("org.openrewrite.java.cleanup.SimplifyCompoundStatement")                                                          // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 ////activeRecipe("org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution")                                                  // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested

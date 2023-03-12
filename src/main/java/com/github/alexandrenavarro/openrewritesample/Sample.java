@@ -204,6 +204,9 @@ public final class Sample
         if (a == true) {
         }
 
+        // [UpperEll]
+        long l = 100l;
+
         // [SimplifyBooleanReturn]
         if (a == true) {
             return true;
