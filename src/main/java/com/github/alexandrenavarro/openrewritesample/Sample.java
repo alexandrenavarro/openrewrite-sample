@@ -40,6 +40,9 @@ public final class Sample
     // [VisibilityModifier]
     public final int someIntValue = 1;
 
+    // org.openrewrite.java.cleanup.ExplicitInitialization [ExplicitInitialization]
+    private boolean boolField1 = false;
+
     // org.openrewrite.java.cleanup.EmptyBlock
     {
     }

@@ -179,6 +179,7 @@
         <module name="CovariantEquals"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.CovariantEquals") -->
         <module name="DefaultComesLast"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.DefaultComesLast") -->
         <module name="EqualsAvoidNull"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.EqualsAvoidsNull") -->
+        <module name="ExplicitInitialization"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ExplicitInitialization") -->
 
         <!-- Checks for class design                         -->
         <!-- See https://checkstyle.org/config_design.html -->
