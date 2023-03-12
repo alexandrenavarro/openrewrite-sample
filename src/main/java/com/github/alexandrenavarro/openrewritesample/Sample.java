@@ -306,4 +306,16 @@ public final class Sample
         }
     }
 
+    public void defaultInSwitch(int i) {
+        switch (i) {
+            case 1:
+                break;
+            // org.openrewrite.java.cleanup.DefaultComesLast [DefaultComesLast]
+            default: // violation, 'default' before 'case'
+                break;
+            case 2:
+                break;
+        }
+    }
+
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
