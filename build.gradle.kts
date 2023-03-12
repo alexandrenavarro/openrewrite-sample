@@ -102,9 +102,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, ?, can break if the project is a lib.
 
 
-//activeRecipe("org.openrewrite.java.cleanup.HideUtilityClassConstructor")                                                          // ,cleanup, not yet, 9, ?, ? vs @Utility
-//    <module name="InterfaceIsType"/>
-//    <module name="VisibilityModifier"/>
 
 //activeRecipe("org.openrewrite.java.cleanup.RemoveRedundantTypeCast")                                                              // ,cleanup, not yet, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryThrows")                                                                    // ,cleanup, not yet, 9, ?, ?,

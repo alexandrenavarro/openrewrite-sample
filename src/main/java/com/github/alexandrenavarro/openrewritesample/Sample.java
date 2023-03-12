@@ -36,6 +36,9 @@ public final class Sample
 
     private String field1;
 
+    // [VisibilityModifier]
+    public final int someIntValue = 1;
+
     // org.openrewrite.java.cleanup.EmptyBlock
     {
     }
@@ -277,5 +280,10 @@ public final class Sample
         private MyClass() { }
     }
 
+
+    // [InterfaceIsType]
+    public interface Test1 { // violation
+        int a = 3;
+    }
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
