@@ -391,5 +391,18 @@ public final class Sample implements Serializable
     protected void finalize() {
     }
 
+    void switchCaseWithoutBreak(String s) {
+        int i = 0;
+        switch (s) {
+            case "a":
+                i++;
+                // org.openrewrite.java.cleanup.FallThrough [FallThrough]
+            case "b":
+                i++;
+                break;
+            default:
+        }
+    }
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]

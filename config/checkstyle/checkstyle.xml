@@ -186,6 +186,7 @@
         <module name="MultipleStringLiterals"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals") -->
         <module name="NoFinalizer"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.NoFinalizer") -->
         <module name="StringLiteralEquality"/> <!-- managed by activeRecipe("org.openrewrite.java.cleanup.StringLiteralEquality") -->
+        <module name="FallThrough"/> <!-- managed by activeRecipe("activeRecipe("org.openrewrite.java.cleanup.FallThrough") -->
 
 
         <!-- Checks for class design                         -->
