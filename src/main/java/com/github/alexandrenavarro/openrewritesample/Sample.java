@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.List;
 import java.util.Scanner;
 import java.net.*; //[AvoidStarImport]
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 import sun.misc.Unsafe; //[IllegalImport]
 
 /**
@@ -20,7 +23,8 @@ import sun.misc.Unsafe; //[IllegalImport]
  * @version abc
  * @unknownTag value [JavadocType]
  */
-public final class Sample
+public final class Sample implements Supplier<String>
+
 // [LeftCurly]
 {
     // [ConstantName] [JavadocVariable]
@@ -56,24 +60,24 @@ public final class Sample
      * Some description here [JavadocStyle]
      */
     // org.openrewrite.java.cleanup.MethodParamPad  [MethodParamPad]
-    int methodParamPad (int param) {
+    int methodParamPad(int param) {
 
         // org.openrewrite.java.cleanup.OperatorWrap [OperatorWrap]
         final String helloWorld = "Hello " +
                 "world";
 
         // org.openrewrite.java.cleanup.TypecastParenPad [TypecastParenPad]
-        final String test = ( String) helloWorld; 
+        final String test = (String) helloWorld;
 
         // org.openrewrite.java.cleanup.NeedBraces [NeedBraces]
         if (param == 1)
             return 1;
 
         // [EmptyStatement]
-        if (param == 1);
+        if (param == 1) ;
 
         // org.openrewrite.java.cleanup.NoWhitespaceAfter [NoWhitespaceAfter]
-        if (! true) {
+        if (!true) {
             return -1;
         }
 
@@ -83,14 +87,15 @@ public final class Sample
         }
 
         // org.openrewrite.java.cleanup.NoWhitespaceBefore [NoWhitespaceBefore]
-        return Math.max(0 ,1);
+        return Math.max(0, 1);
     }
+
     // org.openrewrite.java.format.BlankLines
     void aMethodWithoutBlankLineBefore() {
     }
 
     // org.openrewrite.java.format.NormalizeTabsOrSpaces [FileTabCharacter]
-    	void methodWithTab() {
+    void methodWithTab() {
     }
 
     boolean methodWithTrailingSpace() {
@@ -104,13 +109,13 @@ public final class Sample
             String s = "";
         }
 
-        if(true) {
+        if (true) {
             // org.openrewrite.java.format.RemoveTrailingWhitespace
-           return true; 
+            return true;
         }
         return false;
     }
-    
+
     // org.openrewrite.java.format.SingleLineComments
     //Single line Comment with space after //
 
@@ -124,27 +129,27 @@ public final class Sample
         double LOCAL_PI = 3.14;
 
         // org.openrewrite.java.cleanup.PadEmptyForLoopComponents [EmptyForIteratorPad]
-        for (Iterator it = Map.of().entrySet().iterator(); it.hasNext(); );
+        for (Iterator it = Map.of().entrySet().iterator(); it.hasNext(); ) ;
 
         // org.openrewrite.java.format.Spaces [GenericWhitespace]
-        List< String> l;
+        List<String> l;
 
         // org.openrewrite.java.format.Spaces [WhitespaceAround]
-        if  (true){
+        if (true) {
             return true;
         }
         // org.openrewrite.java.format.Spaces [ParenPad]
-        if ( true) {
+        if (true) {
             return true;
         }
 
         if (true) {
             // [Indentation]
-          return true;
+            return true;
         }
 
         // org.openrewrite.java.format.Spaces [WhitespaceAfter]
-        if(true) {
+        if (true) {
             return true;
         } // [RightCurly]
         else {
@@ -204,7 +209,8 @@ public final class Sample
     void switchWithoutDefault(String s) {
         // org.openrewrite.java.cleanup.MinimumSwitchCases [MissingSwitchDefault]
         switch (s) {
-            case "a" : System.out.println("a");
+            case "a":
+                System.out.println("a");
         }
     }
 
@@ -228,11 +234,14 @@ public final class Sample
         }
 
 
-
         // [TodoComment]
         // TODO:
     }
 
+    // org.openrewrite.java.cleanup.MissingOverrideAnnotation
+    public String get() {
+        return "get";
+    }
 
 
     public abstract class Plant {
@@ -282,7 +291,8 @@ public final class Sample
 
     // [FinalClass]
     class MyClass { // violation, class should be declared final
-        private MyClass() { }
+        private MyClass() {
+        }
     }
 
 
