@@ -19,7 +19,7 @@ public class VeryLongClass {
 
 
     // [MethodLength]
-public void veryLongMethod() {
+    public void veryLongMethod() {
 
 
 
