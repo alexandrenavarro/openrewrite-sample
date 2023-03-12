@@ -343,6 +343,9 @@ public final class Sample
 
     // org.openrewrite.java.cleanup.UnnecessaryThrows
     public String inlineString() throws FileNotFoundException {
+        // org.openrewrite.java.cleanup.UseDiamondOperator
+        // Map<String, String> map = new HashMap<String, String>();
+
         // org.openrewrite.java.cleanup.InlineVariable
         String ret = "Return";
         return ret;
