@@ -1,5 +1,7 @@
 package com.github.alexandrenavarro.openrewritesample;
 
+
+import java.io.Serializable;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +25,8 @@ import sun.misc.Unsafe; //[IllegalImport]
  * @version abc
  * @unknownTag value [JavadocType]
  */
-public final class Sample
+
+public final class Sample implements Serializable
 
 // [LeftCurly]
 {
