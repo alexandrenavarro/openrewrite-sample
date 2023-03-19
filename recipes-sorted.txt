@@ -8,6 +8,7 @@ org.openrewrite.concourse.search.FindPrivilegedResourceType
 org.openrewrite.concourse.UpdateGitResourceUri
 org.openrewrite.config.CompositeRecipe
 org.openrewrite.DeleteSourceFiles
+org.openrewrite.FindBuildToolFailures
 org.openrewrite.FindGitProvenance
 org.openrewrite.FindParseFailures
 org.openrewrite.FindQuarks
@@ -103,6 +104,7 @@ org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor
 org.openrewrite.java.cleanup.FallThrough
 org.openrewrite.java.cleanup.FinalClass
 org.openrewrite.java.cleanup.FinalizeLocalVariables
+org.openrewrite.java.cleanup.FinalizeMethodArguments
 org.openrewrite.java.cleanup.FinalizePrivateFields
 org.openrewrite.java.cleanup.FixSerializableFields
 org.openrewrite.java.cleanup.FixStringFormatExpressions
@@ -427,6 +429,7 @@ org.openrewrite.java.RemoveObjectsIsNull
 org.openrewrite.java.RemoveUnusedImports
 org.openrewrite.java.ReorderMethodArguments
 org.openrewrite.java.ReplaceConstant
+org.openrewrite.java.ReplaceStringLiteralWithConstant
 org.openrewrite.java.search.FindAnnotations
 org.openrewrite.java.search.FindDeprecatedClasses
 org.openrewrite.java.search.FindDeprecatedFields
@@ -764,6 +767,7 @@ org.openrewrite.maven.RemoveProperty
 org.openrewrite.maven.RemoveRedundantDependencyVersions
 org.openrewrite.maven.RemoveRepository
 org.openrewrite.maven.search.DependencyInsight
+org.openrewrite.maven.search.DoesNotIncludeDependency
 org.openrewrite.maven.search.EffectiveMavenRepositories
 org.openrewrite.maven.search.FindDependency
 org.openrewrite.maven.search.FindPlugin

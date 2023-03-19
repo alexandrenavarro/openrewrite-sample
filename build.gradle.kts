@@ -1,7 +1,7 @@
 plugins {
     java
     checkstyle
-    id("org.openrewrite.rewrite") version "5.37.1"
+    id("org.openrewrite.rewrite") version "5.38.0"
     id("org.sonarqube") version "4.0.0.2929"
     id("com.github.ben-manes.versions") version "0.46.0"
 }
@@ -20,7 +20,9 @@ java {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite:rewrite-bom:7.37.3"))
+    rewrite(platform("org.openrewrite:rewrite-bom:7.38.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.16.3"))
+
     rewrite("org.openrewrite:rewrite-core")
     rewrite("org.openrewrite:rewrite-gradle")
     rewrite("org.openrewrite:rewrite-groovy")
@@ -39,19 +41,19 @@ dependencies {
     rewrite("org.openrewrite:rewrite-xml")
     rewrite("org.openrewrite:rewrite-yaml")
 
-    rewrite("org.openrewrite.recipe:rewrite-java-security:1.22.0")
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:0.1.0")
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.17.2")
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.34.0")
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.18.0")
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.33.2")
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.17.0")
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.22.0")
-    rewrite("org.openrewrite.recipe:rewrite-jhipster:1.18.0")
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.28.0")
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.17.0")
-    rewrite("org.openrewrite.recipe:rewrite-circleci:1.18.0")
-    rewrite("org.openrewrite.recipe:rewrite-concourse:1.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks")
+    rewrite("org.openrewrite.recipe:rewrite-spring")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut")
+    rewrite("org.openrewrite.recipe:rewrite-jhipster")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions")
+    rewrite("org.openrewrite.recipe:rewrite-circleci")
+    rewrite("org.openrewrite.recipe:rewrite-concourse")
 }
 
 rewrite {
@@ -117,16 +119,17 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8, UnusedLocalVariable, no,  (not by default, present in doc but does not work?), ?, is it ok always?, ok on big project
 
-////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, 0, HiddenField, no,, no effect on a big project, to be tested
 
 ////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, no, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, no, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                     // ,cleanup, yes, 1, MemberName, no, can break if the project is a lib.
 
+////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, 0, HiddenField, no,, no effect on a big project, to be tested
+
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                             // ,cleanup, yes, -1, FinalLocalVariable, no, ?, controversial, have some problem like finalvar on a big project
-////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, -2, FinalParameters, no, controversial, use ParameterAssignment in checkstyle instead
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, -1, LocalFinalVariableName LocalVariableName, no, problem error some times (error between Class and variable, does not compile)
 ////activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals")                                                     // ,cleanup, yes, -1, MultipleStringLiterals, no, create String final and reference it on all ok on the principle but errors on a big project on interface with private static String (not allowed)
+////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, -2, FinalParameters, no, controversial, use ParameterAssignment in checkstyle instead
 
 //activeRecipe("org.openrewrite.java.cleanup.IsEmptyCallOnCollections")                                                             // ,cleanup, not yet, 9, ?, ?, transform size() -> .isEmpty()
 //activeRecipe("org.openrewrite.java.cleanup.IndexOfReplaceableByContains")                                                         // ,cleanup, not yet, 9, ?, ?, ok, transform (path.indexOf("/")>-1){ -> contains
@@ -237,27 +240,23 @@ rewrite {
 //activeRecipe("org.openrewrite.java.RemoveObjectsIsNull")                                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReorderMethodArguments")                                                                       // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReplaceConstant")                                                                              // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.ReplaceStringLiteralWithConstant")                                                             // ,?, not yet, 0, ?, ?,
 
 
+//activeRecipe("org.openrewrite.java.migrate.Java8toJava11")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.JavaVersion11")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.JavaVersion17")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 
-
-
-
-
-//activeRecipe("org.openrewrite.java.migrate.Java8toJava11")
-//activeRecipe("org.openrewrite.java.migrate.JavaVersion11")
-//activeRecipe("org.openrewrite.java.migrate.JavaVersion17")
-
-//activeRecipe("org.openrewrite.java.migrate.util.JavaUtilAPIs")
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")
-//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent")
-//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty")
-//activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")
-//activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")
+//activeRecipe("org.openrewrite.java.migrate.util.JavaUtilAPIs")                                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")                                                 // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")                                              // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")                                               // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent")                                                     // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty")                                                     // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 
 //activeRecipe("org.openrewrite.java.migrate.guava.NoGuava")
 //activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference")
