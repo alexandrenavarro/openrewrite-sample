@@ -57,7 +57,7 @@ dependencies {
 rewrite {
 // Note (10 formating; 9 change code but must not change behavior; 8 change code but may change behavior in some cases; 7 tech migration; 6 change code but rare case, 5 change code but can break, 1 , 0 note tested; note -1 do not use it,
 
-// Recipe, Category, Note, Tested in the sample, Violation in checkstyle, Violation in Sonar, Comment,
+// Recipe, Category, Tested in the sample, Note, Violation in checkstyle, Violation in Sonar, Comment,
 
 //activeRecipe("org.openrewrite.java.cleanup.EmptyBlock")                                                                           // ,format, yes, 10, EmptyBlock, java:S108 (Nested blocks of code should not be left empty),
 //activeRecipe("org.openrewrite.java.cleanup.MethodParamPad")                                                                       // ,format, yes, 10, MethodParamPad, no,
@@ -112,26 +112,31 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NestedEnumsAreNotStatic")                                                              // ,cleanup, yes, 9, no, no,
 //activeRecipe("org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface")                                                      // ,cleanup, yes, 9, no, no,
 //activeRecipe("org.openrewrite.java.cleanup.NoRedundantJumpStatements")                                                            // ,cleanup, yes, 9, no, ?,
-//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8?, UnusedLocalVariable, no,  (not by default, present in doc but does not work?), ?, is it ok always?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.cleanup.NoFinalizer")                                                                          // ,cleanup, yes, 9, NoFinalizer, no, Remove code.of finalize
 
-////activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                         // ,cleanup, yes, ?, FinalClass, no, ?, set only on private class or private constructor, seems ok?,TODO to be tested on a big project
-////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, ?, LocalFinalVariableName LocalVariableName, no, TODO to be tested on a big project generated not corrected not  can break if the project is a lib.
-////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, ?, FinalParameters, no, available 7.38, vs ParameterAssignment
-////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, ?, HiddenField, no,, TODO to be tested on a big project
-////activeRecipe("org.openrewrite.java.cleanup.NoFinalizer")                                                                        // ,cleanup, yes, ?, NoFinalizer, no, Remove code.
-////activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                             // ,cleanup, yes, ?, FinalLocalVariable, no, ?, contreversial, have some problem like finalvar on a big project TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
+//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8, UnusedLocalVariable, no,  (not by default, present in doc but does not work?), ?, is it ok always?, ok on big project
 
-////activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals")                                                     // ,cleanup, yes, 1?, MultipleStringLiterals, no, create String final and reference it on all,?, TODO to be tested on a big project
-////activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                     // ,cleanup, yes, 1, MemberName, no,  can break if the project is a lib.
+////activeRecipe("org.openrewrite.java.cleanup.HiddenField")                                                                        // ,cleanup, yes, 0, HiddenField, no,, no effect on a big project, to be tested
+
 ////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, no, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, no, can break if the project is a lib.
+////activeRecipe("org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase")                                                     // ,cleanup, yes, 1, MemberName, no, can break if the project is a lib.
 
-//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods")                                                           // ,cleanup, not yet, 1?, ?, ?, ? can break on private constructor on jackson ?
-//activeRecipe("org.openrewrite.java.cleanup.UseStringReplace")                                                                     // ,cleanup, not yet, ?, ?, ?, replaceAll -> replace
-//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateFields")                                                            // ,cleanup, not yet, ?, ?, ?,, NotFound, can break notably in unit or Autowired field
-//activeRecipe("org.openrewrite.java.cleanup.FinalizePrivateFields")                                                                // ,cleanup, not yet, ?, ?, ?, nonFound
-//activeRecipe("org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes")                                                          // ,cleanup, not yet, ?, ?, ?, do we want to do it (personally yes but controversial)
-//activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet, ?, ?, ? --i -> i--
+////activeRecipe("org.openrewrite.java.cleanup.FinalizeLocalVariables")                                                             // ,cleanup, yes, -1, FinalLocalVariable, no, ?, controversial, have some problem like finalvar on a big project
+////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, -2, FinalParameters, no, controversial, use ParameterAssignment in checkstyle instead
+////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, -1, LocalFinalVariableName LocalVariableName, no, problem error some times (error between Class and variable, does not compile)
+////activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals")                                                     // ,cleanup, yes, -1, MultipleStringLiterals, no, create String final and reference it on all ok on the principle but errors on a big project on interface with private static String (not allowed)
+
+//activeRecipe("org.openrewrite.java.cleanup.IsEmptyCallOnCollections")                                                             // ,cleanup, not yet, 9, ?, ?, transform size() -> .isEmpty()
+//activeRecipe("org.openrewrite.java.cleanup.IndexOfReplaceableByContains")                                                         // ,cleanup, not yet, 9, ?, ?, ok, transform (path.indexOf("/")>-1){ -> contains
+//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods")                                                           // ,cleanup, not yet, 9, ?, ?,  ok on a big project
+//activeRecipe("org.openrewrite.java.cleanup.UseStringReplace")                                                                     // ,cleanup, not yet, 9, ?, ?, replaceAll -> replace, ok on a big project, let regex with replaceAll
+
+//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateFields")                                                            // ,cleanup, not yet, -2, ?, ?,, NotFound, can break notably in unit or Autowired field
+//activeRecipe("org.openrewrite.java.cleanup.FinalizePrivateFields")                                                                // ,cleanup, not yet, -2, ?, ?, nonFound, controversial
+//activeRecipe("org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes")                                                          // ,cleanup, not yet, -2, ?, ?, controversial, some case ok some other not
+//activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet, -2, ?, ? --i -> i--, can change the behaviour
 
 ////activeRecipe("org.openrewrite.java.cleanup.SimplifyConsecutiveAssignments")                                                     // ,cleanup, not yet, -1, ?, ?, generate error in the code with comment
 ////activeRecipe("org.openrewrite.java.cleanup.LambdaBlockToExpression")                                                            // ,cleanup, not yet, -1, ?, ?, do not use, reformat gradle.build
@@ -161,26 +166,22 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ForLoopIncrementInUpdate")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero")                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.SimplifyCompoundStatement")                                                          // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution")                                                  // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.BooleanChecksNotInverted")                                                           // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.NoToStringOnStringType")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.NoValueOfOnStringType")                                                              // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring")                                          // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededAssertion")                                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments")                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition")                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet")                                                       // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions")                                                       // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums")                                                 // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase")                                          // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.CatchClauseOnlyRethrows")                                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-////activeRecipe("org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument")                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-
-//activeRecipe("org.openrewrite.java.cleanup.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull")                    // ,cleanup, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.cleanup.IsEmptyCallOnCollections")                                                             // ,cleanup, not yet, 9, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.cleanup.IndexOfReplaceableByContains")                                                         // ,cleanup, not yet, 0, ?, ?, TODO to be tested on a big project
-
+//activeRecipe("org.openrewrite.java.cleanup.SimplifyCompoundStatement")                                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution")                                                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.BooleanChecksNotInverted")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.NoToStringOnStringType")                                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.NoValueOfOnStringType")                                                                // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring")                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededAssertion")                                                              // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments")                                                     // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition")                                                 // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet")                                                         // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions")                                                         // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums")                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase")                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.CatchClauseOnlyRethrows")                                                              // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument")                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull")                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.UseObjectNotifyAll")                                                                   // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceRedundantFormatWithPrintf")                                                     // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.RemoveCallsToObjectFinalize")                                                          // ,cleanup, not yet, 0, ?, ?, not found
@@ -194,8 +195,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyDurationCreationUnits")                                                        // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.InstanceOfPatternMatch")                                                               // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceTextBlockWithString")                                                           // ,cleanup, not yet, 0, ?, ?, not found
-
-
 
 //activeRecipe("org.openrewrite.java.AddApache2LicenseHeader")                                                                      // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.AddLicenseHeader")                                                                             // ,?, not yet, 0, ?, ?,
@@ -238,6 +237,11 @@ rewrite {
 //activeRecipe("org.openrewrite.java.RemoveObjectsIsNull")                                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReorderMethodArguments")                                                                       // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReplaceConstant")                                                                              // ,?, not yet, 0, ?, ?,
+
+
+
+
+
 
 
 //activeRecipe("org.openrewrite.java.migrate.Java8toJava11")
