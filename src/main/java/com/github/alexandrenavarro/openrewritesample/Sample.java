@@ -423,5 +423,10 @@ public final class Sample implements Serializable
         return;
     }
 
+    boolean isEmpttyCollection(List<String> strings) {
+        // org.openrewrite.java.cleanup.IsEmptyCallOnCollections
+        return strings.size() == 0;
+    }
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
