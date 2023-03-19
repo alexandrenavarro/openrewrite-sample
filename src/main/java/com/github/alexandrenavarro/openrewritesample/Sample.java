@@ -423,10 +423,17 @@ public final class Sample implements Serializable
         return;
     }
 
-    boolean isEmpttyCollection(List<String> strings) {
+    boolean isEmptyCollection(List<String> strings) {
         // org.openrewrite.java.cleanup.IsEmptyCallOnCollections
         return strings.size() == 0;
     }
+
+    boolean containsDash(String s) {
+        // org.openrewrite.java.cleanup.IndexOfReplaceableByContains
+        return s.indexOf("-") > -1;
+    }
+
+
 
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
