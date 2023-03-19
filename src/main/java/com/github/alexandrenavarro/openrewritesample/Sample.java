@@ -433,7 +433,9 @@ public final class Sample implements Serializable
         return s.indexOf("-") > -1;
     }
 
-
+    // org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods
+    private void unusedPrivateMethod() {
+    }
 
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
