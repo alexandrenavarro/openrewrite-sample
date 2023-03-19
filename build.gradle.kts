@@ -20,6 +20,9 @@ java {
 }
 
 dependencies {
+    compileOnly("com.pushtorefresh:javac-warning-annotation:1.0.0")
+    annotationProcessor("com.pushtorefresh:javac-warning-annotation:1.0.0")
+
     rewrite(platform("org.openrewrite:rewrite-bom:7.38.0"))
     rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.16.3"))
 
@@ -117,7 +120,8 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NoFinalizer")                                                                          // ,cleanup, yes, 9, NoFinalizer, no, Remove code.of finalize
 //activeRecipe("org.openrewrite.java.cleanup.IsEmptyCallOnCollections")                                                             // ,cleanup, yes, 9, ?, yes sonar , transform size() -> .isEmpty()
 //activeRecipe("org.openrewrite.java.cleanup.IndexOfReplaceableByContains")                                                         // ,cleanup, yes, 9, ?, ?, ok, transform (path.indexOf("/")>-1){ -> contains
-//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods")                                                           // ,cleanup, yes, 9, ?, yes sonar,  ok on a big project
+//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods")                                                           // ,cleanup, yes, 9, ?, java:s1144,  ok on a big project
+//activeRecipe("org.openrewrite.java.cleanup.UseStringReplace")                                                                     // ,cleanup, yes, 9, ?, java:s5351, replaceAll -> replace, ok on a big project, let regex with replaceAll
 
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8, UnusedLocalVariable, no,  (not by default, present in doc but does not work?), ?, is it ok always?, ok on big project
@@ -134,12 +138,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals")                                                     // ,cleanup, yes, -1, MultipleStringLiterals, no, create String final and reference it on all ok on the principle but errors on a big project on interface with private static String (not allowed)
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, -2, FinalParameters, no, controversial, use ParameterAssignment in checkstyle instead
 
-//activeRecipe("org.openrewrite.java.cleanup.UseStringReplace")                                                                     // ,cleanup, not yet, 9, ?, ?, replaceAll -> replace, ok on a big project, let regex with replaceAll
-
-//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateFields")                                                            // ,cleanup, not yet, -2, ?, ?,, NotFound, can break notably in unit or Autowired field
-//activeRecipe("org.openrewrite.java.cleanup.FinalizePrivateFields")                                                                // ,cleanup, not yet, -2, ?, ?, nonFound, controversial
-//activeRecipe("org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes")                                                          // ,cleanup, not yet, -2, ?, ?, controversial, some case ok some other not
-//activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet, -2, ?, ? --i -> i--, can change the behaviour
 
 ////activeRecipe("org.openrewrite.java.cleanup.SimplifyConsecutiveAssignments")                                                     // ,cleanup, not yet, -1, ?, ?, generate error in the code with comment
 ////activeRecipe("org.openrewrite.java.cleanup.LambdaBlockToExpression")                                                            // ,cleanup, not yet, -1, ?, ?, do not use, reformat gradle.build
@@ -149,6 +147,18 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.ControlFlowIndentation")                                                             // ,cleanup, not yet, -1, ?, ? reformat code incorrectly
 ////activeRecipe("org.openrewrite.java.cleanup.RenameExceptionInEmptyCatch")                                                        // ,cleanup, not yet, -1, ?, ? error in comments in source code
 ////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryCatch")                                                                   // ,cleanup, not yet, -1, IllegalCatch, ?, do not use, change the behaviour if NPE occurs for instance
+
+//activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedPrivateFields")                                                            // ,cleanup, not yet, -2, ?, ?,, NotFound, can break notably in unit or Autowired field
+//activeRecipe("org.openrewrite.java.cleanup.FinalizePrivateFields")                                                                // ,cleanup, not yet, -2, ?, ?, nonFound, controversial
+//activeRecipe("org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes")                                                          // ,cleanup, not yet, -2, ?, ?, controversial, some case ok some other not
+//activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet, -2, ?, ? --i -> i--, can change the behaviour
+//activeRecipe("org.openrewrite.java.cleanup.ReplaceTextBlockWithString")                                                           // ,cleanup, not yet, -2, ?, ?, Does not want to do that (do the contrary)
+
+
+//activeRecipe("org.openrewrite.java.cleanup.NoToStringOnStringType")                                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.SimplifyCompoundStatement")                                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+//activeRecipe("org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution")                                                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
+
 
 //activeRecipe("org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor")                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.FixStringFormatExpressions")                                                           // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
@@ -169,10 +179,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ForLoopIncrementInUpdate")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero")                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-//activeRecipe("org.openrewrite.java.cleanup.SimplifyCompoundStatement")                                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-//activeRecipe("org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution")                                                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.BooleanChecksNotInverted")                                                             // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-//activeRecipe("org.openrewrite.java.cleanup.NoToStringOnStringType")                                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.NoValueOfOnStringType")                                                                // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring")                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededAssertion")                                                              // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
@@ -197,7 +204,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UseSystemLineSeparator")                                                               // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyDurationCreationUnits")                                                        // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.InstanceOfPatternMatch")                                                               // ,cleanup, not yet, 0, ?, ?, not found
-//activeRecipe("org.openrewrite.java.cleanup.ReplaceTextBlockWithString")                                                           // ,cleanup, not yet, 0, ?, ?, not found
+
 
 //activeRecipe("org.openrewrite.java.AddApache2LicenseHeader")                                                                      // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.AddLicenseHeader")                                                                             // ,?, not yet, 0, ?, ?,
@@ -258,42 +265,44 @@ rewrite {
 //activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 //activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuava")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaImmutableListOf")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaImmutableMapOf")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaListsNewLinkedList")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaMapsNewLinkedHashMap")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet")
-//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferCharCompare")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerCompare")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerParseUnsignedInt")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsSynchronizedNavigableMap")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsUnmodifiableNavigableMap")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilFunction")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsEquals")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsHashCode")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilSupplier")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongCompare")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongRemainderUnsigned")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferMathAddExact")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferMathMultiplyExact")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferMathSubtractExact")
-//activeRecipe("org.openrewrite.java.migrate.guava.PreferShortCompare")
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuava")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference")                                                     // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir")                                                           // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor")                                                          // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaImmutableListOf")                                                         // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaImmutableMapOf")                                                          // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf")                                                          // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList")                                                       // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList")                                            // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaListsNewLinkedList")                                                      // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaMapsNewLinkedHashMap")                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet")                                                // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet")                                                          // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet")                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferCharCompare")                                                              // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerCompare")                                                           // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned")                                                   // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned")                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerParseUnsignedInt")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned")                                                 // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsSynchronizedNavigableMap")                              // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsUnmodifiableNavigableMap")                              // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilFunction")                                                         // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsEquals")                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsHashCode")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate")                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilSupplier")                                                         // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongCompare")                                                              // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned")                                                      // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned")                                                       // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong")                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferLongRemainderUnsigned")                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferMathAddExact")                                                             // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferMathMultiplyExact")                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferMathSubtractExact")                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.guava.PreferShortCompare")                                                             // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+
 //activeRecipe("org.openrewrite.java.migrate.apache.commons.codec.ApacheBase64ToJavaBase64")
 //activeRecipe("org.openrewrite.java.migrate.apache.commons.io.ApacheFileUtilsToJavaFiles")
 //activeRecipe("org.openrewrite.java.migrate.apache.commons.io.ApacheIOUtilsUseExplicitCharset")

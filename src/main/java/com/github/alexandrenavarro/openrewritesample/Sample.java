@@ -437,5 +437,10 @@ public final class Sample implements Serializable
     private void unusedPrivateMethod() {
     }
 
+    String replaceString(String s) {
+        // org.openrewrite.java.cleanup.UseStringReplace
+        return s.replaceAll("-", ".");
+    }
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
