@@ -411,11 +411,16 @@ public final class Sample implements Serializable
         }
     }
 
-    void method() throws IOException {
+    void methodWithUnnecessaryClose() throws IOException {
         // org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources
         try(Reader r1 = new PipedReader();){
             r1.close();
         } 
+    }
+
+    void methodWithJustAReturn() {
+        // org.openrewrite.java.cleanup.NoRedundantJumpStatements
+        return;
     }
 
 
