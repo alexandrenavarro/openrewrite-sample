@@ -439,7 +439,7 @@ public final class Sample implements Serializable
 
     String replaceString(String s) {
         // org.openrewrite.java.cleanup.UseStringReplace
-        return s.replaceAll("-", ".");
+        return s.replaceAll("a", "A");
     }
 
 
