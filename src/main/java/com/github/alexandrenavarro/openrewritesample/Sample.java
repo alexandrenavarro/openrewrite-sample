@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -451,9 +452,22 @@ public final class Sample implements Serializable
             return "TOTO";
         }
 
+        Optional<String> optional = Optional.of("a");
+        // org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent
+        if (!optional.isEmpty()) {
+            return "";
+        }
+
+        // org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty
+        if (!optional.isPresent()) {
+            return "";
+        }
+
+
         // org.openrewrite.java.cleanup.NoToStringOnStringType
         return s.toString();
     }
+
 
 
 

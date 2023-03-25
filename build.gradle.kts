@@ -125,6 +125,10 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NoToStringOnStringType")                                                               // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution")                                                    // ,cleanup, yes, 9, ?, ?, sample (a == true) -> (a)
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyCompoundStatement")                                                            // ,cleanup, yes, 9, ?, ?, `b &= false` with `b = false` (not used a lot)
+//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent")                                                     // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty")                                                     // ,cleanup, yes, 9, ?, ?,
+
+
 
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8, UnusedLocalVariable, no,  (not by default, present in doc but does not work?), ?, is it ok always?, ok on big project
@@ -157,6 +161,15 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet, -2, ?, ? --i -> i--, can change the behaviour
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceTextBlockWithString")                                                           // ,cleanup, not yet, -2, ?, ?, Does not want to do that (do the contrary)
 
+
+
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")                                                 // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")                                              // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")                                               // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
+//activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 
 
 
@@ -207,6 +220,19 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.InstanceOfPatternMatch")                                                               // ,cleanup, not yet, 0, ?, ?, not found
 
 
+
+//activeRecipe("org.openrewrite.java.cleanup.DeclarationSiteTypeVariance")                                                          // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.FixSerializableFields")                                                                // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                            // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.ReplaceStringBuilderWithString")                                                       // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.ReplaceStreamToListWithCollect")                                                       // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.ReplaceDeprecatedRuntimeExecMethods")                                                  // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull")                       // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull")                         // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.controlflow.ControlFlowVisualization")                                                         // ,?, not yet, 0, ?, ?,
+
+
 //activeRecipe("org.openrewrite.java.AddApache2LicenseHeader")                                                                      // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.AddLicenseHeader")                                                                             // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.AddOrUpdateAnnotationAttribute")                                                               // ,?, not yet, 0, ?, ?,
@@ -219,18 +245,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.ChangeType")                                                                                   // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls")                                                        // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.Cleanup")                                                                              // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.DeclarationSiteTypeVariance")                                                          // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.FixSerializableFields")                                                                // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.JavaApiBestPractices")                                                                 // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                            // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.ReplaceDeprecatedRuntimeExecMethods")                                                  // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.ReplaceStreamToListWithCollect")                                                       // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.ReplaceStringBuilderWithString")                                                       // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull")                       // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull")                         // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UseAsBuilder")                                                                         // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.controlflow.ControlFlowVisualization")                                                         // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.DeleteMethodArgument")                                                                         // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.dependencies.DependencyLicenseCheck")                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.dependencies.DependencyVulnerabilityCheck")                                                    // ,?, not yet, 0, ?, ?,
@@ -249,6 +264,8 @@ rewrite {
 //activeRecipe("org.openrewrite.java.ReorderMethodArguments")                                                                       // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReplaceConstant")                                                                              // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReplaceStringLiteralWithConstant")                                                             // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.JavaApiBestPractices")                                                                 // ,?, not yet, 0, ?, ?,
+
 
 
 //activeRecipe("org.openrewrite.java.migrate.Java8toJava11")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
@@ -257,7 +274,7 @@ rewrite {
 //    - org.openrewrite.java.migrate.javax.AddJaxwsDependencies
 //    - org.openrewrite.java.migrate.javax.AddInjectDependencies
 //    - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
-//    - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf
+//    - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf // al
 //    - org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs
 //    - org.openrewrite.java.migrate.lang.JavaLangAPIs
 //    - org.openrewrite.java.migrate.logging.JavaLoggingAPIs
@@ -298,15 +315,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.migrate.JavaVersion17")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 
 //activeRecipe("org.openrewrite.java.migrate.util.JavaUtilAPIs")                                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")                                                 // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")                                              // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")                                               // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent")                                                     // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty")                                                     // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 
 //activeRecipe("org.openrewrite.java.migrate.guava.NoGuava")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 //    - org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir
