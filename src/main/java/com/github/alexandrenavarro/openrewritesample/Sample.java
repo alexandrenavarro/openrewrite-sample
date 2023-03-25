@@ -525,7 +525,7 @@ public final class Sample implements Serializable
     void divedBigDecimal() {
         boolean condition = true;
         // org.openrewrite.java.cleanup.BooleanChecksNotInverted
-        if (!!condition) {
+        if (!(condition != true)) {
             // org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
             BigDecimal result = BigDecimal.valueOf(1L).divide(BigDecimal.valueOf(2L), 0);
         }
