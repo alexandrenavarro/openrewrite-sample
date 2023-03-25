@@ -499,6 +499,16 @@ public final class Sample implements Serializable
 
     }
 
+    void createString() {
+        // org.openrewrite.java.cleanup.ReplaceStringBuilderWithString
+        String s = new StringBuilder().append("a").append("b").append("c").toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < 100; i++) {
+            stringBuilder.append(i);
+            stringBuilder.append(",");
+        }
+        String numbers = stringBuilder.toString();
+    }
 
 
 
