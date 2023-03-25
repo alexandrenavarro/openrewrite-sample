@@ -146,6 +146,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnusedLocalVariables")                                                           // ,cleanup, yes, 8, UnusedLocalVariable, no,  (not by default, present in doc but does not work?), ?, is it ok always?, ok on big project
 
+//activeRecipe("org.openrewrite.java.migrate.UseJavaUtilBase64")                                                                    // ,cleanup, no (not possible in jdk 17 without ), 2, ?, ?, Not anymore really
 
 ////activeRecipe("org.openrewrite.java.cleanup.LowercasePackage")                                                                   // ,cleanup, yes, 1, PackageName, no, can break if the project is a lib.
 ////activeRecipe("org.openrewrite.java.cleanup.MethodNameCasing")                                                                   // ,cleanup, yes, 1, MethodName, no, can break if the project is a lib.
@@ -174,13 +175,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators")                                               // ,cleanup, not yet, -2, ?, ? --i -> i--, can change the behaviour
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceTextBlockWithString")                                                           // ,cleanup, not yet, -2, ?, ?, Does not want to do that (do the contrary)
 //activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                            // ,cleanup, not yet, -2, ?, ?, controversial, generally ok, some case ok some other not
-
-
-
-
-
-
-
 
 //activeRecipe("org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase")                                            // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.CatchClauseOnlyRethrows")                                                              // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
@@ -217,14 +211,13 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceRedundantFormatWithPrintf")                                                     // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.RemoveCallsToObjectFinalize")                                                          // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.CommonDeclarationSiteTypeVariances")                                                   // ,cleanup, not yet, 0, ?, ?, not found
-//activeRecipe("org.openrewrite.java.cleanup.RemoveEmptyJavaDocParameters")                                                         // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.RemoveCallsToSystemGc")                                                                // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.UseListSort")                                                                          // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.UseForEachRemoveInsteadOfSetRemoveAll")                                                // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.UseSystemLineSeparator")                                                               // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyDurationCreationUnits")                                                        // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.InstanceOfPatternMatch")                                                               // ,cleanup, not yet, 0, ?, ?, not found
-
+//activeRecipe("org.openrewrite.java.cleanup.RemoveEmptyJavaDocParameters")                                                         // ,cleanup, not yet, 0, ?, ?, not found
 
 //activeRecipe("org.openrewrite.java.cleanup.DeclarationSiteTypeVariance")                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.FixSerializableFields")                                                                // ,?, not yet, 0, ?, ?,
@@ -277,11 +270,11 @@ rewrite {
 //////activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")                                                             // ,cleanup, not yet, -1, ?, ? group some others receipe, some are not ok
 //    - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable                                                              // already tested ok
 //    - org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet
-//    - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
-//    - org.openrewrite.java.cleanup.BooleanChecksNotInverted
+//    - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums                                                             // already tested, ok
+//    - org.openrewrite.java.cleanup.BooleanChecksNotInverted                                                                       // already tested, ok
 //    - org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase
 //    - org.openrewrite.java.cleanup.CatchClauseOnlyRethrows
-//    - org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls
+//    - org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls                                                                  // already tested, ok
 //    - org.openrewrite.java.cleanup.CovariantEquals                                                                                // already tested, ok
 //    - org.openrewrite.java.cleanup.DefaultComesLast                                                                               // already tested, ok
 //    - org.openrewrite.java.cleanup.EmptyBlock                                                                                     // already tested, ok
@@ -323,14 +316,14 @@ rewrite {
 //    - org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
 //    - org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase                                                                 // already tested, only on application not lib
 //    - org.openrewrite.java.cleanup.ReplaceLambdaWithMethodReference                                                               // already tested, ko
-//    - org.openrewrite.java.cleanup.ReplaceStringBuilderWithString
+//    - org.openrewrite.java.cleanup.ReplaceStringBuilderWithString                                                                 // already tested, ok
 //    - org.openrewrite.java.cleanup.SimplifyBooleanExpression                                                                      // already tested, ok
 //    - org.openrewrite.java.cleanup.SimplifyBooleanReturn                                                                          // already tested, ok
 //    - org.openrewrite.java.cleanup.StaticMethodNotFinal                                                                           // already tested, ok
 //    - org.openrewrite.java.cleanup.StringLiteralEquality                                                                          // already tested, ok
 //    - org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources                                                             // already tested, ok
 //    - org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments
-//    - org.openrewrite.java.cleanup.UnnecessaryParentheses
+//    - org.openrewrite.java.cleanup.UnnecessaryParentheses                                                                         // already tested, ok
 //    - org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations
 //    - org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes                                                                       // already tested, ok
 //    - org.openrewrite.java.cleanup.UseDiamondOperator                                                                             // already tested, ok
@@ -360,25 +353,25 @@ rewrite {
 //    - org.openrewrite.java.cleanup.NeedBraces                                                                                     // already tested, ok
 //    - org.openrewrite.java.cleanup.OperatorWrap                                                                                   // already tested, ok
 //    - org.openrewrite.java.cleanup.UnnecessaryParentheses                                                                         // already tested, ok
-//    - org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart
-//    - org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls
-//    - org.openrewrite.java.cleanup.ReplaceStringBuilderWithString
+//    - org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart                                                                // already tested, ok
+//    - org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls                                                                  // already tested, ok
+//    - org.openrewrite.java.cleanup.ReplaceStringBuilderWithString                                                                 // already tested, ok
 
 
 // Global Java 17
 ////activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")                                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 ////activeRecipe("org.openrewrite.java.migrate.JavaVersion17")                                                                      // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 
-//    - org.openrewrite.java.migrate.UseJavaUtilBase64
-//    - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
+//    - org.openrewrite.java.migrate.UseJavaUtilBase64                                                                              // ok, not anymore need
+//    - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums                                                             // already tested, ok
 
 //activeRecipe("org.openrewrite.java.migrate.Java8toJava11")
 //    - org.openrewrite.java.migrate.UseJavaUtilBase64
 //    - org.openrewrite.java.migrate.javax.AddJaxbDependencies
 //    - org.openrewrite.java.migrate.javax.AddJaxwsDependencies
 //    - org.openrewrite.java.migrate.javax.AddInjectDependencies
-//    - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
-//    - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf // already done
+//    - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums                                                             // already tested, ok
+//    - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf                                                      // already tested, ok
 //    - org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs
     //    - org.openrewrite.java.migrate.concurrent.MigrateAtomicBooleanWeakCompareAndSetToWeakCompareAndSetPlain
     //    - org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerWeakCompareAndSetToWeakCompareAndSetPlain

@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.Currency;
 import java.util.EnumSet;
@@ -28,6 +29,8 @@ import java.util.Scanner;
 import java.net.*; //[AvoidStarImport]
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
+import sun.misc.BASE64Decoder;
+
 
 import sun.misc.Unsafe; //[IllegalImport]
 
@@ -529,6 +532,7 @@ public final class Sample implements Serializable
             // org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
             BigDecimal result = BigDecimal.valueOf(1L).divide(BigDecimal.valueOf(2L), 0);
         }
+
     }
 
 
