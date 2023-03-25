@@ -6,6 +6,7 @@ import java.io.PipedReader;
 import java.io.Reader;
 import java.io.Serializable;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -519,6 +520,11 @@ public final class Sample implements Serializable
         // org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart
         Thread thread = new Thread();
         thread.run();
+    }
+
+    void divedBigDecimal() {
+        // org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
+        BigDecimal result = BigDecimal.valueOf(1L).divide(BigDecimal.valueOf(2L), 0);
     }
 
 
