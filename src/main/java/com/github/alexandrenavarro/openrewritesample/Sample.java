@@ -7,6 +7,7 @@ import java.io.Reader;
 import java.io.Serializable;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Currency;
 import java.util.EnumSet;
@@ -482,13 +483,13 @@ public final class Sample implements Serializable
         Set<String> set = Collections.singleton("1");
 
         // org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList
-        List<Object> unmodifiableList = Collections.unmodifiableList(new ArrayList<>());
+        List<String> unmodifiableList = Collections.<String>unmodifiableList(Arrays.asList("1", "2", "3"));
 
         // org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet
-        Set<Object> unmodifiableSet = Collections.unmodifiableSet(new HashSet<>());
+        Set<String> unmodifiableSet = Collections.unmodifiableSet(new HashSet<>(Arrays.asList("1", "2", "3")));
 
         // org.openrewrite.java.migrate.util.UseEnumSetOf
-        Set<String> a = Set.of("a", "b");
+        Set<TimeUnit> enumSet = Set.of(TimeUnit.MINUTES, TimeUnit.SECONDS);
 
         // org.openrewrite.java.migrate.util.UseMapOf
         Map<String, String> map = new HashMap<>();
