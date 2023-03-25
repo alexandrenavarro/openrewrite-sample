@@ -443,6 +443,10 @@ public final class Sample implements Serializable
     }
 
     String convertToSTring(String s) {
+        if ("TOTO".equals("TOTO")) {
+            return "TOTO";
+        }
+
         // org.openrewrite.java.cleanup.NoToStringOnStringType
         return s.toString();
     }
