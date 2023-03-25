@@ -523,8 +523,12 @@ public final class Sample implements Serializable
     }
 
     void divedBigDecimal() {
-        // org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
-        BigDecimal result = BigDecimal.valueOf(1L).divide(BigDecimal.valueOf(2L), 0);
+        boolean condition = true;
+        // org.openrewrite.java.cleanup.BooleanChecksNotInverted
+        if (!!condition) {
+            // org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
+            BigDecimal result = BigDecimal.valueOf(1L).divide(BigDecimal.valueOf(2L), 0);
+        }
     }
 
 
