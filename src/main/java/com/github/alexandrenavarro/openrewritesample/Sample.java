@@ -442,8 +442,9 @@ public final class Sample implements Serializable
         return s.replaceAll("a", "A");
     }
 
-    String convertToSTring(String s) {
-        if ("TOTO" == "TOTO") {
+    String convertToSTring(String s, boolean a) {
+        // org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution"
+        if (a == true) {
             return "TOTO";
         }
 
