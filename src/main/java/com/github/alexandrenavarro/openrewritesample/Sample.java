@@ -443,6 +443,9 @@ public final class Sample implements Serializable
     }
 
     String convertToSTring(String s, boolean a) {
+        boolean b = false;
+        // org.openrewrite.java.cleanup.SimplifyCompoundStatement
+        b &= false;
         // org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution"
         if (a == true) {
             return "TOTO";
