@@ -508,6 +508,14 @@ public final class Sample implements Serializable
             stringBuilder.append(",");
         }
         String numbers = stringBuilder.toString();
+
+        // org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls
+        String string = new String();
+        for (int i = 0; i < 100; i++) {
+            string += i;
+            string += ",";
+        }
+
     }
 
 
