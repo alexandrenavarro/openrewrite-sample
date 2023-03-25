@@ -513,9 +513,13 @@ public final class Sample implements Serializable
         StringBuilder sb = new StringBuilder();
         String op = "+";
         sb.append("A" + "B" + "C" + op + "D" + "E");
-
     }
 
+    void startThread() {
+        // org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart
+        Thread thread = new Thread();
+        thread.run();
+    }
 
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile] 
