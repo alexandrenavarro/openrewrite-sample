@@ -127,6 +127,13 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.SimplifyCompoundStatement")                                                            // ,cleanup, yes, 9, ?, ?, `b &= false` with `b = false` (not used a lot)
 //activeRecipe("org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent")                                                     // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty")                                                     // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")                                                 // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")                                                  // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")                                                  // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")                                              // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")                                               // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                    // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                        // ,cleanup, yes, 9, ?, ?,
 
 
 
@@ -163,13 +170,6 @@ rewrite {
 
 
 
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")                                                 // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")                                                  // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")                                              // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")                                               // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                    // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
-//activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                        // ,?, not yet, 0, ?, ?, TODO to be tested on a big project
 
 
 

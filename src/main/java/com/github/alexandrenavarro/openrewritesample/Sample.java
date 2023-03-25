@@ -7,8 +7,11 @@ import java.io.Reader;
 import java.io.Serializable;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Currency;
+import java.util.EnumSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
@@ -466,6 +469,31 @@ public final class Sample implements Serializable
 
         // org.openrewrite.java.cleanup.NoToStringOnStringType
         return s.toString();
+    }
+
+    void createCollection() {
+        // org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList
+        List<Integer> list = Collections.singletonList(Integer.valueOf(1));
+
+        // org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap
+        Map<String, String> stringStringMap = Collections.singletonMap("key", "value");
+
+        // org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet
+        Set<String> set = Collections.singleton("1");
+
+        // org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList
+        List<Object> unmodifiableList = Collections.unmodifiableList(new ArrayList<>());
+
+        // org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet
+        Set<Object> unmodifiableSet = Collections.unmodifiableSet(new HashSet<>());
+
+        // org.openrewrite.java.migrate.util.UseEnumSetOf
+        Set<String> a = Set.of("a", "b");
+
+        // org.openrewrite.java.migrate.util.UseMapOf
+        Map<String, String> map = new HashMap<>();
+        map.put("1", "One");
+        map.put("2", "Two");
     }
 
 
