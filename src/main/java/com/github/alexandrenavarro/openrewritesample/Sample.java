@@ -443,7 +443,7 @@ public final class Sample implements Serializable
     }
 
     String convertToSTring(String s) {
-        if ("TOTO".equals("TOTO")) {
+        if ("TOTO" == "TOTO") {
             return "TOTO";
         }
 
