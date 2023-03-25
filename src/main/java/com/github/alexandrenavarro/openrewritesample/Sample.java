@@ -442,5 +442,11 @@ public final class Sample implements Serializable
         return s.replaceAll("a", "A");
     }
 
+    String convertToSTring(String s) {
+        // org.openrewrite.java.cleanup.NoToStringOnStringType
+        return s.toString();
+    }
+
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
