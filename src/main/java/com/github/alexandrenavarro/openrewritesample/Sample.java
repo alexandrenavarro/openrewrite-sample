@@ -510,14 +510,12 @@ public final class Sample implements Serializable
         String numbers = stringBuilder.toString();
 
         // org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls
-        String string = new String();
-        for (int i = 0; i < 100; i++) {
-            string += i;
-            string += ",";
-        }
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+        sb.append("A" + "B" + "C" + op + "D" + "E");
 
     }
 
 
 
-} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
+} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile] 
