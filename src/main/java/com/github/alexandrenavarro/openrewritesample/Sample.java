@@ -492,9 +492,10 @@ public final class Sample implements Serializable
         Set<TimeUnit> enumSet = Set.of(TimeUnit.MINUTES, TimeUnit.SECONDS);
 
         // org.openrewrite.java.migrate.util.UseMapOf
-        Map<String, String> map = new HashMap<>();
-        map.put("1", "One");
-        map.put("2", "Two");
+        Map<String, String> map = new HashMap<>() {{
+            put("1", "One");
+            put("2", "Two");
+        }};
     }
 
 
