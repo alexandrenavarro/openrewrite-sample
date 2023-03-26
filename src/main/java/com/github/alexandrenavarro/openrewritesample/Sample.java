@@ -407,6 +407,7 @@ public final class Sample implements Serializable
 
     // org.openrewrite.java.cleanup.NoFinalizer [NoFinalizer]
     protected void finalize() {
+        // org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper
     }
 
     void switchCaseWithoutBreak(String s) {
@@ -600,10 +601,6 @@ public final class Sample implements Serializable
         String s = new Long(1L).toString();
     }
 
-    void testFinalize() {
-        // org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper
-        finalize();
-    }
 
 
     static class External implements Externalizable {
