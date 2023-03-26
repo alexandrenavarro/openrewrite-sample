@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.net.*; //[AvoidStarImport]
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Predicate;
 
 
@@ -567,6 +568,18 @@ public final class Sample implements Serializable
             // org.openrewrite.java.cleanup.CatchClauseOnlyRethrows
             throw e;
         }
+    }
+
+    void testAtomic() {
+        AtomicBoolean atomicBoolean1 = new AtomicBoolean();
+        atomicBoolean1.set(true);
+        AtomicBoolean atomicBoolean2 = new AtomicBoolean();
+        atomicBoolean2.set(true);
+        // org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet
+        if (atomicBoolean1.equals(atomicBoolean2)) {
+
+        }
+
     }
 
     boolean testSomeStringMethods() {

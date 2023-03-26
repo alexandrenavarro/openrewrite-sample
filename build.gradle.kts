@@ -161,6 +161,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal")                                                            // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.RedundantFileCreation")                                                                // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.CatchClauseOnlyRethrows")                                                              // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet")                                                         // ,cleanup, yes, 9, ?, ?,
 
 
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
@@ -199,6 +200,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                            // ,cleanup, not yet, -2, ?, ?, controversial, generally ok, some case ok some other not
 
 
+
 //activeRecipe("org.openrewrite.java.cleanup.UseMapContainsKey")                                                                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceStackWithDeque")                                                                // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals")                                                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
@@ -206,7 +208,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations")                                                          // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.UseStandardCharset")                                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededAssertion")                                                              // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-//activeRecipe("org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet")                                                         // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions")                                                         // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull")                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.UseObjectNotifyAll")                                                                   // ,cleanup, not yet, 0, ?, ?, not found
@@ -268,28 +269,28 @@ rewrite {
 // https://github.com/openrewrite/rewrite-docs/blob/master/SUMMARY.md
 // Global Java CommonStaticAnalysis
 
-//////activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")                                                             // ,cleanup, not yet, -1, ?, ? group some others receipe, some are not ok
-//    - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable                                                              // already tested ok
+//////activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")                                                             // ,cleanup, yes, -1, ?, ? group some others receipe, some are not ok
+//    - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable                                                              // already tested, ok
 //    - org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet
 //    - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums                                                             // already tested, ok
 //    - org.openrewrite.java.cleanup.BooleanChecksNotInverted                                                                       // already tested, ok
-//    - org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase
-//    - org.openrewrite.java.cleanup.CatchClauseOnlyRethrows
+//    - org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase                                                      // already tested, ok
+//    - org.openrewrite.java.cleanup.CatchClauseOnlyRethrows                                                                        // already tested, ok
 //    - org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls                                                                  // already tested, ok
 //    - org.openrewrite.java.cleanup.CovariantEquals                                                                                // already tested, ok
 //    - org.openrewrite.java.cleanup.DefaultComesLast                                                                               // already tested, ok
 //    - org.openrewrite.java.cleanup.EmptyBlock                                                                                     // already tested, ok
 //    - org.openrewrite.java.cleanup.EqualsAvoidsNull                                                                               // already tested, ok
 //    - org.openrewrite.java.cleanup.ExplicitInitialization                                                                         // already tested, ok
-//    - org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor
+//    - org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor                                                             // already tested, ok
 //    - org.openrewrite.java.cleanup.FinalizePrivateFields                                                                          // already tested, ko
 //    - org.openrewrite.java.cleanup.FallThrough                                                                                    // already tested, ok
 //    - org.openrewrite.java.cleanup.FinalClass                                                                                     // already tested, ok
-//    - org.openrewrite.java.cleanup.FixStringFormatExpressions
-//    - org.openrewrite.java.cleanup.ForLoopIncrementInUpdate
-//    - org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition
+//    - org.openrewrite.java.cleanup.FixStringFormatExpressions                                                                     // already tested, ok
+//    - org.openrewrite.java.cleanup.ForLoopIncrementInUpdate                                                                       // already tested, ok
+//    - org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition                                                           // already tested, ok
 //    - org.openrewrite.java.cleanup.IndexOfReplaceableByContains                                                                   // already tested, ok
-//    - org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero
+//    - org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero                                                         // already tested, ok
 //    - org.openrewrite.java.cleanup.InlineVariable                                                                                 // already tested, ok
 //    - org.openrewrite.java.cleanup.IsEmptyCallOnCollections                                                                       // already tested, ok
 //    - org.openrewrite.java.cleanup.LambdaBlockToExpression                                                                        // already tested, ko
@@ -300,21 +301,21 @@ rewrite {
 //    - org.openrewrite.java.cleanup.MultipleVariableDeclarations                                                                   // already tested, ok
 //    - org.openrewrite.java.cleanup.NeedBraces                                                                                     // already tested, ok
 //    - org.openrewrite.java.cleanup.NestedEnumsAreNotStatic                                                                        // already tested, ok
-//    - org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument
+//    - org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument                                                         // already tested, ok
 //    - org.openrewrite.java.cleanup.NoDoubleBraceInitialization                                                                    // already tested, ok
-//    - org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType
-//    - org.openrewrite.java.cleanup.NoEqualityInForCondition
+//    - org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType                                                                   // already tested, ok
+//    - org.openrewrite.java.cleanup.NoEqualityInForCondition                                                                       // already tested, ?
 //    - org.openrewrite.java.cleanup.NoFinalizer                                                                                    // already tested, ok
-//    - org.openrewrite.java.cleanup.NoPrimitiveWrappersForToStringOrCompareTo
+//    - org.openrewrite.java.cleanup.NoPrimitiveWrappersForToStringOrCompareTo                                                      // already tested, ok
 //    - org.openrewrite.java.cleanup.NoRedundantJumpStatements                                                                      // already tested, ok
 //    - org.openrewrite.java.cleanup.NoToStringOnStringType                                                                         // already tested, ok
-//    - org.openrewrite.java.cleanup.NoValueOfOnStringType
-//    - org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper
+//    - org.openrewrite.java.cleanup.NoValueOfOnStringType                                                                          // already tested, ok
+//    - org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper                                                                       // already tested, ok
 //    - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf                                                      // already tested, ok
-//    - org.openrewrite.java.cleanup.RedundantFileCreation
+//    - org.openrewrite.java.cleanup.RedundantFileCreation                                                                          // already tested, ok
 //    - org.openrewrite.java.cleanup.RemoveExtraSemicolons                                                                          // already tested, ok
 //    - org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase                                                                // already tested, ko
-//    - org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
+//    - org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring                                                      // already tested, ok
 //    - org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase                                                                 // already tested, only on application not lib
 //    - org.openrewrite.java.cleanup.ReplaceLambdaWithMethodReference                                                               // already tested, ko
 //    - org.openrewrite.java.cleanup.ReplaceStringBuilderWithString                                                                 // already tested, ok
@@ -323,15 +324,15 @@ rewrite {
 //    - org.openrewrite.java.cleanup.StaticMethodNotFinal                                                                           // already tested, ok
 //    - org.openrewrite.java.cleanup.StringLiteralEquality                                                                          // already tested, ok
 //    - org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources                                                             // already tested, ok
-//    - org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments
+//    - org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments                                                               // already tested, ok
 //    - org.openrewrite.java.cleanup.UnnecessaryParentheses                                                                         // already tested, ok
-//    - org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations
+//    - org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations                                                                // already tested, ok
 //    - org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes                                                                       // already tested, ok
 //    - org.openrewrite.java.cleanup.UseDiamondOperator                                                                             // already tested, ok
 //    - org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations                                                                  // already tested, ok
 //    - org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface                                                                // already tested, ok
-//    - org.openrewrite.java.cleanup.WhileInsteadOfFor
-//    - org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal
+//    - org.openrewrite.java.cleanup.WhileInsteadOfFor                                                                              // already tested, ok
+//    - org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal                                                                      // already tested, ok
 
 
 // Global Java Clean Up (checkstyle)
