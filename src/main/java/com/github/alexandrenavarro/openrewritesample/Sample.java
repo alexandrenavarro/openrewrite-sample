@@ -1,7 +1,10 @@
 package com.github.alexandrenavarro.openrewritesample;
 
 
+import java.io.Externalizable;
 import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 import java.io.PipedReader;
 import java.io.Reader;
 import java.io.Serializable;
@@ -565,6 +568,26 @@ public final class Sample implements Serializable
 
 
     }
+
+
+    static class External implements Externalizable {
+        private String attribute;
+
+        public External(String attribute) {
+            this.attribute = attribute;
+        }
+
+        @Override
+        public void writeExternal(ObjectOutput out) throws IOException {
+
+        }
+
+        @Override
+        public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+
+        }
+    }
+
 
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile] 
