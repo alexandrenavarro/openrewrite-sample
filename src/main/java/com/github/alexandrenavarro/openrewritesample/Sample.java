@@ -2,6 +2,7 @@ package com.github.alexandrenavarro.openrewritesample;
 
 
 import java.io.Externalizable;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
@@ -547,7 +548,7 @@ public final class Sample implements Serializable
         }
 
         // org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal
-        int octal      =  0757;
+        int octal = 0757;
     }
 
     boolean testEquals() {
@@ -556,6 +557,16 @@ public final class Sample implements Serializable
 
         // org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase
         return (upperA.toUpperCase().equalsIgnoreCase(lowerA));
+    }
+
+    void testFile() {
+        try {
+            // org.openrewrite.java.cleanup.RedundantFileCreation
+            FileInputStream fileInputStream = new FileInputStream(new File("a.txt"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     boolean testSomeStringMethods() {
