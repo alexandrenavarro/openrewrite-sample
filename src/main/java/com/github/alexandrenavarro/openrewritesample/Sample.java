@@ -542,5 +542,10 @@ public final class Sample implements Serializable
         return (upperA.toUpperCase().equalsIgnoreCase(lowerA));
     }
 
+    void formatString() {
+        // org.openrewrite.java.cleanup.FixStringFormatExpressions
+        String.format("string:%s", "myString");
+    }
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile] 
