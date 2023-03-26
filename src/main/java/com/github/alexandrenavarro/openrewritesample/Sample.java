@@ -573,6 +573,7 @@ public final class Sample implements Serializable
     static class External implements Externalizable {
         private String attribute;
 
+        // org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor
         public External(String attribute) {
             this.attribute = attribute;
         }
