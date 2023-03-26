@@ -559,6 +559,9 @@ public final class Sample implements Serializable
             return true;
         }
 
+        // org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument
+        StringBuilder sb = new StringBuilder('c');
+
         return false;
     }
 
