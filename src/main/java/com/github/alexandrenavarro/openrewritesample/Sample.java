@@ -526,6 +526,9 @@ public final class Sample implements Serializable
 
         // org.openrewrite.java.cleanup.NoValueOfOnStringType
         String string = String.valueOf("s");
+
+        // org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments
+        String s1 = String.valueOf(1.1d);
     }
 
     void startThread() {
