@@ -522,6 +522,9 @@ public final class Sample implements Serializable
         StringBuilder sb = new StringBuilder();
         String op = "+";
         sb.append("A" + "B" + "C" + op + "D" + "E");
+
+        // org.openrewrite.java.cleanup.NoValueOfOnStringType
+        String string = String.valueOf("s");
     }
 
     void startThread() {
