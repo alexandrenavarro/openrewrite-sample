@@ -490,7 +490,7 @@ public final class Sample implements Serializable
         Set<String> set = Collections.singleton("1");
 
         // org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList
-        List<String> unmodifiableList = Collections.<String>unmodifiableList(Arrays.asList("1", "2", "3"));
+        List<String> unmodifiableList = Collections.unmodifiableList(Arrays.asList("1", "2", "3"));
 
         // org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet
         Set<String> unmodifiableSet = Collections.unmodifiableSet(new HashSet<>(Arrays.asList("1", "2", "3")));
@@ -507,6 +507,8 @@ public final class Sample implements Serializable
         // org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType
         List<String> emptyList = Collections.EMPTY_LIST;
 
+        // org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments
+        List<String> unmodifiableList2 = Collections.<String>unmodifiableList(Arrays.asList("1", "2", "3", "4"));
     }
 
     void createString() {
@@ -527,8 +529,7 @@ public final class Sample implements Serializable
         // org.openrewrite.java.cleanup.NoValueOfOnStringType
         String string = String.valueOf("s");
 
-        // org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments
-        String s1 = String.valueOf(1.1d);
+
     }
 
     void startThread() {
@@ -632,4 +633,4 @@ public final class Sample implements Serializable
 
 
 
-} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile] 
+} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]  
