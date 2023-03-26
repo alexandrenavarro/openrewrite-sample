@@ -589,6 +589,13 @@ public final class Sample implements Serializable
             nb2 += i;
             i++;
         }
+
+        boolean flag = true;
+
+        // org.openrewrite.java.cleanup.WhileInsteadOfFor
+        for (;flag;) {
+            flag = false;
+        }
     }
 
     String testInstantPattern(Object obj) {
