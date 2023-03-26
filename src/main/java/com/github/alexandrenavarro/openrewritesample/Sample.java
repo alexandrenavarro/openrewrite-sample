@@ -555,5 +555,16 @@ public final class Sample implements Serializable
         }
     }
 
+    String testInstantPattern(Object obj) {
+        // org.openrewrite.java.cleanup.InstanceOfPatternMatch
+        if (obj instanceof String) {
+            return (String) obj;
+        } else {
+            return "";
+        }
+
+
+    }
+
 
 } // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile] 
