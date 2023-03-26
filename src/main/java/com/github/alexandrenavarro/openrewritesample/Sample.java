@@ -524,7 +524,7 @@ public final class Sample implements Serializable
         thread.run();
     }
 
-    void divedBigDecimal() {
+    void dividedBigDecimal() {
         boolean condition = true;
         // org.openrewrite.java.cleanup.BooleanChecksNotInverted
         if (!(condition != true)) {
@@ -532,6 +532,14 @@ public final class Sample implements Serializable
             BigDecimal result = BigDecimal.valueOf(1L).divide(BigDecimal.valueOf(2L), 0);
         }
 
+    }
+
+    boolean testEquals() {
+        String upperA = "A";
+        String lowerA = "a";
+
+        // org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase
+        return (upperA.toUpperCase().equalsIgnoreCase(lowerA));
     }
 
 
