@@ -584,8 +584,11 @@ public final class Sample implements Serializable
         } else {
             return "";
         }
+    }
 
-
+    void testWrapper() {
+        // org.openrewrite.java.cleanup.NoPrimitiveWrappersForToStringOrCompareTo
+        String s = new Long(1L).toString();
     }
 
 
