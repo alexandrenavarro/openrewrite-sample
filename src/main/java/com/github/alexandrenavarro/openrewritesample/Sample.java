@@ -503,6 +503,9 @@ public final class Sample implements Serializable
             put("2", "Two");
         }};
 
+        // org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType
+        List<String> emptyList = Collections.EMPTY_LIST;
+
     }
 
     void createString() {
