@@ -550,7 +550,7 @@ public final class Sample implements Serializable
     void testForCondition() {
         int nb = 0;
         // org.openrewrite.java.cleanup.NoEqualityInForCondition
-        for (int i = 0; i == 10; i++) {
+        for (int i = 0; i != 0; i++) {
             nb += i;
         }
     }
