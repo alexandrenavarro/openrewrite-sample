@@ -602,7 +602,7 @@ public final class Sample implements Serializable
     }
 
     // org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
-    int hashcode() {
+    public int hashcode() {
         return this.hashCode();
     }
 
