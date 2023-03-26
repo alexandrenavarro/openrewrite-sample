@@ -200,7 +200,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                            // ,cleanup, not yet, -2, ?, ?, controversial, generally ok, some case ok some other not
 
 
-
 //activeRecipe("org.openrewrite.java.cleanup.UseMapContainsKey")                                                                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceStackWithDeque")                                                                // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals")                                                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
@@ -234,6 +233,17 @@ rewrite {
 //activeRecipe("org.openrewrite.java.RandomizeId")                                                                                  // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReplaceConstant")                                                                              // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReplaceStringLiteralWithConstant")                                                             // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.SimplifyMethodChain")                                                                          // ,?, not yet, 0, ?, ?,
+
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicBooleanWeakCompareAndSetToWeakCompareAndSetPlain")             // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerArrayWeakCompareAndSetToWeakCompareAndSetPlain")        // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerWeakCompareAndSetToWeakCompareAndSetPlain")             // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicLongArrayWeakCompareAndSetToWeakCompareAndSetPlain")           // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicLongWeakCompareAndSetToWeakCompareAndSetPlain")                // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain")      // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceWeakCompareAndSetToWeakCompareAndSetPlain")           // ,?, not yet, 0, ?, ?,
+
+//activeRecipe("org.openrewrite.java.cleanup.JavaApiBestPractices")                                                                 // ,?, not yet, 0, ?, ?,
 
 //activeRecipe("org.openrewrite.java.OrderImports")                                                                                 // ,?, not yet, 0, ?, ?,
 
@@ -253,7 +263,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.dependencies.DependencyVulnerabilityCheck")                                                    // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.DoesNotUseRewriteSkip")                                                                        // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.UpdateSourcePositions")                                                                        // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.SimplifyMethodChain")                                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.RecipeExceptionDemonstration")                                                                 // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.RecipeMarkupDemonstration")                                                                    // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.RemoveAnnotation")                                                                             // ,?, not yet, 0, ?, ?,
@@ -261,9 +270,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.RemoveObjectsIsNull")                                                                          // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReorderMethodArguments")                                                                       // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.RemoveJavaDocAuthorTag")                                                               // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
-//activeRecipe("org.openrewrite.java.cleanup.JavaApiBestPractices")                                                                 // ,?, not yet, 0, ?, ?,
-
-
 
 
 // https://github.com/openrewrite/rewrite-docs/blob/master/SUMMARY.md
@@ -364,7 +370,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")                                                                    // ,cleanup, yes, 9, ?, ?,
 ////activeRecipe("org.openrewrite.java.migrate.JavaVersion17")
 //activeRecipe("org.openrewrite.java.migrate.Java8toJava11")
-//    - org.openrewrite.java.migrate.UseJavaUtilBase64                                                                              // ok, not anymore need
+//    - org.openrewrite.java.migrate.UseJavaUtilBase64                                                                              // ok, not anymore needed (not easy testable after java 17)
 //    - org.openrewrite.java.migrate.javax.AddJaxbDependencies
 //    - org.openrewrite.java.migrate.javax.AddJaxwsDependencies
 //    - org.openrewrite.java.migrate.javax.AddInjectDependencies
