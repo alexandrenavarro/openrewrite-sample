@@ -36,6 +36,8 @@ import java.util.function.Predicate;
 
 import sun.misc.Unsafe; //[IllegalImport]
 
+import javax.annotation.Nullable;
+
 /**
  * @author
  * @version abc
@@ -528,8 +530,6 @@ public final class Sample implements Serializable
 
         // org.openrewrite.java.cleanup.NoValueOfOnStringType
         String string = String.valueOf("s");
-
-
     }
 
     void startThread() {
@@ -603,6 +603,10 @@ public final class Sample implements Serializable
     void testWrapper() {
         // org.openrewrite.java.cleanup.NoPrimitiveWrappersForToStringOrCompareTo
         String s = new Long(1L).toString();
+    }
+
+    // org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations
+    void testAnnotation(@Nullable int i) {
     }
 
     // org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
