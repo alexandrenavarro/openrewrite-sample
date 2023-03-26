@@ -601,6 +601,11 @@ public final class Sample implements Serializable
         String s = new Long(1L).toString();
     }
 
+    // org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
+    int hashcode() {
+        return this.hashCode();
+    }
+
 
 
     static class External implements Externalizable {
