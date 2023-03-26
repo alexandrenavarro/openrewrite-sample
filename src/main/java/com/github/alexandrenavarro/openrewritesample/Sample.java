@@ -538,7 +538,7 @@ public final class Sample implements Serializable
         thread.run();
     }
 
-    void dividedBigDecimal() {
+    void testNumber() {
         boolean condition = true;
         // org.openrewrite.java.cleanup.BooleanChecksNotInverted
         if (!(condition != true)) {
@@ -546,6 +546,8 @@ public final class Sample implements Serializable
             BigDecimal result = BigDecimal.valueOf(1L).divide(BigDecimal.valueOf(2L), 0);
         }
 
+        // org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal
+        int octal      =  0757;
     }
 
     boolean testEquals() {
