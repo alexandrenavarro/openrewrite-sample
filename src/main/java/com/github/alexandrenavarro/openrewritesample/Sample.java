@@ -559,14 +559,14 @@ public final class Sample implements Serializable
         return (upperA.toUpperCase().equalsIgnoreCase(lowerA));
     }
 
-    void testFile() {
+    void testFile() throws FileNotFoundException {
         try {
             // org.openrewrite.java.cleanup.RedundantFileCreation
             FileInputStream fileInputStream = new FileInputStream(new File("a.txt"));
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            // org.openrewrite.java.cleanup.CatchClauseOnlyRethrows
+            throw e;
         }
-
     }
 
     boolean testSomeStringMethods() {
