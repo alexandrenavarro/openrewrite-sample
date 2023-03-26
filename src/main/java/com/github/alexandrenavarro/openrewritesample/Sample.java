@@ -550,7 +550,12 @@ public final class Sample implements Serializable
         String s = String.format("string:%s\n", "myString");
 
         // org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition
-        if (s.indexOf("s") > -1) {
+        if (s.indexOf("s") > 2) {
+            return true;
+        }
+
+        // org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero
+        if (s.indexOf("s") > 0) {
             return true;
         }
 
