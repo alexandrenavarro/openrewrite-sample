@@ -544,7 +544,15 @@ public final class Sample implements Serializable
 
     void formatString() {
         // org.openrewrite.java.cleanup.FixStringFormatExpressions
-        String.format("string:%s", "myString");
+        String s = String.format("string:%s\n", "myString");
+    }
+
+    void testForCondition() {
+        int nb = 0;
+        // org.openrewrite.java.cleanup.NoEqualityInForCondition
+        for (int i = 0; i == 10; i++) {
+            nb += i;
+        }
     }
 
 
