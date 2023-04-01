@@ -649,6 +649,12 @@ public final class Sample implements Serializable
         return this.hashCode();
     }
 
+    public void testString() {
+        String s = "a";
+        // org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes
+        s.getBytes();
+    }
+
     public void testStream() {
         // org.openrewrite.java.cleanup.ReplaceStreamToListWithCollect
         List<String> list = List.of("1", "2")
