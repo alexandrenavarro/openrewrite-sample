@@ -677,8 +677,8 @@ public final class Sample implements Serializable
     public void testInstanceOf() {
         Object object = (new Random().nextBoolean()) ? "string" : 1;
         // org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch
-        if (object instanceof String) {
-            String s = (String) object;
+        if (object instanceof String s) {
+            int length = s.length();
         }
     }
 
