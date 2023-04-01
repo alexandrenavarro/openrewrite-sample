@@ -666,6 +666,11 @@ public final class Sample implements Serializable
         stack.push("One");
     }
 
+    public void testEquality() {
+        final Long one = Long.valueOf(1);
+        final Long two = Long.valueOf(2);
+        final boolean notEqual = one != two;
+    }
 
     static class External implements Externalizable {
         private String attribute;
