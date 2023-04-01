@@ -656,7 +656,7 @@ public final class Sample implements Serializable
 
     public void testMap() {
         // org.openrewrite.java.cleanup.UseMapContainsKey
-        Map.of("One", "1", "Two", "2").entrySet().contains("One");
+        Map.of("One", "1", "Two", "2").keySet().contains("One");
     }
 
 
