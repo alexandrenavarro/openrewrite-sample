@@ -673,6 +673,15 @@ public final class Sample implements Serializable
         final boolean notEqual = s1 == s2;
     }
 
+    public void testInstanceOf() {
+        Object object = "string";
+        // org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch
+        if (object instanceof String) {
+            String s = (String) object;
+        }
+    }
+
+
     static class External implements Externalizable {
         private String attribute;
 

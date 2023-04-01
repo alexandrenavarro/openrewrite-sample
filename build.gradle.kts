@@ -166,6 +166,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UseMapContainsKey")                                                                    // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceStackWithDeque")                                                                // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals")                                                    // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,cleanup, yes, 9, ?, ?,
 
 
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
@@ -222,7 +223,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.RemoveEmptyJavaDocParameters")                                                         // ,cleanup, not yet, 0, ?, ?, not found
 
 
-//activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceDeprecatedRuntimeExecMethods")                                                  // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull")                       // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull")                         // ,?, not yet, 0, ?, ?,
