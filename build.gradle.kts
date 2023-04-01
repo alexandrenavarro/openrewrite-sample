@@ -166,7 +166,6 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UseMapContainsKey")                                                                    // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceStackWithDeque")                                                                // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals")                                                    // ,cleanup, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes")                                                      // ,cleanup, yes, 9, ?, ?,
 
 
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
@@ -184,6 +183,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase")                                                    // ,cleanup, yes, -1, LocalFinalVariableName LocalVariableName, no, problem error some times (error between Class and variable, does not compile)
 ////activeRecipe("org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals")                                                     // ,cleanup, yes, -1, MultipleStringLiterals, no, create String final and reference it on all ok on the principle but errors on a big project on interface with private static String (not allowed)
 ////activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                  // ,cleanup, yes, -1, ?, ?, Error caused by: java.lang.IllegalArgumentException: This template requires 1 parameters., at org.openrewrite.java.JavaTemplate.withTemplate(JavaTemplate.java:65)
+////activeRecipe("org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes")                                                    // ,cleanup, yes, -1, ?, ?, Generate error : CharSet.<error>
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, -2, FinalParameters, no, controversial, use ParameterAssignment in checkstyle instead
 ////activeRecipe("org.openrewrite.java.cleanup.ReplaceStreamToListWithCollect")                                                     // ,cleanup, yes, -2, ?, ?, not ok to migrate toList -> collect(Collectors.toList()) (sonar has the opposite rules)
 ////activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,cleanup, yes, -2, ?, ?, does not want remove instanceOfPattern (jdk 14 features)
@@ -195,6 +195,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.ControlFlowIndentation")                                                             // ,cleanup, not yet, -1, ?, ? reformat code incorrectly
 ////activeRecipe("org.openrewrite.java.cleanup.RenameExceptionInEmptyCatch")                                                        // ,cleanup, not yet, -1, ?, ? error in comments in source code
 ////activeRecipe("org.openrewrite.java.cleanup.UnnecessaryCatch")                                                                   // ,cleanup, not yet, -1, IllegalCatch, ?, do not use, change the behaviour if NPE occurs for instance
+
 
 ////activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")                                                               // ,cleanup, not yet, -2, ?, ?, list of recipes, some are not ok
 ////activeRecipe("org.openrewrite.java.cleanup.Cleanup")                                                                            // ,cleanup, not yet, -2, ?, ?, list of recipes, some are not ok
