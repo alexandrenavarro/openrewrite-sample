@@ -166,7 +166,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UseMapContainsKey")                                                                    // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceStackWithDeque")                                                                // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals")                                                    // ,cleanup, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,cleanup, yes, 9, ?, ?,
+
 
 
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
@@ -186,7 +186,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                  // ,cleanup, yes, -1, ?, ?, Error caused by: java.lang.IllegalArgumentException: This template requires 1 parameters., at org.openrewrite.java.JavaTemplate.withTemplate(JavaTemplate.java:65)
 ////activeRecipe("org.openrewrite.java.cleanup.FinalizeMethodArguments")                                                            // ,cleanup, yes, -2, FinalParameters, no, controversial, use ParameterAssignment in checkstyle instead
 ////activeRecipe("org.openrewrite.java.cleanup.ReplaceStreamToListWithCollect")                                                     // ,cleanup, yes, -2, ?, ?, not ok to migrate toList -> collect(Collectors.toList()) (sonar has the opposite rules)
-
+////activeRecipe("org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch")                                                         // ,cleanup, yes, -2, ?, ?, does not want remove instanceOfPattern (jdk 14 features)
 
 ////activeRecipe("org.openrewrite.java.cleanup.SimplifyConsecutiveAssignments")                                                     // ,cleanup, not yet, -1, ?, ?, generate error in the code with comment
 ////activeRecipe("org.openrewrite.java.cleanup.LambdaBlockToExpression")                                                            // ,cleanup, not yet, -1, ?, ?, do not use, reformat gradle.build

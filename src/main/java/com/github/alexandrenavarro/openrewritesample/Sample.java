@@ -23,6 +23,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Random;
 import java.util.Set;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -674,7 +675,7 @@ public final class Sample implements Serializable
     }
 
     public void testInstanceOf() {
-        Object object = "string";
+        Object object = (new Random().nextBoolean()) ? "string" : 1;
         // org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch
         if (object instanceof String) {
             String s = (String) object;
