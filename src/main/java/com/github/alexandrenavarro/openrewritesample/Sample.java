@@ -667,9 +667,10 @@ public final class Sample implements Serializable
     }
 
     public void testEquality() {
-        final Long one = Long.valueOf(1);
-        final Long two = Long.valueOf(2);
-        final boolean notEqual = one != two;
+        final String s1 = "s1";
+        final String s2 = "s1";
+        // org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals
+        final boolean notEqual = s1 == s2;
     }
 
     static class External implements Externalizable {

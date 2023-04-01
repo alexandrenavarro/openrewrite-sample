@@ -157,7 +157,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring")                                            // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments")                                                     // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations")                                                      // ,cleanup, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.WhileInsteadOfFor")                                                                    // ,cleanup, yes, 9, 0, ?,
+//activeRecipe("org.openrewrite.java.cleanup.WhileInsteadOfFor")                                                                    // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal")                                                            // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.RedundantFileCreation")                                                                // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.CatchClauseOnlyRethrows")                                                              // ,cleanup, yes, 9, ?, ?,
