@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.List;
 import java.util.Scanner;
 import java.net.*; //[AvoidStarImport]
+import java.util.Stack;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Predicate;
@@ -657,6 +658,12 @@ public final class Sample implements Serializable
     public void testMap() {
         // org.openrewrite.java.cleanup.UseMapContainsKey
         Map.of("One", "1", "Two", "2").keySet().contains("One");
+    }
+
+    public void testQueue() {
+        // org.openrewrite.java.cleanup.ReplaceStackWithDeque
+        final Stack<String> stack = new Stack<String>();
+        stack.push("One");
     }
 
 
