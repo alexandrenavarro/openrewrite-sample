@@ -647,6 +647,12 @@ public final class Sample implements Serializable
         return this.hashCode();
     }
 
+    public void testStream() {
+        // org.openrewrite.java.cleanup.ReplaceStreamToListWithCollect
+        List<String> list = List.of("1", "2")
+                .stream()
+                .toList();
+    }
 
 
     static class External implements Externalizable {
