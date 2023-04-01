@@ -654,6 +654,11 @@ public final class Sample implements Serializable
                 .toList();
     }
 
+    public void testMap() {
+        // org.openrewrite.java.cleanup.UseMapContainsKey
+        Map.of("One", "1", "Two", "2").entrySet().contains("One");
+    }
+
 
     static class External implements Externalizable {
         private String attribute;
