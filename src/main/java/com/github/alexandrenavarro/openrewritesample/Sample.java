@@ -605,10 +605,10 @@ public final class Sample implements Serializable
         this.notify();
     }
 
-    void testSystemOut() {
+    void testSystemOut() throws FileNotFoundException {
         // org.openrewrite.java.cleanup.ReplaceRedundantFormatWithPrintf
-        final PrintStream printStream = new PrintStream();
-        printStream.format(String.format("string:%s", "s"));
+        final PrintStream printStream = new PrintStream(new File("a.txt"));
+        printStream.print(String.format("string:%s", "s"));
     }
 
     void testCondition() {
