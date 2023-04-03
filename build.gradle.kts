@@ -178,6 +178,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations")                                                          // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.UseStandardCharset")                                                                   // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededAssertion")                                                              // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions")                                                         // ,cleanup, yes, 9, ?, ?,
 
 
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
@@ -219,7 +220,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                          // ,cleanup, not yet, -2, ?, ?, controversial, generally ok, some case ok some other not
 
 
-//activeRecipe("org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions")                                                         // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull")                    // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.UseObjectNotifyAll")                                                                   // ,cleanup, not yet, 0, ?, ?, not found
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceRedundantFormatWithPrintf")                                                     // ,cleanup, not yet, 0, ?, ?, not found
