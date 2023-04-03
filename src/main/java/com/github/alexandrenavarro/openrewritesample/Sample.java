@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.io.PipedReader;
+import java.io.PrintStream;
 import java.io.Reader;
 import java.io.Serializable;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
@@ -602,6 +603,12 @@ public final class Sample implements Serializable
     void testThreading() {
         // org.openrewrite.java.cleanup.UseObjectNotifyAll
         this.notify();
+    }
+
+    void testSystemOut() {
+        // org.openrewrite.java.cleanup.ReplaceRedundantFormatWithPrintf
+        final PrintStream printStream = new PrintStream();
+        printStream.format(String.format("string:%s", "s"));
     }
 
     void testCondition() {
