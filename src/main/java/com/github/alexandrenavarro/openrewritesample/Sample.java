@@ -14,6 +14,7 @@ import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
@@ -570,6 +571,9 @@ public final class Sample implements Serializable
     }
 
     void testFile() throws FileNotFoundException {
+        // org.openrewrite.java.cleanup.UseStandardCharset
+        final Charset iso88591 = Charset.forName("ISO_8859_1");
+
         try {
             // org.openrewrite.java.cleanup.RedundantFileCreation
             FileInputStream fileInputStream = new FileInputStream(new File("a.txt"));
@@ -696,6 +700,7 @@ public final class Sample implements Serializable
         }
     }
 
+    // org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations
     @NamedQueries({@NamedQuery(name = "name1"), @NamedQuery(name = "name2")})
     public void testAnnotations() {
     }
