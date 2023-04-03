@@ -599,6 +599,14 @@ public final class Sample implements Serializable
         assert true;
     }
 
+    void testCondition() {
+        Boolean aBoolean = new Boolean(true);
+        // org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions
+        if (aBoolean) {
+        }
+
+    }
+
     boolean testSomeStringMethods() {
         // org.openrewrite.java.cleanup.FixStringFormatExpressions
         String s = String.format("string:%s\n", "myString");
