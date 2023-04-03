@@ -592,7 +592,11 @@ public final class Sample implements Serializable
         if (atomicBoolean1.equals(atomicBoolean2)) {
 
         }
+    }
 
+    void testAssert() {
+        // org.openrewrite.java.cleanup.RemoveUnneededAssertion
+        assert true;
     }
 
     boolean testSomeStringMethods() {
