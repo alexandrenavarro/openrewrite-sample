@@ -24,6 +24,15 @@ dependencies {
     compileOnly("com.pushtorefresh:javac-warning-annotation:1.0.0")
     annotationProcessor("com.pushtorefresh:javac-warning-annotation:1.0.0")
 
+    compileOnly("jakarta.validation:jakarta.validation-api:3.0.2")
+
+//    <dependency>
+//    <groupId>javax.validation</groupId>
+//    <artifactId>validation-api</artifactId>
+//    <version>2.0.1.Final</version>
+//    </dependency>
+
+
     rewrite(platform("org.openrewrite:rewrite-bom:7.38.0"))
     rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.16.3"))
 
@@ -166,6 +175,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.cleanup.UseMapContainsKey")                                                                    // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReplaceStackWithDeque")                                                                // ,cleanup, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals")                                                    // ,cleanup, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations")                                                          // ,cleanup, yes, 9, ?, ?,
 
 
 //activeRecipe("org.openrewrite.java.cleanup.FinalClass")                                                                           // ,cleanup, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
@@ -207,7 +217,6 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.cleanup.NoFinalizedLocalVariables")                                                          // ,cleanup, not yet, -2, ?, ?, controversial, generally ok, some case ok some other not
 
 
-//activeRecipe("org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations")                                                          // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.UseStandardCharset")                                                                   // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.RemoveUnneededAssertion")                                                              // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested
 //activeRecipe("org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions")                                                         // ,cleanup, not yet, 0, ?, ?, no effect on a big project, to be tested

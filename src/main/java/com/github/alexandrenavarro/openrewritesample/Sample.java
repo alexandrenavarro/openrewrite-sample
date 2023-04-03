@@ -10,6 +10,9 @@ import java.io.PipedReader;
 import java.io.Reader;
 import java.io.Serializable;
 // org.openrewrite.java.RemoveUnusedImports [UnusedImports]
+import java.lang.annotation.Repeatable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,6 +44,10 @@ import java.util.function.Predicate;
 import sun.misc.Unsafe; //[IllegalImport]
 
 import javax.annotation.Nullable;
+
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * @author
@@ -431,9 +438,9 @@ public final class Sample implements Serializable
 
     void methodWithUnnecessaryClose() throws IOException {
         // org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources
-        try(Reader r1 = new PipedReader();){
+        try (Reader r1 = new PipedReader();) {
             r1.close();
-        } 
+        }
     }
 
     void methodWithJustAReturn() {
@@ -621,7 +628,7 @@ public final class Sample implements Serializable
         boolean flag = true;
 
         // org.openrewrite.java.cleanup.WhileInsteadOfFor
-        for (;flag;) {
+        for (; flag; ) {
             flag = false;
         }
     }
@@ -634,6 +641,7 @@ public final class Sample implements Serializable
             return "";
         }
     }
+
 
     void testWrapper() {
         // org.openrewrite.java.cleanup.NoPrimitiveWrappersForToStringOrCompareTo
@@ -688,6 +696,10 @@ public final class Sample implements Serializable
         }
     }
 
+    @NamedQueries({@NamedQuery(name = "name1"), @NamedQuery(name = "name2")})
+    public void testAnnotations() {
+    }
+
 
     static class External implements Externalizable {
         private String attribute;
@@ -708,6 +720,18 @@ public final class Sample implements Serializable
         }
     }
 
+    @Target({METHOD})
+    @Retention(RUNTIME)
+    public @interface NamedQueries {
+        NamedQuery[] value();
+    }
+
+    @Target({METHOD})
+    @Retention(RUNTIME)
+    @Repeatable(NamedQueries.class)
+    public @interface NamedQuery {
+        String name();
+    }
 
 
-} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]  
+} // org.openrewrite.java.format.EmptyNewlineAtEndOfFile [NewlineAtEndOfFile]
