@@ -9,3 +9,7 @@ Clean begin and end files.
     
     cat recipes.txt|sort|awk '{print "//activeRecipe(\"" $0 "\")"} '
 
+
+First activate the recipe in the build.gradle.kts and then run the rewrite
+
+    ./gradlew rewriteRun
