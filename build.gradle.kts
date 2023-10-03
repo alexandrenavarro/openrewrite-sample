@@ -95,7 +95,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.format.WrappingAndBraces")                                                                   // ,format, no, -1, no, no, break all the formatting notably gradle.build, don't use it absolutely
 ////activeRecipe("org.openrewrite.java.format.NormalizeFormat")                                                                     // ,format, no, -1, no, no, do nothing except some stuff in the gradle.build
 ////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks")                                                                 // ,format, no, -1, no, no, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
-
+//
 //activeRecipe("org.openrewrite.staticanalysis.EmptyBlock")                                                                         // ,staticanalysis, yes, 10, EmptyBlock, java:S108 (Nested blocks of code should not be left empty),
 //activeRecipe("org.openrewrite.staticanalysis.ModifierOrder")                                                                      // ,staticanalysis, yes, 10, ModifierOrder, java:S1124 (Reorder the modifiers to comply with the Java Language Specification),
 //activeRecipe("org.openrewrite.staticanalysis.NeedBraces")                                                                         // ,staticanalysis, yes, 10, NeedBraces, no,
@@ -104,7 +104,7 @@ rewrite {
 //activeRecipe("org.openrewrite.staticanalysis.RemoveUnneededBlock")                                                                // ,staticanalysis, yes, 10, AvoidNestedBlocks, java:S1199 (Extract this nested code block into a method.),
 //activeRecipe("org.openrewrite.staticanalysis.TypecastParenPad")                                                                   // ,staticanalysis, yes, 10, TypecastParenPad, java:S1905 (Remove this unnecessary cast to "String"),
 //activeRecipe("org.openrewrite.staticanalysis.UnnecessaryParentheses")                                                             // ,staticanalysis, yes, 10, UnnecessaryParentheses (not by default), no,
-
+//
 //activeRecipe("org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf")                                          // ,staticanalysis, yes, 9, IllegalInstantiation, no,
 //activeRecipe("org.openrewrite.staticanalysis.MinimumSwitchCases")                                                                 // ,staticanalysis, yes, 9, MissingSwitchDefault, no, ok
 //activeRecipe("org.openrewrite.staticanalysis.MultipleVariableDeclarations")                                                       // ,staticanalysis, yes, 9, MultipleVariableDeclarations, no,
@@ -141,16 +141,16 @@ rewrite {
 //activeRecipe("org.openrewrite.staticanalysis.NoToStringOnStringType")                                                             // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution")                                                  // ,staticanalysis, yes, 9, ?, ?, sample (a == true) -> (a)
 //activeRecipe("org.openrewrite.staticanalysis.SimplifyCompoundStatement")                                                          // ,staticanalysis, yes, 9, ?, ?, `b &= false` with `b = false` (not used a lot)
-
-//activeRecipe("org.openrewrite.migrate.util.OptionalNotEmptyToIsPresent")                                                          // ,staticanalysis, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.migrate.util.OptionalNotPresentToIsEmpty")                                                          // ,staticanalysis, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.migrate.util.MigrateCollectionsSingletonList")                                                      // ,staticanalysis, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.migrate.util.MigrateCollectionsSingletonMap")                                                       // ,staticanalysis, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.migrate.util.MigrateCollectionsSingletonSet")                                                       // ,staticanalysis, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.migrate.util.MigrateCollectionsUnmodifiableList")                                                   // ,staticanalysis, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.migrate.util.MigrateCollectionsUnmodifiableSet")                                                    // ,staticanalysis, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.migrate.util.UseMapOf")                                                                             // ,staticanalysis, yes, 9, ?, ?,
-
+//
+//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent")                                                          // ,staticanalysis, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty")                                                          // ,staticanalysis, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")                                                      // ,staticanalysis, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")                                                       // ,staticanalysis, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")                                                       // ,staticanalysis, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")                                                   // ,staticanalysis, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")                                                    // ,staticanalysis, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                             // ,staticanalysis, yes, 9, ?, ?,
+//
 //activeRecipe("org.openrewrite.staticanalysis.ReplaceStringBuilderWithString")                                                     // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls")                                                      // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart")                                                    // ,staticanalysis, yes, 9, ?, ?,
@@ -175,7 +175,7 @@ rewrite {
 //activeRecipe("org.openrewrite.staticanalysis.WriteOctalValuesAsDecimal")                                                          // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.RedundantFileCreation")                                                              // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.CatchClauseOnlyRethrows")                                                            // ,staticanalysis, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet")                                                       // ,staticanalysis, yes, 9, ?, ?,
+//
 //activeRecipe("org.openrewrite.staticanalysis.NoEqualityInForCondition")                                                           // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.UseMapContainsKey")                                                                  // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.ReplaceStackWithDeque")                                                              // ,staticanalysis, yes, 9, ?, ?,
@@ -186,27 +186,28 @@ rewrite {
 //activeRecipe("org.openrewrite.staticanalysis.AvoidBoxedBooleanExpressions")                                                       // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.UseObjectNotifyAll")                                                                 // ,staticanalysis, yes, 9, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.ReplaceRedundantFormatWithPrintf")                                                   // ,staticanalysis, yes, 9, ?, ?,
-
+//
 //activeRecipe("org.openrewrite.staticanalysis.FinalClass")                                                                         // ,staticanalysis, yes, 8, FinalClass, no, ?, set only on private class or private constructor, seems ok, ok on a big project.
 //activeRecipe("org.openrewrite.staticanalysis.RemoveUnusedLocalVariables")                                                         // ,staticanalysis, yes, 8, UnusedLocalVariable, no,  (not by default, present in doc but does not work?), ?, is it ok always?, ok on big project
 //activeRecipe("org.openrewrite.staticanalysis.HiddenField")                                                                        // ,staticanalysis, yes, 8, HiddenField, no,, rename a argument with arg1 if attribute in the class except for setter / constructor
-
-
-////activeRecipe("org.openrewrite.staticanalysis.LowercasePackage")                                                                 // ,staticanalysis, yes, 5, PackageName, no, can break if the project is a lib.
-////activeRecipe("org.openrewrite.staticanalysis.MethodNameCasing")                                                                 // ,staticanalysis, yes, 5, MethodName, no, can break if the project is a lib.
-////activeRecipe("org.openrewrite.staticanalysis.RenamePrivateFieldsToCamelCase")                                                   // ,staticanalysis, yes, 5, MemberName, no, can break if the project is a lib.
-
+//
+//
+//activeRecipe("org.openrewrite.staticanalysis.LowercasePackage")                                                                 // ,staticanalysis, yes, 5, PackageName, no, can break if the project is a lib.
+//activeRecipe("org.openrewrite.staticanalysis.MethodNameCasing")                                                                 // ,staticanalysis, yes, 5, MethodName, no, can break if the project is a lib.
+//activeRecipe("org.openrewrite.staticanalysis.RenamePrivateFieldsToCamelCase")                                                   // ,staticanalysis, yes, 5, MemberName, no, can break if the project is a lib.
+//
 //activeRecipe("org.openrewrite.java.migrate.UseJavaUtilBase64")                                                                    // ,staticanalysis, no (not possible in jdk 17 without ), 0, ?, ?, Not anymore really
-
+//
 ////activeRecipe("org.openrewrite.staticanalysis.FinalizeLocalVariables")                                                           // ,staticanalysis, yes, -1, FinalLocalVariable, no, ?, controversial, have some problem like finalvar on a big project
 ////activeRecipe("org.openrewrite.staticanalysis.RenameLocalVariablesToCamelCase")                                                  // ,staticanalysis, yes, -1, LocalFinalVariableName LocalVariableName, no, problem error some times (error between Class and variable, does not compile)
 ////activeRecipe("org.openrewrite.staticanalysis.ReplaceDuplicateStringLiterals")                                                   // ,staticanalysis, yes, -1, MultipleStringLiterals, no, create String final and reference it on all ok on the principle but errors on a big project on interface with private static String (not allowed)
 ////activeRecipe("org.openrewrite.migrate.util.UseEnumSetOf")                                                                       // ,staticanalysis, yes, -1, ?, ?, Error caused by: java.lang.IllegalArgumentException: This template requires 1 parameters., at org.openrewrite.java.JavaTemplate.withTemplate(JavaTemplate.java:65)
 ////activeRecipe("org.openrewrite.staticanalysis.ExplicitCharsetOnStringGetBytes")                                                  // ,staticanalysis, yes, -1, ?, ?, Generate error : CharSet.<error>
+////activeRecipe("org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet")                                                     // ,staticanalysis, yes, -1, ?, ?, Generate error : java.lang.ClassCastException: c
 ////activeRecipe("org.openrewrite.staticanalysis.FinalizeMethodArguments")                                                          // ,staticanalysis, yes, -2, FinalParameters, no, controversial, use ParameterAssignment in checkstyle instead
 ////activeRecipe("org.openrewrite.staticanalysis.ReplaceStreamToListWithCollect")                                                   // ,staticanalysis, yes, -2, ?, ?, not ok to migrate toList -> collect(Collectors.toList()) (sonar has the opposite rules)
 ////activeRecipe("org.openrewrite.staticanalysis.RemoveInstanceOfPatternMatch")                                                     // ,staticanalysis, yes, -2, ?, ?, does not want remove instanceOfPattern (jdk 14 features)
-
+//
 ////activeRecipe("org.openrewrite.java.staticanalysis.SimplifyConsecutiveAssignments")                                              // ,staticanalysis, not yet, -1, ?, ?, generate error in the code with comment
 ////activeRecipe("org.openrewrite.java.staticanalysis.LambdaBlockToExpression")                                                     // ,staticanalysis, not yet, -1, ?, ?, do not use, reformat gradle.build
 ////activeRecipe("org.openrewrite.java.staticanalysis.ReplaceLambdaWithMethodReference")                                            // ,staticanalysis, not yet, -1, ?, problem if 2 classes with the same for the class
@@ -214,7 +215,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.staticanalysis.ControlFlowIndentation")                                                      // ,staticanalysis, not yet, -1, ?, ? reformat code incorrectly
 ////activeRecipe("org.openrewrite.java.staticanalysis.RenameExceptionInEmptyCatch")                                                 // ,staticanalysis, not yet, -1, ?, ? error in comments in source code
 ////activeRecipe("org.openrewrite.java.staticanalysis.UnnecessaryCatch")                                                            // ,staticanalysis, not yet, -1, IllegalCatch, ?, do not use, change the behaviour if NPE occurs for instance
-
+//
 ////activeRecipe("org.openrewrite.java.staticanalysis.CommonStaticAnalysis")                                                        // ,staticanalysis, not yet, -2, ?, ?, list of recipes, some are not ok
 ////activeRecipe("org.openrewrite.java.staticanalysis.CodeCleanup")                                                                 // ,staticanalysis, not yet, -2, ?, ?, list of recipes, some are not ok
 ////activeRecipe("org.openrewrite.java.staticanalysis.RemoveUnusedPrivateFields")                                                   // ,staticanalysis, not yet, -2, ?, ?,, NotFound, can break notably in unit or Autowired field
@@ -223,22 +224,22 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.staticanalysis.ForLoopControlVariablePostfixOperators")                                      // ,staticanalysis, not yet, -2, ?, ? --i -> i--, can change the behaviour
 ////activeRecipe("org.openrewrite.java.staticanalysis.ReplaceTextBlockWithString")                                                  // ,staticanalysis, not yet, -2, ?, ?, Does not want to do that (do the contrary)
 ////activeRecipe("org.openrewrite.java.staticanalysis.NoFinalizedLocalVariables")                                                   // ,staticanalysis, not yet, -2, ?, ?, controversial, generally ok, some case ok some other not
-
-
-//activeRecipe("org.openrewrite.java.staticanalysis.RemoveCallsToObjectFinalize")                                                   // ,staticanalysis, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.CommonDeclarationSiteTypeVariances")                                            // ,staticanalysis, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.RemoveCallsToSystemGc")                                                         // ,staticanalysis, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.UseListSort")                                                                   // ,staticanalysis, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.UseForEachRemoveInsteadOfSetRemoveAll")                                         // ,staticanalysis, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.UseSystemLineSeparator")                                                        // ,staticanalysis, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.SimplifyDurationCreationUnits")                                                 // ,staticanalysis, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull")             // ,staticanalysis, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.RemoveEmptyJavaDocParameters")                                                  // ,staticanalysis, not yet, 0, ?, ?,
-
-
-//activeRecipe("org.openrewrite.java.staticanalysis.ReplaceDeprecatedRuntimeExecMethods")                                           // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull")                // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull")                  // ,?, not yet, 0, ?, ?,
+//
+//
+//activeRecipe("org.openrewrite.staticanalysis.RemoveCallsToObjectFinalize")                                                   // ,staticanalysis, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.CommonDeclarationSiteTypeVariances")                                            // ,staticanalysis, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.RemoveCallsToSystemGc")                                                         // ,staticanalysis, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.UseListSort")                                                                   // ,staticanalysis, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.UseForEachRemoveInsteadOfSetRemoveAll")                                         // ,staticanalysis, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.UseSystemLineSeparator")                                                        // ,staticanalysis, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.SimplifyDurationCreationUnits")                                                 // ,staticanalysis, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull")             // ,staticanalysis, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.RemoveEmptyJavaDocParameters")                                                  // ,staticanalysis, not yet, 0, ?, ?,
+//
+//
+//activeRecipe("org.openrewrite.staticanalysis.ReplaceDeprecatedRuntimeExecMethods")                                           // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull")                // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull")                  // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.analysis.controlflow.ControlFlowVisualization")                                                     // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.UseStaticImport")                                                                              // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.NoStaticImport")                                                                               // ,?, not yet, 0, ?, ?,
@@ -246,12 +247,12 @@ rewrite {
 //activeRecipe("org.openrewrite.java.ReplaceConstant")                                                                              // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReplaceStringLiteralWithConstant")                                                             // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.SimplifyMethodChain")                                                                          // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.staticanalysis.DeclarationSiteTypeVariance")                                                   // ,?, not yet, 0, ?, ?,
-
-//activeRecipe("org.openrewrite.java.staticanalysis.JavaApiBestPractices")                                                          // ,?, not yet, 0, ?, ?,
-
+//activeRecipe("org.openrewrite.staticanalysis.DeclarationSiteTypeVariance")                                                   // ,?, not yet, 0, ?, ?,
+//
+//activeRecipe("org.openrewrite.staticanalysis.JavaApiBestPractices")                                                          // ,?, not yet, 0, ?, ?,
+//
 //activeRecipe("org.openrewrite.java.OrderImports")                                                                                 // ,?, not yet, 0, ?, ?,
-
+//
 //activeRecipe("org.openrewrite.java.AddApache2LicenseHeader")                                                                      // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.AddLicenseHeader")                                                                             // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.AddOrUpdateAnnotationAttribute")                                                               // ,?, not yet, 0, ?, ?,
@@ -267,8 +268,8 @@ rewrite {
 //activeRecipe("org.openrewrite.java.UpdateSourcePositions")                                                                        // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.RecipeMarkupDemonstration")                                                                    // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ReorderMethodArguments")                                                                       // ,?, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.cleanup.RemoveJavaDocAuthorTag")                                                               // ,?, not yet, 0, ?, ?, no effect on a big project, to be tested
-
+//activeRecipe("org.openrewrite.staticanalysis.RemoveJavaDocAuthorTag")                                                             // ,?, not yet, 0, ?, ?, no effect on a big project, to be tested
+//
 //activeRecipe("org.openrewrite.java.dependencies.AddDependency")                                                                   // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.dependencies.ChangeDependency")                                                                // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.dependencies.DependencyLicenseCheck")                                                          // ,?, not yet, 0, ?, ?,
@@ -276,7 +277,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.dependencies.DependencyVulnerabilityCheck")                                                    // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.dependencies.RemoveDependency")                                                                // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.dependencies.UpgradeDependencyVersion")                                                        // ,?, not yet, 0, ?, ?,
-
+//
 //activeRecipe("org.openrewrite.staticanalysis.EqualsToContentEquals")                                                              // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.RemoveHashCodeCallsFromArrayInstances")                                              // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.RemoveSystemOutPrintln")                                                             // ,?, not yet, 0, ?, ?,
@@ -285,17 +286,17 @@ rewrite {
 //activeRecipe("org.openrewrite.staticanalysis.ReplaceWeekYearWithYear")                                                            // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.SortedSetStreamToLinkedHashSet")                                                     // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.staticanalysis.TernaryOperatorsShouldNotBeNested")                                                  // ,?, not yet, 0, ?, ?,
-
+//
 //activeRecipe("org.openrewrite.java.ReplaceConstantWithAnotherConstant")                                                           // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.ShortenFullyQualifiedTypeReferences")                                                          // ,?, not yet, 0, ?, ?,
-
+//
 //activeRecipe("org.openrewrite.java.upgrade.MigrateToRewrite8")                                                                    // ,?, not yet, 0, ?, ?,
 //activeRecipe("org.openrewrite.java.upgrade.UpdateStaticAnalysisPackage")                                                          // ,?, not yet, 0, ?, ?,
 
 
-////activeRecipe("org.openrewrite.java.GoogleJavaFormat")                                                                           // ,?, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.IntelliJ")                                                                                   // ,?, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.jhipster.FixCwe338")                                                                         // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.GoogleJavaFormat")                                                                           // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.IntelliJ")                                                                                   // ,?, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.jhipster.FixCwe338")                                                                         // ,?, not yet, 0, ?, ?,
 
 
 
@@ -422,7 +423,7 @@ rewrite {
 
 // Global Logging
 // Logging (to retest)
-////activeRecipe("org.openrewrite.java.logging.log4j.Log4j1ToLog4j2")
+//activeRecipe("org.openrewrite.java.logging.log4j.Log4j1ToLog4j2")
 //activeRecipe("org.openrewrite.java.logging.log4j.ParameterizedLogging")
 //activeRecipe("org.openrewrite.java.logging.log4j.PrependRandomName")
 //activeRecipe("org.openrewrite.java.logging.logback.Log4jAppenderToLogback")
@@ -461,7 +462,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion")
 //activeRecipe("org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions")
 //activeRecipe("org.openrewrite.java.testing.assertj.StaticImports")
-
+//
 //activeRecipe("org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull")
 //activeRecipe("org.openrewrite.java.testing.cleanup.AssertFalseEqualsToAssertNotEquals")
 //activeRecipe("org.openrewrite.java.testing.cleanup.AssertFalseNegationToAssertTrue")
@@ -476,7 +477,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.testing.cleanup.RemoveTestPrefix")
 //activeRecipe("org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions")
 //activeRecipe("org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic")
-
+//
 //activeRecipe("org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed")
 //activeRecipe("org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ")
 //activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestIsMatcherToAssertJ")
@@ -485,7 +486,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ")
 //activeRecipe("org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ")
 //activeRecipe("org.openrewrite.java.testing.hamcrest.RemoveIsMatcher")
-
+//
 //activeRecipe("org.openrewrite.java.testing.junit5.AddMissingNested")
 //activeRecipe("org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation")
 //activeRecipe("org.openrewrite.java.testing.junit5.AssertToAssertions")
@@ -523,7 +524,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.testing.junit5.UseWiremockExtension")
 //activeRecipe("org.openrewrite.java.testing.junit5.UseXMLUnitLegacy")
 //activeRecipe("org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5")
-
+//
 //activeRecipe("org.openrewrite.java.testing.mockito.AnyStringToNullable")
 //activeRecipe("org.openrewrite.java.testing.mockito.AnyToNullable")
 //activeRecipe("org.openrewrite.java.testing.mockito.CleanupMockitoImports")
@@ -642,7 +643,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.spring.data.UseTlsJdbcConnectionString")
 //activeRecipe("org.openrewrite.java.spring.DeleteSpringProperty")
 //activeRecipe("org.openrewrite.java.spring.ExpandProperties")
-//activeRecipe("org.openrewrite.java.SpringFormat")
+////activeRecipe("org.openrewrite.java.SpringFormat")
 //activeRecipe("org.openrewrite.java.spring.framework.EnvironmentAcceptsProfiles")
 //activeRecipe("org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs")
 //activeRecipe("org.openrewrite.java.spring.framework.MigrateHandlerInterceptor")
@@ -847,7 +848,7 @@ rewrite {
 //activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors")
 //activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForObject")
 //activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForPrimitive")
-
+//
 //activeRecipe("org.openrewrite.java.migrate.logging.JavaLoggingAPIs")
 //activeRecipe("org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean")
 //activeRecipe("org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean")
