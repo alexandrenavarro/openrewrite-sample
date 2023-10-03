@@ -56,7 +56,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * @version abc
  * @unknownTag value [JavadocType]
  */
-// org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable
+// org.openrewrite.java.staticanalysis.AddSerialVersionUidToSerializable
 public final class Sample implements Serializable
 
 // [LeftCurly]
@@ -64,14 +64,14 @@ public final class Sample implements Serializable
     // [ConstantName] [JavadocVariable]
     public static final double pi = 3.141592;
 
-    // org.openrewrite.java.cleanup.ModifierOrder [ModifierOrder]
+    // org.openrewrite.java.staticanalysis.ModifierOrder [ModifierOrder]
     public final static double PI = 3.141592;
 
     // [StaticVariableName]
     private static String STATIC_NAME;
     // "org.openrewrite.java.format.RemoveTrailingWhitespace" [RegexpSingleline]
 
-    // org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase [MemberName]
+    // org.openrewrite.java.staticanalysis.RenamePrivateFieldsToCamelCase [MemberName]
     private String NAME;
 
     private String field1;
@@ -79,10 +79,10 @@ public final class Sample implements Serializable
     // [VisibilityModifier]
     public final int someIntValue = 1;
 
-    // org.openrewrite.java.cleanup.ExplicitInitialization [ExplicitInitialization]
+    // org.openrewrite.java.staticanalysis.ExplicitInitialization [ExplicitInitialization]
     private boolean boolField1 = false;
 
-    // org.openrewrite.java.cleanup.EmptyBlock
+    // org.openrewrite.java.staticanalysis.EmptyBlock
     {
     }
 
@@ -93,34 +93,34 @@ public final class Sample implements Serializable
     /**
      * Some description here [JavadocStyle]
      */
-    // org.openrewrite.java.cleanup.MethodParamPad  [MethodParamPad]
+    // org.openrewrite.java.format.MethodParamPad  [MethodParamPad]
     int methodParamPad(int param) {
 
-        // org.openrewrite.java.cleanup.OperatorWrap [OperatorWrap]
+        // org.openrewrite.java.staticanalysis.OperatorWrap [OperatorWrap]
         final String helloWorld = "Hello " +
                 "world";
 
-        // org.openrewrite.java.cleanup.TypecastParenPad [TypecastParenPad]
+        // org.openrewrite.java.format.TypecastParenPad [TypecastParenPad]
         final String test = (String) helloWorld;
 
-        // org.openrewrite.java.cleanup.NeedBraces [NeedBraces]
+        // org.openrewrite.java.staticanalysis.NeedBraces [NeedBraces]
         if (param == 1)
             return 1;
 
         // [EmptyStatement]
         if (param == 1) ;
 
-        // org.openrewrite.java.cleanup.NoWhitespaceAfter [NoWhitespaceAfter]
+        // rg.openrewrite.java.format.NoWhitespaceAfter [NoWhitespaceAfter]
         if (!true) {
             return -1;
         }
 
-        // org.openrewrite.java.cleanup.UnnecessaryParentheses [UnnecessaryParentheses]
+        // org.openrewrite.java.staticanalysis.UnnecessaryParentheses [UnnecessaryParentheses]
         if ((true)) {
             return 1;
         }
 
-        // org.openrewrite.java.cleanup.NoWhitespaceBefore [NoWhitespaceBefore]
+        // org.openrewrite.java.format.NoWhitespaceBefore [NoWhitespaceBefore]
         return Math.max(0, 1);
     }
 
@@ -133,13 +133,13 @@ public final class Sample implements Serializable
     }
 
     boolean methodWithTrailingSpace() {
-        // org.openrewrite.java.cleanup.RemoveExtraSemicolons
+        // org.openrewrite.java.staticanalysis.RemoveExtraSemicolons
         ;
         try (Scanner scanner = new Scanner(new File("test.txt"));) {
         } catch (FileNotFoundException fnfe) {
         }
 
-        // org.openrewrite.java.cleanup.RemoveUnneededBlock [AvoidNestedBlocks]
+        // org.openrewrite.java.staticanalysis.RemoveUnneededBlock [AvoidNestedBlocks]
         {
             String s = "";
         }
@@ -157,13 +157,13 @@ public final class Sample implements Serializable
     // [RedundantModifier]
     final boolean methodWithSpaceErrors() {
 
-        // org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase [LocalFinalVariableName]
+        // org.openrewrite.java.staticanalysis.RenameLocalVariablesToCamelCase [LocalFinalVariableName]
         final double FINAL_LOCAL_PI = 3.14;
 
-        // org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase [LocalVariableName]
+        // org.openrewrite.java.staticanalysis.RenameLocalVariablesToCamelCase [LocalVariableName]
         double LOCAL_PI = 3.14;
 
-        // org.openrewrite.java.cleanup.PadEmptyForLoopComponents [EmptyForIteratorPad]
+        // org.openrewrite.java.format.PadEmptyForLoopComponents [EmptyForIteratorPad]
         for (Iterator it = Map.of().entrySet().iterator(); it.hasNext(); ) ;
 
         // org.openrewrite.java.format.Spaces [GenericWhitespace]
@@ -192,7 +192,7 @@ public final class Sample implements Serializable
         }
     }
 
-    // org.openrewrite.java.cleanup.MethodNameCasing [MethodName]
+    // org.openrewrite.java.staticanalysis.MethodNameCasing [MethodName]
     void WrongMethodName() {
     }
 
@@ -228,7 +228,7 @@ public final class Sample implements Serializable
     }
 
     void illegal() {
-        // org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf [IllegalInstantiation]
+        // org.openrewrite.java.staticanalysis.PrimitiveWrapperClassConstructorToValueOf [IllegalInstantiation]
         Boolean bo = new Boolean(Boolean.TRUE);
     }
 
@@ -237,31 +237,31 @@ public final class Sample implements Serializable
         int b;
         // [InnerAssignment] [MagicNumber]
         a = b = 5;
-        // org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals [MultipleVariableDeclarations]
+        // org.openrewrite.java.staticanalysis.ReplaceDuplicateStringLiterals [MultipleVariableDeclarations]
         int c, d;
     }
 
     void switchWithoutDefault(String s) {
-        // org.openrewrite.java.cleanup.MinimumSwitchCases [MissingSwitchDefault]
+        // org.openrewrite.java.staticanalysis.MinimumSwitchCases [MissingSwitchDefault]
         switch (s) {
             case "a":
                 System.out.println("a");
         }
     }
 
-    // org.openrewrite.java.cleanup.FinalizeMethodArguments [FinalParameters]
+    // org.openrewrite.java.staticanalysis.FinalizeMethodArguments [FinalParameters]
     boolean simplifyExpression(boolean a) {
-        // org.openrewrite.java.cleanup.SimplifyBooleanExpression [SimplifyBooleanExpression]
+        // org.openrewrite.java.staticanalysis.SimplifyBooleanExpression [SimplifyBooleanExpression]
         if (a == true) {
         }
 
-        // org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes [UpperEll]
+        // org.openrewrite.java.staticanalysis.UpperCaseLiteralSuffixes [UpperEll]
         long l = 100l;
 
-        // "org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations" [ArrayTypeStyle]
+        // "org.openrewrite.java.staticanalysis.UseJavaStyleArrayDeclarations" [ArrayTypeStyle]
         String strings[];
 
-        // org.openrewrite.java.cleanup.SimplifyBooleanReturn [SimplifyBooleanReturn]
+        // org.openrewrite.java.staticanalysis.SimplifyBooleanReturn [SimplifyBooleanReturn]
         if (a == true) {
             return true;
         } else {
@@ -294,7 +294,7 @@ public final class Sample implements Serializable
             if (leaves == null) throw new IllegalArgumentException("No leaves!");
         }
 
-        // org.openrewrite.java.cleanup.MissingOverrideAnnotation [DesignForExtension]
+        // org.openrewrite.java.staticanalysis.MissingOverrideAnnotation [DesignForExtension]
         public void grow() {
             validate();
         }
@@ -330,10 +330,10 @@ public final class Sample implements Serializable
         int a = 3;
     }
 
-    // org.openrewrite.java.cleanup.NoDoubleBraceInitialization
+    // org.openrewrite.java.staticanalysis.NoDoubleBraceInitialization
     public void noDoubleBraceInit() {
 
-        // org.openrewrite.java.cleanup.NoDoubleBraceInitialization [AvoidDoubleBraceInitialization]
+        // org.openrewrite.java.staticanalysis.NoDoubleBraceInitialization [AvoidDoubleBraceInitialization]
         Map<String, Integer> map = new HashMap<>() {{
             put("one", 1);
             put("tow", 2);
@@ -343,7 +343,7 @@ public final class Sample implements Serializable
 
     class Test {
 
-        // org.openrewrite.java.cleanup.CovariantEquals [CovariantEquals]
+        // org.openrewrite.java.staticanalysis.CovariantEquals [CovariantEquals]
         public boolean equals(Test i) {  // violation
             return false;
         }
@@ -353,7 +353,7 @@ public final class Sample implements Serializable
         switch (i) {
             case 1:
                 break;
-            // org.openrewrite.java.cleanup.DefaultComesLast [DefaultComesLast]
+            // org.openrewrite.java.staticanalysis.DefaultComesLast [DefaultComesLast]
             default: // violation, 'default' before 'case'
                 break;
             case 2:
@@ -362,46 +362,42 @@ public final class Sample implements Serializable
     }
 
     public boolean equalsAvoidsNull(String s) {
-        //org.openrewrite.java.cleanup.EqualsAvoidsNull EqualsAvoidNull
+        //org.openrewrite.java.staticanalysis.EqualsAvoidsNull EqualsAvoidNull
         return s.equals("42");
     }
 
     public void illegalType() {
-        // org.openrewrite.java.cleanup.UseCollectionInterfaces [IllegalType]
+        // org.openrewrite.java.staticanalysis.UseCollectionInterfaces [IllegalType]
         HashMap<String, String> map = new HashMap();
 
-        // org.openrewrite.java.cleanup.RemoveUnusedLocalVariables
+        // org.openrewrite.java.staticanalysis.RemoveUnusedLocalVariables
         final String s = "aString";
         // [MultipleStringLiterals]
         final String s2 = "aString";
         final String s3 = "aString";
 
-        // org.openrewrite.java.cleanup.StringLiteralEquality [StringLiteralEquality]
-        if (s2 == "aString") {
-        }
-
-        // org.openrewrite.java.cleanup.RemoveRedundantTypeCast
+        // org.openrewrite.java.staticanalysis.RemoveRedundantTypeCast
         final String s4 = (String) "aString4";
     }
 
-    // org.openrewrite.java.cleanup.UnnecessaryThrows
+    // org.openrewrite.java.staticanalysis.UnnecessaryThrows
     public String inlineString() throws FileNotFoundException {
-        // org.openrewrite.java.cleanup.UseDiamondOperator
+        // org.openrewrite.java.staticanalysis.UseDiamondOperator
         Map<String, String> map = new HashMap<String, String>();
 
-        // org.openrewrite.java.cleanup.FinalizeLocalVariables [FinalLocalVariable]
+        // org.openrewrite.java.staticanalysis.FinalizeLocalVariables [FinalLocalVariable]
         String aNonFinalString = "aNonFinalString";
 
-        // org.openrewrite.java.cleanup.InlineVariable
+        // org.openrewrite.java.staticanalysis.InlineVariable
         String ret = "Return";
         return ret;
     }
 
-    // org.openrewrite.java.cleanup.StaticMethodNotFinal
+    // org.openrewrite.java.staticanalysis.StaticMethodNotFinal
     public static final boolean staticFinalMethod() {
         List.of("a")
                 .stream()
-                // org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface
+                // org.openrewrite.java.staticanalysis.UseLambdaForFunctionalInterface
                 .filter(new Predicate<String>() {
                     @Override
                     public boolean test(String s) {
@@ -411,18 +407,18 @@ public final class Sample implements Serializable
                 .toList();
 
 
-        // org.openrewrite.java.cleanup.CompareEnumsWithEqualityOperator
+        // org.openrewrite.java.staticanalysis.CompareEnumsWithEqualityOperator
         return TimeUnit.DAYS.equals(TimeUnit.MINUTES);
     }
 
-    // org.openrewrite.java.cleanup.NestedEnumsAreNotStatic
+    // org.openrewrite.java.staticanalysis.NestedEnumsAreNotStatic
     public static enum Currency {
         EUR, USD, GBP
     }
 
-    // org.openrewrite.java.cleanup.NoFinalizer [NoFinalizer]
+    // org.openrewrite.java.staticanalysis.NoFinalizer [NoFinalizer]
     protected void finalize() {
-        // org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper
+        // org.openrewrite.java.staticanalysis.ObjectFinalizeCallsSuper
     }
 
     void switchCaseWithoutBreak(String s) {
@@ -430,7 +426,7 @@ public final class Sample implements Serializable
         switch (s) {
             case "a":
                 i++;
-                // org.openrewrite.java.cleanup.FallThrough [FallThrough]
+                // org.openrewrite.java.staticanalysis.FallThrough [FallThrough]
             case "b":
                 i++;
                 break;
@@ -439,41 +435,41 @@ public final class Sample implements Serializable
     }
 
     void methodWithUnnecessaryClose() throws IOException {
-        // org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources
+        // org.openrewrite.java.staticanalysis.UnnecessaryCloseInTryWithResources
         try (Reader r1 = new PipedReader();) {
             r1.close();
         }
     }
 
     void methodWithJustAReturn() {
-        // org.openrewrite.java.cleanup.NoRedundantJumpStatements
+        // org.openrewrite.java.staticanalysis.NoRedundantJumpStatements
         return;
     }
 
     boolean isEmptyCollection(List<String> strings) {
-        // org.openrewrite.java.cleanup.IsEmptyCallOnCollections
+        // org.openrewrite.java.staticanalysis.IsEmptyCallOnCollections
         return strings.size() == 0;
     }
 
     boolean containsDash(String s) {
-        // org.openrewrite.java.cleanup.IndexOfReplaceableByContains
+        // org.openrewrite.java.staticanalysis.IndexOfReplaceableByContains
         return s.indexOf("-") > -1;
     }
 
-    // org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods
+    // org.openrewrite.java.staticanalysis.RemoveUnusedPrivateMethods
     private void unusedPrivateMethod() {
     }
 
     String replaceString(String s) {
-        // org.openrewrite.java.cleanup.UseStringReplace
+        // org.openrewrite.java.staticanalysis.UseStringReplace
         return s.replaceAll("a", "A");
     }
 
     String convertToSTring(String s, boolean a) {
         boolean b = false;
-        // org.openrewrite.java.cleanup.SimplifyCompoundStatement
+        // org.openrewrite.java.staticanalysis.SimplifyCompoundStatement
         b &= false;
-        // org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution"
+        // org.openrewrite.java.staticanalysis.SimplifyConstantIfBranchExecution"
         if (a == true) {
             return "TOTO";
         }
@@ -490,7 +486,7 @@ public final class Sample implements Serializable
         }
 
 
-        // org.openrewrite.java.cleanup.NoToStringOnStringType
+        // org.openrewrite.java.staticanalysis.NoToStringOnStringType
         return s.toString();
     }
 
@@ -519,15 +515,15 @@ public final class Sample implements Serializable
             put("2", "Two");
         }};
 
-        // org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType
+        // org.openrewrite.java.staticanalysis.NoEmptyCollectionWithRawType
         List<String> emptyList = Collections.EMPTY_LIST;
 
-        // org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments
+        // org.openrewrite.java.staticanalysis.UnnecessaryExplicitTypeArguments
         List<String> unmodifiableList2 = Collections.<String>unmodifiableList(Arrays.asList("1", "2", "3", "4"));
     }
 
     void createString() {
-        // org.openrewrite.java.cleanup.ReplaceStringBuilderWithString
+        // org.openrewrite.java.staticanalysis.ReplaceStringBuilderWithString
         String s = new StringBuilder().append("a").append("b").append("c").toString();
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 100; i++) {
@@ -536,30 +532,30 @@ public final class Sample implements Serializable
         }
         String numbers = stringBuilder.toString();
 
-        // org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls
+        // org.openrewrite.java.staticanalysis.ChainStringBuilderAppendCalls
         StringBuilder sb = new StringBuilder();
         String op = "+";
         sb.append("A" + "B" + "C" + op + "D" + "E");
 
-        // org.openrewrite.java.cleanup.NoValueOfOnStringType
+        // org.openrewrite.java.staticanalysis.NoValueOfOnStringType
         String string = String.valueOf("s");
     }
 
     void startThread() {
-        // org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart
+        // org.openrewrite.java.staticanalysis.ReplaceThreadRunWithThreadStart
         Thread thread = new Thread();
         thread.run();
     }
 
     void testNumber() {
         boolean condition = true;
-        // org.openrewrite.java.cleanup.BooleanChecksNotInverted
+        // org.openrewrite.java.staticanalysis.BooleanChecksNotInverted
         if (!(condition != true)) {
-            // org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
+            // org.openrewrite.java.staticanalysis.BigDecimalRoundingConstantsToEnums
             BigDecimal result = BigDecimal.valueOf(1L).divide(BigDecimal.valueOf(2L), 0);
         }
 
-        // org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal
+        // org.openrewrite.java.staticanalysis.WriteOctalValuesAsDecimal
         int octal = 0757;
     }
 
@@ -567,19 +563,19 @@ public final class Sample implements Serializable
         String upperA = "A";
         String lowerA = "a";
 
-        // org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase
+        // org.openrewrite.java.staticanalysis.CaseInsensitiveComparisonsDoNotChangeCase
         return (upperA.toUpperCase().equalsIgnoreCase(lowerA));
     }
 
     void testFile() throws FileNotFoundException {
-        // org.openrewrite.java.cleanup.UseStandardCharset
+        // org.openrewrite.java.staticanalysis.UseStandardCharset
         final Charset iso88591 = Charset.forName("ISO_8859_1");
 
         try {
-            // org.openrewrite.java.cleanup.RedundantFileCreation
+            // org.openrewrite.java.staticanalysis.RedundantFileCreation
             FileInputStream fileInputStream = new FileInputStream(new File("a.txt"));
         } catch (FileNotFoundException e) {
-            // org.openrewrite.java.cleanup.CatchClauseOnlyRethrows
+            // org.openrewrite.java.staticanalysis.CatchClauseOnlyRethrows
             throw e;
         }
     }
@@ -589,51 +585,45 @@ public final class Sample implements Serializable
         atomicBoolean1.set(true);
         AtomicBoolean atomicBoolean2 = new AtomicBoolean();
         atomicBoolean2.set(true);
-        // org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet
-        if (atomicBoolean1.equals(atomicBoolean2)) {
-
-        }
+        atomicBoolean1.equals(atomicBoolean2);
     }
 
     void testAssert() {
-        // org.openrewrite.java.cleanup.RemoveUnneededAssertion
+        // org.openrewrite.java.staticanalysis.RemoveUnneededAssertion
         assert true;
     }
 
     void testThreading() {
-        // org.openrewrite.java.cleanup.UseObjectNotifyAll
+        // org.openrewrite.java.staticanalysis.UseObjectNotifyAll
         this.notify();
     }
 
     void testSystemOut() throws FileNotFoundException {
-        // org.openrewrite.java.cleanup.ReplaceRedundantFormatWithPrintf
+        // org.openrewrite.java.staticanalysis.ReplaceRedundantFormatWithPrintf
         final PrintStream printStream = new PrintStream(new File("a.txt"));
         printStream.print(String.format("string:%s", "s"));
     }
 
     void testCondition() {
         Boolean aBoolean = new Boolean(true);
-        // org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions
-        if (aBoolean) {
-        }
 
     }
 
     boolean testSomeStringMethods() {
-        // org.openrewrite.java.cleanup.FixStringFormatExpressions
+        // org.openrewrite.java.staticanalysis.FixStringFormatExpressions
         String s = String.format("string:%s\n", "myString");
 
-        // org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition
+        // org.openrewrite.java.staticanalysis.IndexOfChecksShouldUseAStartPosition
         if (s.indexOf("s") > 2) {
             return true;
         }
 
-        // org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero
+        // org.openrewrite.java.staticanalysis.IndexOfShouldNotCompareGreaterThanZero
         if (s.indexOf("s") > 0) {
             return true;
         }
 
-        // org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument
+        // org.openrewrite.java.staticanalysis.NewStringBuilderBufferWithCharArgument
         StringBuilder sb = new StringBuilder('c');
 
         return false;
@@ -641,13 +631,13 @@ public final class Sample implements Serializable
 
     void testFor() {
         int nb = 0;
-        // org.openrewrite.java.cleanup.NoEqualityInForCondition
+        // org.openrewrite.java.staticanalysis.NoEqualityInForCondition
         for (int i = 0; i != 0; i++) {
             nb += i;
         }
 
         int nb2 = 0;
-        // org.openrewrite.java.cleanup.ForLoopIncrementInUpdate
+        // org.openrewrite.java.staticanalysis.ForLoopIncrementInUpdate
         for (int i = 0; i < 10; ) {
             nb2 += i;
             i++;
@@ -655,14 +645,14 @@ public final class Sample implements Serializable
 
         boolean flag = true;
 
-        // org.openrewrite.java.cleanup.WhileInsteadOfFor
+        // org.openrewrite.java.staticanalysis.WhileInsteadOfFor
         for (; flag; ) {
             flag = false;
         }
     }
 
     String testInstantPattern(Object obj) {
-        // org.openrewrite.java.cleanup.InstanceOfPatternMatch
+        // org.openrewrite.java.staticanalysis.InstanceOfPatternMatch
         if (obj instanceof String) {
             return (String) obj;
         } else {
@@ -672,39 +662,39 @@ public final class Sample implements Serializable
 
 
     void testWrapper() {
-        // org.openrewrite.java.cleanup.NoPrimitiveWrappersForToStringOrCompareTo
+        // org.openrewrite.java.staticanalysis.NoPrimitiveWrappersForToStringOrCompareTo
         String s = new Long(1L).toString();
     }
 
-    // org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations
+    // org.openrewrite.java.staticanalysis.UnnecessaryPrimitiveAnnotations
     void testAnnotation(@Nullable int i) {
     }
 
-    // org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
+    // org.openrewrite.java.staticanalysis.RenameMethodsNamedHashcodeEqualOrTostring
     public int hashcode() {
         return this.hashCode();
     }
 
     public void testString() {
         String s = "a";
-        // org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes
+        // org.openrewrite.java.staticanalysis.ExplicitCharsetOnStringGetBytes
         s.getBytes();
     }
 
     public void testStream() {
-        // org.openrewrite.java.cleanup.ReplaceStreamToListWithCollect
+        // org.openrewrite.java.staticanalysis.ReplaceStreamToListWithCollect
         List<String> list = List.of("1", "2")
                 .stream()
                 .toList();
     }
 
     public void testMap() {
-        // org.openrewrite.java.cleanup.UseMapContainsKey
+        // org.openrewrite.java.staticanalysis.UseMapContainsKey
         Map.of("One", "1", "Two", "2").keySet().contains("One");
     }
 
     public void testQueue() {
-        // org.openrewrite.java.cleanup.ReplaceStackWithDeque
+        // org.openrewrite.java.staticanalysis.ReplaceStackWithDeque
         final Stack<String> stack = new Stack<String>();
         stack.push("One");
     }
@@ -712,19 +702,19 @@ public final class Sample implements Serializable
     public void testEquality() {
         final String s1 = "s1";
         final String s2 = "s1";
-        // org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals
+        // org.openrewrite.java.staticanalysis.ReferentialEqualityToObjectEquals
         final boolean notEqual = s1 == s2;
     }
 
     public void testInstanceOf() {
         Object object = (new Random().nextBoolean()) ? "string" : 1;
-        // org.openrewrite.java.cleanup.RemoveInstanceOfPatternMatch
+        // org.openrewrite.java.staticanalysis.RemoveInstanceOfPatternMatch
         if (object instanceof String s) {
             int length = s.length();
         }
     }
 
-    // org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations
+    // org.openrewrite.java.staticanalysis.UnwrapRepeatableAnnotations
     @NamedQueries({@NamedQuery(name = "name1"), @NamedQuery(name = "name2")})
     public void testAnnotations() {
     }
@@ -733,7 +723,7 @@ public final class Sample implements Serializable
     static class External implements Externalizable {
         private String attribute;
 
-        // org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor
+        // org.openrewrite.java.staticanalysis.ExternalizableHasNoArgsConstructor
         public External(String attribute) {
             this.attribute = attribute;
         }
