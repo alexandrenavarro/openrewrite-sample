@@ -226,7 +226,7 @@ rewrite {
 
 
 
-// Global latest Java (To retest)
+//// Global latest Java (To retest)
 
 ////activeRecipe("org.openrewrite.java.AddApache2LicenseHeader")                                                                    // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.AddLicenseHeader")                                                                           // ,java, not yet, 0, ?, ?,
@@ -417,7 +417,7 @@ rewrite {
 
 
 
-// Commons-jakarta  (to retest)
+//// Commons-jakarta  (to retest)
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.codec.ApacheBase64ToJavaBase64")
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.io.ApacheCommonsFileUtilsRecipes")
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.io.ApacheCommonsFileUtilsRecipes$GetFileRecipe")
@@ -448,7 +448,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.lang.IsNotEmptyToJdk")
 
 
-// Guava (to retest)
+//// Guava (to retest)
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuava")
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference")
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir")
@@ -496,7 +496,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.guava.PreferShortCompare")
 
 
-// Global Jakarta (to retest)
+//// Global Jakarta (to retest)
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta")
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta")
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta")
@@ -540,7 +540,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta")
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.WsWsocServerContainerDeprecation")
 
-// Javax (needed, to retest)
+//// Javax (needed, to retest)
 ////activeRecipe("org.openrewrite.java.migrate.javax.AddInjectDependencies")
 ////activeRecipe("org.openrewrite.java.migrate.javax.AddJaxbDependencies")
 ////activeRecipe("org.openrewrite.java.migrate.javax.AddJaxbRuntime")
@@ -567,8 +567,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.javax.MigrateXMLOutputFactoryNewInstanceToNewFactory")
 
 
-// Global Logging
-// Logging (to retest)
+//// Logging (to retest)
 ////activeRecipe("org.openrewrite.java.logging.log4j.Log4j1ToLog4j2")
 ////activeRecipe("org.openrewrite.java.logging.log4j.ParameterizedLogging")
 ////activeRecipe("org.openrewrite.java.logging.log4j.PrependRandomName")
@@ -591,7 +590,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.logging.SystemPrintToLogging")
 
 
-// Global Junit (to retest)
+//// Global Junit (to retest)
 ////activeRecipe("org.openrewrite.java.testing.assertj.AdoptAssertJDurationAssertions")
 ////activeRecipe("org.openrewrite.java.testing.assertj.Assertj")
 ////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat")
@@ -678,7 +677,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.testing.mockito.ReplacePowerMockito")
 
 
-// Spring (to test)
+//// Spring (to test)
 ////activeRecipe("org.openrewrite.java.spring.AddSpringProperty")
 ////activeRecipe("org.openrewrite.java.spring.amqp.UseTlsAmqpConnectionString")
 ////activeRecipe("org.openrewrite.java.spring.batch.ImplementChunkListenerDirectly")
@@ -841,7 +840,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.spring.UpdateApiManifest")
 
 
-// Security (to test)
+//// Security (to test)
 ////activeRecipe("org.openrewrite.java.security.FindTextDirectionChanges")
 ////activeRecipe("org.openrewrite.java.security.JavaSecurityBestPractices")
 ////activeRecipe("org.openrewrite.java.security.marshalling.SecureJacksonDefaultTyping")
@@ -896,7 +895,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.security.ZipSlip")
 
 
-// Migrate hibernate (to test)
+//// Migrate hibernate (to test)
 ////activeRecipe("org.openrewrite.hibernate.MigrateToHibernate61")
 ////activeRecipe("org.openrewrite.hibernate.MigrateToHibernate62")
 ////activeRecipe("org.openrewrite.hibernate.MigrateToHibernateDependencies61")
@@ -906,7 +905,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.hibernate.TypeDescriptorToType")
 
 
-// Migrate httpclient (to test)
+//// Migrate httpclient (to test)
 ////activeRecipe("org.openrewrite.java.apache.httpclient4.MappingDeprecatedClasses")
 ////activeRecipe("org.openrewrite.java.apache.httpclient4.MigrateDefaultHttpClient")
 ////activeRecipe("org.openrewrite.java.apache.httpclient4.UpgradeApacheHttpClient_4_5")
@@ -919,7 +918,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit")
 
 
-// Recipes
+//// Recipes
 ////activeRecipe("org.openrewrite.java.recipes.ExecutionContextParameterName")
 ////activeRecipe("org.openrewrite.java.recipes.FindRecipes")
 ////activeRecipe("org.openrewrite.java.recipes.MigrateJavaTemplateToRewrite8")
