@@ -1,7 +1,7 @@
 plugins {
     java
     checkstyle
-    id("org.openrewrite.rewrite") version "6.3.17"
+    id("org.openrewrite.rewrite") version "6.3.18"
     id("org.sonarqube") version "4.4.1.3373"
     id("com.github.ben-manes.versions") version "0.48.0"
 }
@@ -70,26 +70,29 @@ rewrite {
 
 // Recipe, Category, Tested in the sample, Note, Violation in checkstyle, Violation in Sonar, Comment,
 
-////activeRecipe("org.openrewrite.java.format.AutoFormat")                                                                          // ,format, no, -1, no, no, don't not format correct compared to intellij
-//activeRecipe("org.openrewrite.java.format.BlankLines")                                                                            // ,format, yes, 10, no, no, Add some blank like between method
-//activeRecipe("org.openrewrite.java.format.EmptyNewlineAtEndOfFile")                                                               // ,format, yes, 10, NewlineAtEndOfFile, no,
-//activeRecipe("org.openrewrite.java.format.MethodParamPad")                                                                        // ,format, yes, 10, MethodParamPad, no,
-////activeRecipe("org.openrewrite.java.format.NormalizeFormat")                                                                     // ,format, no, -1, no, no, do nothing except some stuff in the gradle.build
-////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks")                                                                 // ,format, no, -1, no, no, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
-//activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces")                                                                 // ,format, yes, 10, FileTabCharacter, no,
-//activeRecipe("org.openrewrite.java.format.NoWhitespaceAfter")                                                                     // ,format, yes, 10, NoWhitespaceAfter, no,
-//activeRecipe("org.openrewrite.java.format.NoWhitespaceBefore")                                                                    // ,format, yes, 10, NoWhitespaceBefore, no,
-//activeRecipe("org.openrewrite.java.format.OperatorWrap")                                                                          // ,format, yes, 10, OperatorWrap, no,
-//activeRecipe("org.openrewrite.java.format.PadEmptyForLoopComponents")                                                             // ,format, yes, 10, EmptyForIteratorPad, ?,
-//activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace")                                                              // ,format, yes, 10, RegexpSingleline, no,
-//activeRecipe("org.openrewrite.java.format.SingleLineComments")                                                                    // ,format, yes, 10, no, no, just a space after a single line comment
-//activeRecipe("org.openrewrite.java.format.Spaces")                                                                                // ,format, yes, 10, WhitespaceAround ParenPad WhitespaceAfter GenericWhitespace, no, caution problem reformat with gradle, do exclusion of gradle file
-////activeRecipe("org.openrewrite.java.format.TabsAndIndents")                                                                      // ,format, no, -1, no, no, do not format like intellij (1 or 2 indent for continuation)
-//activeRecipe("org.openrewrite.java.format.TypecastParenPad")                                                                      // ,format, yes, 10, TypecastParenPad, java:S1905 (Remove this unnecessary cast to "String"),
-////activeRecipe("org.openrewrite.java.format.WrappingAndBraces")                                                                   // ,format, no, -1, no, no, break all the formatting notably gradle.build, don't use it absolutely
+// Java  Format cat recipes.txt|sort|grep "org.openrewrite.java.format.[^\.]*$"|awk '{print "//activeRecipe(\"" $0 "\")"}
+
+////activeRecipe("org.openrewrite.java.format.AutoFormat")                                                                          // ,java.format, no, -1, no, no, don't not format correct compared to intellij
+//activeRecipe("org.openrewrite.java.format.BlankLines")                                                                            // ,java.format, yes, 10, no, no, Add some blank like between method
+//activeRecipe("org.openrewrite.java.format.EmptyNewlineAtEndOfFile")                                                               // ,java.format, yes, 10, NewlineAtEndOfFile, no,
+////activeRecipe("org.openrewrite.java.format.MethodParamPad")                                                                      // ,java.format, yes, 10, MethodParamPad, no, problem space{ -> { in gradle.buil
+////activeRecipe("org.openrewrite.java.format.NormalizeFormat")                                                                     // ,java.format, no, -1, no, no, do nothing except some stuff in the gradle.build
+////activeRecipe("org.openrewrite.java.format.NormalizeLineBreaks")                                                                 // ,java.format, no, -1, no, no, Normalize LF / CRLF, weird behaviour to choose LF ou CRLF if different?
+//activeRecipe("org.openrewrite.java.format.NormalizeTabsOrSpaces")                                                                 // ,java.format, yes, 10, FileTabCharacter, no,
+//activeRecipe("org.openrewrite.java.format.NoWhitespaceAfter")                                                                     // ,java.format, yes, 10, NoWhitespaceAfter, no,
+//activeRecipe("org.openrewrite.java.format.NoWhitespaceBefore")                                                                    // ,java.format, yes, 10, NoWhitespaceBefore, no,
+//activeRecipe("org.openrewrite.java.format.OperatorWrap")                                                                          // ,java.format, yes, 10, OperatorWrap, no,
+//activeRecipe("org.openrewrite.java.format.PadEmptyForLoopComponents")                                                             // ,java.format, yes, 10, EmptyForIteratorPad, ?,
+//activeRecipe("org.openrewrite.java.format.RemoveTrailingWhitespace")                                                              // ,java.format, yes, 10, RegexpSingleline, no,
+//activeRecipe("org.openrewrite.java.format.SingleLineComments")                                                                    // ,java.format, yes, 10, no, no, just a space after a single line comment
+//activeRecipe("org.openrewrite.java.format.Spaces")                                                                                // ,java.format, yes, 10, WhitespaceAround ParenPad WhitespaceAfter GenericWhitespace, no, caution problem reformat with gradle, do exclusion of gradle file
+////activeRecipe("org.openrewrite.java.format.TabsAndIndents")                                                                      // ,java.format, no, -1, no, no, do not format like intellij (1 or 2 indent for continuation)
+//activeRecipe("org.openrewrite.java.format.TypecastParenPad")                                                                      // ,java.format, yes, 10, TypecastParenPad, java:S1905 (Remove this unnecessary cast to "String"),
+////activeRecipe("org.openrewrite.java.format.WrappingAndBraces")                                                                   // ,java.format, no, -1, no, no, break all the formatting notably gradle.build, don't use it absolutely
 
 
 
+//// Static analysis cat recipes.txt|sort|grep "org\.openrewrite\.staticanalysis\..*"|awk '{print "//activeRecipe(\"" $0 "\")"} '
 //activeRecipe("org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable")                                                  // ,staticanalysis, yes, 9, no, no, does not generate the uid, weird?////activeRecipe("org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet")
 ////activeRecipe("org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet")                                                     // ,staticanalysis, yes, -1, ?, ?, Generate error : java.lang.ClassCastException: c
 //activeRecipe("org.openrewrite.staticanalysis.AvoidBoxedBooleanExpressions")                                                       // ,staticanalysis, yes, 9, ?, ?,
@@ -223,16 +226,10 @@ rewrite {
 //activeRecipe("org.openrewrite.staticanalysis.WriteOctalValuesAsDecimal")                                                          // ,staticanalysis, yes, 9, ?, ?,
 
 
-
-
-
-//// Global latest Java (To retest)
-
+//// java : cat recipes.txt|sort|grep "org.openrewrite.java\.[^\.]*$"|awk '{print "//activeRecipe(\"" $0 "\")"} ' TODO: to test
 ////activeRecipe("org.openrewrite.java.AddApache2LicenseHeader")                                                                    // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.AddLicenseHeader")                                                                           // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.AddOrUpdateAnnotationAttribute")                                                             // ,java, not yet, 0, ?, ?,
-
-//// Refactor : Custom usecase, need argument
 ////activeRecipe("org.openrewrite.java.ChangeMethodAccessLevel")                                                                    // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.ChangeMethodName")                                                                           // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.ChangeMethodTargetToStatic")                                                                 // ,java, not yet, 0, ?, ?,
@@ -240,137 +237,11 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.ChangePackage")                                                                              // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.ChangeStaticFieldToMethod")                                                                  // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.ChangeType")                                                                                 // ,java, not yet, 0, ?, ?,
-
 ////activeRecipe("org.openrewrite.java.DeleteMethodArgument")                                                                       // ,java, not yet, 0, ?, ?,
-
-//// Dependency : Custom usecase, need argument
-////activeRecipe("org.openrewrite.java.dependencies.AddDependency")                                                                 // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.dependencies.ChangeDependency")                                                              // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.dependencies.DependencyLicenseCheck")                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.dependencies.DependencyList")                                                                // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.dependencies.DependencyVulnerabilityCheck")                                                  // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.dependencies.RemoveDependency")                                                              // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.dependencies.UpgradeDependencyVersion")                                                      // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.GoogleJavaFormat")                                                                           // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.IntelliJ")                                                                                   // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.jhipster.FixCwe338")                                                                         // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.AddJDeprScanPlugin")                                                                 // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin")                                   // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.ChangeMethodInvocationReturnType")                                                   // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin")                                               // ,java, not yet, 0, ?, ?,
-
-//activeRecipe("org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs")                                                        // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicBooleanWeakCompareAndSetToWeakCompareAndSetPlain")             // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerArrayWeakCompareAndSetToWeakCompareAndSetPlain")        // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerWeakCompareAndSetToWeakCompareAndSetPlain")             // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicLongArrayWeakCompareAndSetToWeakCompareAndSetPlain")           // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicLongWeakCompareAndSetToWeakCompareAndSetPlain")                // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain")      // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceWeakCompareAndSetToWeakCompareAndSetPlain")           // ,java, no, 9, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.DeprecatedJavaxSecurityCert")                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.DeprecatedLogRecordThreadID")                                                        // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.IBMSemeru")                                                                          // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.InternalBindContextFactory")                                                         // ,java, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.io.ReplaceFileInOrOutputStreamFinalizeWithClose")                                      // ,java, no, 9, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion")                                             // ,java, not yet, 0, ?, ?,
-
-//activeRecipe("org.openrewrite.java.migrate.Java8toJava11")                                                                        // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.JavaVersion11")                                                                        // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.JavaVersion17")                                                                        // ,java, no, 9, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.JavaVersion21")                                                                      // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.Jre17AgentMainPreMainPublic")                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalSslProvider")                                            // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol")                                            // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocolHttpsHandler")                                // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.lang.JavaLangAPIs")                                                                  // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterOrDigitToIsJavaIdentifierPart")                     // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterToIsJavaIdentifierStart")                           // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateCharacterIsSpaceToIsWhitespace")                                         // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass")                                                 // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateClassNewInstanceToGetDeclaredConstructorNewInstance")                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMajorToFeature")                                           // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMinorToInterim")                                           // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateRuntimeVersionSecurityToUpdate")                                         // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.MigrateSecurityManagerMulticast")                                               // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.RemoveThreadDestroyMethod")                                                     // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.StringFormatted")                                                               // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes")                                                            // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes$IndexOfCharRecipe")                                          // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes$IndexOfStringRecipe")                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes$RedundantCallRecipe")                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes$UseEqualsIgnoreCaseRecipe")                                  // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.UseStringIsEmptyRecipe")                                                        // ,java, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.lang.UseTextBlocks")                                                                   // ,java, no, 9, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.UseVar")                                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations")                                         // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors")                                             // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForObject")                                                           // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForPrimitive")                                                        // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.logging.JavaLoggingAPIs")                                                            // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean")                                 // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean")                       // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.logging.MigrateLoggerGlobalToGetGlobal")                                             // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.logging.MigrateLoggerLogrbToUseResourceBundle")                                      // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.logging.MigrateLogRecordSetMillisToSetInstant")                                      // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.lombok.LombokValToFinalVar")                                                         // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.lombok.UpdateLombokToJava11")                                                        // ,java, not yet, 0, ?, ?,
-
-
-////activeRecipe("org.openrewrite.java.migrate.metrics.SimplifyMicrometerMeterTags")                                                // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.net.JavaNetAPIs")                                                                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.net.MigrateHttpURLConnectionHttpServerErrorToHttpInternalError")                     // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive")                                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive")                                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.net.MigrateURLDecoderDecode")                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.net.MigrateURLEncoderEncode")                                                        // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.RemovedLegacySunJSSEProviderName")                                                   // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.ReplaceStringLiteralValue")                                                          // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.search.AboutJavaVersion")                                                            // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.sql.JavaSqlAPIs")                                                                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream")                                               // ,java, not yet, 0, ?, ?,
-
-////activeRecipe("org.openrewrite.java.migrate.UpgradeJavaVersion")                                                                 // ,java, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")                                                                      // ,java, no, 9, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.UpgradeToJava21")                                                                    // ,java, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.UseJavaUtilBase64")                                                                    // ,java, no (not possible in jdk 17 without ), 0, ?, ?, Not anymore really
-
-//activeRecipe("org.openrewrite.java.migrate.util.JavaUtilAPIs")                                                                    // ,java, no, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")                                                 // ,java, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")                                                  // ,java, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")                                                  // ,java, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")                                              // ,java, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")                                               // ,java, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent")                                                     // ,java, yes, 9, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty")                                                     // ,java, yes, 9, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.util.RemoveFinalizerFromZip")                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList")                                                // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.util.SequencedCollection")                                                           // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.migrate.util.UseEnumSetOf")                                                                       // ,java, yes, -1, ?, ?, Error caused by: java.lang.IllegalArgumentException: This template requires 1 parameters., at org.openrewrite.java.JavaTemplate.withTemplate(JavaTemplate.java:65)
-////activeRecipe("org.openrewrite.java.migrate.util.UseLocaleOf")                                                                   // ,java, not yet, 0, ?, ?,
-//activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                        // ,java, yes, 9, ?, ?,
-////activeRecipe("org.openrewrite.java.migrate.wro4j.UpgradeWro4jMavenPluginVersion")                                               // ,java, not yet, 0, ?, ?,
-
 ////activeRecipe("org.openrewrite.java.NoStaticImport")                                                                             // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.OrderImports")                                                                               // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.RandomizeId")                                                                                // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.RecipeMarkupDemonstration")                                                                  // ,java, not yet, 0, ?, ?,
-
 ////activeRecipe("org.openrewrite.java.RemoveAnnotation")                                                                           // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.RemoveImplements")                                                                           // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.RemoveObjectsIsNull")                                                                        // ,java, not yet, 0, ?, ?,
@@ -379,45 +250,15 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.ReplaceConstant")                                                                            // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.ReplaceConstantWithAnotherConstant")                                                         // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.ReplaceStringLiteralWithConstant")                                                           // ,java, not yet, 0, ?, ?,
-
-
-//// Search
-////activeRecipe("org.openrewrite.java.search.FindAnnotations")                                                                     // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindComments")                                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindDeprecatedClasses")                                                               // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindDeprecatedFields")                                                                // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindDeprecatedMethods")                                                               // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindDeprecatedUses")                                                                  // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindEmptyClasses")                                                                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindEmptyMethods")                                                                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindFields")                                                                          // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindFieldsOfType")                                                                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindImplementations")                                                                 // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindImports")                                                                         // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindLiterals")                                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindMethodDeclaration")                                                               // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindMethods")                                                                         // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindMissingTypes")                                                                    // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindRepeatableAnnotations")                                                           // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindSecrets")                                                                         // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.FindTypes")                                                                           // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.HasJavaVersion")                                                                      // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.HasSourceSet")                                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.IsLikelyNotTest")                                                                     // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.IsLikelyTest")                                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.search.ResultOfMethodCallIgnored")                                                           // ,java, not yet, 0, ?, ?,
-
 ////activeRecipe("org.openrewrite.java.ShortenFullyQualifiedTypeReferences")                                                        // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.SimplifyMethodChain")                                                                        // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.upgrade.MigrateToRewrite8")                                                                  // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.upgrade.UpdateStaticAnalysisPackage")                                                        // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.UpdateSourcePositions")                                                                      // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.RecipeMarkupDemonstration")                                                                  // ,java, not yet, 0, ?, ?,
-////activeRecipe("org.openrewrite.java.ReorderMethodArguments")                                                                     // ,java, not yet, 0, ?, ?,
+////activeRecipe("org.openrewrite.java.UseStaticImport")                                                                            // ,java, not yet, 0, ?, ?,
 
 
-
-//// Commons-jakarta  (to retest)
+//// java : cat recipes.txt|sort|grep "org.openrewrite.java.migrate..*"|awk '{print "//activeRecipe(\"" $0 "\")"} ' TODO: to test
+////activeRecipe("org.openrewrite.java.migrate.AddJDeprScanPlugin")
+////activeRecipe("org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin")
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.codec.ApacheBase64ToJavaBase64")
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.io.ApacheCommonsFileUtilsRecipes")
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.io.ApacheCommonsFileUtilsRecipes$GetFileRecipe")
@@ -446,9 +287,18 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$TrimToNullRecipe")
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$UppercaseRecipe")
 ////activeRecipe("org.openrewrite.java.migrate.apache.commons.lang.IsNotEmptyToJdk")
-
-
-//// Guava (to retest)
+////activeRecipe("org.openrewrite.java.migrate.ChangeMethodInvocationReturnType")
+////activeRecipe("org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin")
+//activeRecipe("org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs")                                                        // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicBooleanWeakCompareAndSetToWeakCompareAndSetPlain")             // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerArrayWeakCompareAndSetToWeakCompareAndSetPlain")        // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerWeakCompareAndSetToWeakCompareAndSetPlain")             // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicLongArrayWeakCompareAndSetToWeakCompareAndSetPlain")           // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicLongWeakCompareAndSetToWeakCompareAndSetPlain")                // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain")      // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceWeakCompareAndSetToWeakCompareAndSetPlain")           // ,java, no, 9, ?, ?,
+////activeRecipe("org.openrewrite.java.migrate.DeprecatedJavaxSecurityCert")
+////activeRecipe("org.openrewrite.java.migrate.DeprecatedLogRecordThreadID")
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuava")
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference")
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir")
@@ -465,7 +315,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaOptionalToJavaUtil")
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet")
 ////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet")
-////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet")
+////activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet"
 ////activeRecipe("org.openrewrite.java.migrate.guava.PreferCharCompare")
 ////activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerCompare")
 ////activeRecipe("org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned")
@@ -494,9 +344,10 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.guava.PreferMathMultiplyExact")
 ////activeRecipe("org.openrewrite.java.migrate.guava.PreferMathSubtractExact")
 ////activeRecipe("org.openrewrite.java.migrate.guava.PreferShortCompare")
-
-
-//// Global Jakarta (to retest)
+////activeRecipe("org.openrewrite.java.migrate.IBMSemeru")
+////activeRecipe("org.openrewrite.java.migrate.InternalBindContextFactory")
+//activeRecipe("org.openrewrite.java.migrate.io.ReplaceFileInOrOutputStreamFinalizeWithClose")                                      // ,java, no, 9, ?, ?,
+////activeRecipe("org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion")
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta")
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta")
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta")
@@ -539,8 +390,10 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.RemovedSOAPElementFactory")
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta")
 ////activeRecipe("org.openrewrite.java.migrate.jakarta.WsWsocServerContainerDeprecation")
-
-//// Javax (needed, to retest)
+//activeRecipe("org.openrewrite.java.migrate.Java8toJava11")                                                                        // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.JavaVersion11")                                                                        // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.JavaVersion17")                                                                        // ,java, no, 9, ?, ?,
+////activeRecipe("org.openrewrite.java.migrate.JavaVersion21")
 ////activeRecipe("org.openrewrite.java.migrate.javax.AddInjectDependencies")
 ////activeRecipe("org.openrewrite.java.migrate.javax.AddJaxbDependencies")
 ////activeRecipe("org.openrewrite.java.migrate.javax.AddJaxbRuntime")
@@ -565,119 +418,304 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.migrate.javax.MigrateXMLEventFactoryNewInstanceToNewFactory")
 ////activeRecipe("org.openrewrite.java.migrate.javax.MigrateXMLInputFactoryNewInstanceToNewFactory")
 ////activeRecipe("org.openrewrite.java.migrate.javax.MigrateXMLOutputFactoryNewInstanceToNewFactory")
+////activeRecipe("org.openrewrite.java.migrate.Jre17AgentMainPreMainPublic")
+////activeRecipe("org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalSslProvider")
+////activeRecipe("org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol")
+////activeRecipe("org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocolHttpsHandler")
+////activeRecipe("org.openrewrite.java.migrate.lang.JavaLangAPIs")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterOrDigitToIsJavaIdentifierPart")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterToIsJavaIdentifierStart")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateCharacterIsSpaceToIsWhitespace")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateClassNewInstanceToGetDeclaredConstructorNewInstance")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMajorToFeature")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMinorToInterim")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateRuntimeVersionSecurityToUpdate")
+////activeRecipe("org.openrewrite.java.migrate.lang.MigrateSecurityManagerMulticast")
+////activeRecipe("org.openrewrite.java.migrate.lang.RemoveThreadDestroyMethod")
+////activeRecipe("org.openrewrite.java.migrate.lang.StringFormatted")
+////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes")
+////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes$IndexOfCharRecipe")
+////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes$IndexOfStringRecipe")
+////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes$RedundantCallRecipe")
+////activeRecipe("org.openrewrite.java.migrate.lang.StringRulesRecipes$UseEqualsIgnoreCaseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.lang.UseStringIsEmptyRecipe")
+//activeRecipe("org.openrewrite.java.migrate.lang.UseTextBlocks")                                                                   // ,java, no, 9, ?, ?,
+////activeRecipe("org.openrewrite.java.migrate.lang.UseVar")
+////activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations")
+////activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors")
+////activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForObject")
+////activeRecipe("org.openrewrite.java.migrate.lang.var.UseVarForPrimitive")
+////activeRecipe("org.openrewrite.java.migrate.logging.JavaLoggingAPIs")
+////activeRecipe("org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean")
+////activeRecipe("org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean")
+////activeRecipe("org.openrewrite.java.migrate.logging.MigrateLoggerGlobalToGetGlobal")
+////activeRecipe("org.openrewrite.java.migrate.logging.MigrateLoggerLogrbToUseResourceBundle")
+////activeRecipe("org.openrewrite.java.migrate.logging.MigrateLogRecordSetMillisToSetInstant")
+////activeRecipe("org.openrewrite.java.migrate.lombok.LombokValToFinalVar")
+////activeRecipe("org.openrewrite.java.migrate.lombok.UpdateLombokToJava11")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$AbbreviateRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$CapitaliseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$DefaultStringFallbackRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$DefaultStringRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$DeleteWhitespaceRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$EqualsIgnoreCaseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$EqualsRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$LowercaseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$ReplaceRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$ReverseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$SplitRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$StripRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$TrimRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$UppercaseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration")
+////activeRecipe("org.openrewrite.java.migrate.metrics.SimplifyMicrometerMeterTags")
+////activeRecipe("org.openrewrite.java.migrate.net.JavaNetAPIs")
+////activeRecipe("org.openrewrite.java.migrate.net.MigrateHttpURLConnectionHttpServerErrorToHttpInternalError")
+////activeRecipe("org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive")
+////activeRecipe("org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive")
+////activeRecipe("org.openrewrite.java.migrate.net.MigrateURLDecoderDecode")
+////activeRecipe("org.openrewrite.java.migrate.net.MigrateURLEncoderEncode")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusFileUtilsRecipes")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusFileUtilsRecipes$DeleteDirectoryFileRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusFileUtilsRecipes$DeleteDirectoryStringRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusFileUtilsRecipes$FileExistsStringRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusFileUtilsRecipes$GetFileRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$AbbreviateRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$CapitaliseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$DefaultStringFallbackRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$DefaultStringRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$DeleteWhitespaceRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$EqualsIgnoreCaseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$EqualsRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$LowercaseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$ReplaceRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$ReverseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$SplitRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$StripRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$TrimRecipe")
+////activeRecipe("org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$UppercaseRecipe")
+////activeRecipe("org.openrewrite.java.migrate.RemovedLegacySunJSSEProviderName")
+////activeRecipe("org.openrewrite.java.migrate.ReplaceStringLiteralValue")
+////activeRecipe("org.openrewrite.java.migrate.search.AboutJavaVersion")
+////activeRecipe("org.openrewrite.java.migrate.sql.JavaSqlAPIs")
+////activeRecipe("org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream")
+////activeRecipe("org.openrewrite.java.migrate.UpgradeJavaVersion")
+///activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")                                                                      // ,java, no, 9, ?, ?,
+////activeRecipe("org.openrewrite.java.migrate.UpgradeToJava21")
+//activeRecipe("org.openrewrite.java.migrate.UseJavaUtilBase64")                                                                    // ,java, no (not possible in jdk 17 without ), 0, ?, ?, Not anymore really
+//activeRecipe("org.openrewrite.java.migrate.util.JavaUtilAPIs")                                                                    // ,java, no, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList")                                                 // ,java, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap")                                                  // ,java, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet")                                                  // ,java, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList")                                              // ,java, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet")                                               // ,java, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent")                                                     // ,java, yes, 9, ?, ?,
+//activeRecipe("org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty")                                                     // ,java, yes, 9, ?, ?,
+////activeRecipe("org.openrewrite.java.migrate.util.RemoveFinalizerFromZip")
+////activeRecipe("org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList")
+////activeRecipe("org.openrewrite.java.migrate.util.SequencedCollection")
+////activeRecipe("org.openrewrite.java.migrate.util.UseEnumSetOf")                                                                  // ,java, yes, -1, ?, ?, Error caused by: java.lang.IllegalArgumentException: This template requires 1 parameters., at org.openrewrite.java.JavaTemplate.withTemplate(JavaTemplate.java:65)
+////activeRecipe("org.openrewrite.java.migrate.util.UseLocaleOf")
+////activeRecipe("org.openrewrite.java.migrate.util.UseMapOf")                                                                      // ,java, yes, 9, ?, ?,
+////activeRecipe("org.openrewrite.java.migrate.wro4j.UpgradeWro4jMavenPluginVersion")
 
 
-//// Logging (to retest)
+// java.search : cat recipes.txt|sort|grep "org.openrewrite.java.search.*$"|awk '{print "//activeRecipe(\"" $0 "\")"} '
+//activeRecipe("org.openrewrite.java.search.FindAnnotations")                                                                     // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindComments")                                                                        // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindDeprecatedClasses")                                                               // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindDeprecatedFields")                                                                // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindDeprecatedMethods")                                                               // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindDeprecatedUses")                                                                  // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindEmptyClasses")                                                                    // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindEmptyMethods")                                                                    // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindFields")                                                                          // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindFieldsOfType")                                                                    // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindImplementations")                                                                 // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindImports")                                                                         // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindLiterals")                                                                        // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindMethodDeclaration")                                                               // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindMethods")                                                                         // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindMissingTypes")                                                                    // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindRepeatableAnnotations")                                                           // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindSecrets")                                                                         // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.FindTypes")                                                                           // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.HasJavaVersion")                                                                      // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.HasSourceSet")                                                                        // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.IsLikelyNotTest")                                                                     // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.IsLikelyTest")                                                                        // ,java, not yet, 0, ?, ?,
+//activeRecipe("org.openrewrite.java.search.ResultOfMethodCallIgnored")                                                           // ,java, not yet, 0, ?, ?,
+
+
+//// java.security : cat recipes.txt|sort|grep "org.openrewrite.java.spring.*$"|awk '{print "//activeRecipe(\"" $0 "\")"} ' TODO: to test
+////activeRecipe("org.openrewrite.java.security.FindTextDirectionChanges")
+////activeRecipe("org.openrewrite.java.security.JavaSecurityBestPractices")
+////activeRecipe("org.openrewrite.java.security.marshalling.SecureJacksonDefaultTyping")
+////activeRecipe("org.openrewrite.java.security.marshalling.SecureSnakeYamlConstructor")
+////activeRecipe("org.openrewrite.java.security.OwaspA01")
+////activeRecipe("org.openrewrite.java.security.OwaspA02")
+////activeRecipe("org.openrewrite.java.security.OwaspA03")
+////activeRecipe("org.openrewrite.java.security.OwaspA05")
+////activeRecipe("org.openrewrite.java.security.OwaspA06")
+////activeRecipe("org.openrewrite.java.security.OwaspA08")
+////activeRecipe("org.openrewrite.java.security.OwaspA10")
+////activeRecipe("org.openrewrite.java.security.OwaspTopTen")
+////activeRecipe("org.openrewrite.java.security.PartialPathTraversalVulnerability")
+////activeRecipe("org.openrewrite.java.security.RegularExpressionDenialOfService")
+////activeRecipe("org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping")
+////activeRecipe("org.openrewrite.java.security.search.FindSensitiveApiEndpoints")
+////activeRecipe("org.openrewrite.java.security.search.FindVulnerableJacksonJsonTypeInfo")
+////activeRecipe("org.openrewrite.java.security.secrets.FindArtifactorySecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindAwsSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindAzureSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindDiscordSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindGenericSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindGitHubSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindGoogleSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindHerokuSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindJwtSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindMailChimpSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindMailgunSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindNpmSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindPasswordInUrlSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindPayPalSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindPgpSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindPicaticSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindRsaSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindSecretsByPattern")
+////activeRecipe("org.openrewrite.java.security.secrets.FindSendGridSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindSlackSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindSquareSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindSshSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindStripeSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindTelegramSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindTwilioSecrets")
+////activeRecipe("org.openrewrite.java.security.secrets.FindTwitterSecrets")
+////activeRecipe("org.openrewrite.java.security.SecureRandom")
+////activeRecipe("org.openrewrite.java.security.SecureRandomPrefersDefaultSeed")
+////activeRecipe("org.openrewrite.java.security.SecureTempFileCreation")
+////activeRecipe("org.openrewrite.java.security.spring.CsrfProtection")
+////activeRecipe("org.openrewrite.java.security.spring.PreventClickjacking")
+////activeRecipe("org.openrewrite.java.security.UseFilesCreateTempDirectory")
+////activeRecipe("org.openrewrite.java.security.XmlParserXXEVulnerability")
+////activeRecipe("org.openrewrite.java.security.ZipSlip")
+
+
+// java.logging : cat recipes.txt|sort|grep "org.openrewrite.java.logging.*$"|awk '{print "//activeRecipe(\"" $0 "\")"}
 ////activeRecipe("org.openrewrite.java.logging.log4j.Log4j1ToLog4j2")
 ////activeRecipe("org.openrewrite.java.logging.log4j.ParameterizedLogging")
-////activeRecipe("org.openrewrite.java.logging.log4j.PrependRandomName")
-////activeRecipe("org.openrewrite.java.logging.logback.Log4jAppenderToLogback")
-////activeRecipe("org.openrewrite.java.logging.logback.Log4jLayoutToLogback")
-////activeRecipe("org.openrewrite.java.logging.logback.Log4jToLogback")
-////activeRecipe("org.openrewrite.java.logging.ParameterizedLogging")
-////activeRecipe("org.openrewrite.java.logging.PrintStackTraceToLogError")
-////activeRecipe("org.openrewrite.java.logging.slf4j.ChangeLogLevel")
-////activeRecipe("org.openrewrite.java.logging.slf4j.CompleteExceptionLogging")
-////activeRecipe("org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1")
-////activeRecipe("org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1")
-////activeRecipe("org.openrewrite.java.logging.slf4j.Log4jToSlf4j")
-////activeRecipe("org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass")
-////activeRecipe("org.openrewrite.java.logging.slf4j.ParameterizedLogging")
-////activeRecipe("org.openrewrite.java.logging.slf4j.Slf4jBestPractices")
-////activeRecipe("org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant")
-////activeRecipe("org.openrewrite.java.logging.SystemErrToLogging")
-////activeRecipe("org.openrewrite.java.logging.SystemOutToLogging")
-////activeRecipe("org.openrewrite.java.logging.SystemPrintToLogging")
+//activeRecipe("org.openrewrite.java.logging.log4j.PrependRandomName")
+//activeRecipe("org.openrewrite.java.logging.logback.Log4jAppenderToLogback")
+//activeRecipe("org.openrewrite.java.logging.logback.Log4jLayoutToLogback")
+//activeRecipe("org.openrewrite.java.logging.logback.Log4jToLogback")
+//activeRecipe("org.openrewrite.java.logging.ParameterizedLogging")
+//activeRecipe("org.openrewrite.java.logging.PrintStackTraceToLogError")
+//activeRecipe("org.openrewrite.java.logging.slf4j.ChangeLogLevel")
+//activeRecipe("org.openrewrite.java.logging.slf4j.CompleteExceptionLogging")
+//activeRecipe("org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1")
+//activeRecipe("org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1")
+//activeRecipe("org.openrewrite.java.logging.slf4j.Log4jToSlf4j")
+//activeRecipe("org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass")
+//activeRecipe("org.openrewrite.java.logging.slf4j.ParameterizedLogging")
+//activeRecipe("org.openrewrite.java.logging.slf4j.Slf4jBestPractices")
+//activeRecipe("org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant")
+//activeRecipe("org.openrewrite.java.logging.SystemErrToLogging")
+//activeRecipe("org.openrewrite.java.logging.SystemOutToLogging")
+//activeRecipe("org.openrewrite.java.logging.SystemPrintToLogging")
 
 
-//// Global Junit (to retest)
-////activeRecipe("org.openrewrite.java.testing.assertj.AdoptAssertJDurationAssertions")
-////activeRecipe("org.openrewrite.java.testing.assertj.Assertj")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertEqualsToAssertThat")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertFalseToAssertThat")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertNotEqualsToAssertThat")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertNotNullToAssertThat")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertNullToAssertThat")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertSameToAssertThat")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertThrowsToAssertExceptionType")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertTrueToAssertThat")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail")
-////activeRecipe("org.openrewrite.java.testing.assertj.JUnitToAssertj")
-////activeRecipe("org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion")
-////activeRecipe("org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions")
-////activeRecipe("org.openrewrite.java.testing.assertj.StaticImports")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertFalseEqualsToAssertNotEquals")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertFalseNegationToAssertTrue")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertFalseNullToAssertNotNull")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertionsArgumentOrder")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertTrueComparisonToAssertEquals")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertTrueEqualsToAssertEquals")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertTrueNegationToAssertFalse")
-////activeRecipe("org.openrewrite.java.testing.cleanup.AssertTrueNullToAssertNull")
-////activeRecipe("org.openrewrite.java.testing.cleanup.BestPractices")
-////activeRecipe("org.openrewrite.java.testing.cleanup.RemoveEmptyTests")
-////activeRecipe("org.openrewrite.java.testing.cleanup.RemoveTestPrefix")
-////activeRecipe("org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions")
-////activeRecipe("org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic")
-////activeRecipe("org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed")
-////activeRecipe("org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ")
-////activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestIsMatcherToAssertJ")
-////activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ")
-////activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestNotMatcherToAssertJ")
-////activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ")
-////activeRecipe("org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ")
-////activeRecipe("org.openrewrite.java.testing.hamcrest.RemoveIsMatcher")
-////activeRecipe("org.openrewrite.java.testing.junit5.AddMissingNested")
-////activeRecipe("org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation")
-////activeRecipe("org.openrewrite.java.testing.junit5.AssertToAssertions")
-////activeRecipe("org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf")
-////activeRecipe("org.openrewrite.java.testing.junit5.CategoryToTag")
-////activeRecipe("org.openrewrite.java.testing.junit5.CleanupAssertions")
-////activeRecipe("org.openrewrite.java.testing.junit5.CleanupJUnitImports")
-////activeRecipe("org.openrewrite.java.testing.junit5.EnclosedToNested")
-////activeRecipe("org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows")
-////activeRecipe("org.openrewrite.java.testing.junit5.IgnoreToDisabled")
-////activeRecipe("org.openrewrite.java.testing.junit5.JUnit4to5Migration")
-////activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
-////activeRecipe("org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized")
-////activeRecipe("org.openrewrite.java.testing.junit5.LifecycleNonPrivate")
-////activeRecipe("org.openrewrite.java.testing.junit5.MigrateAssumptions")
-////activeRecipe("org.openrewrite.java.testing.junit5.MigrateJUnitTestCase")
-////activeRecipe("org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension")
-////activeRecipe("org.openrewrite.java.testing.junit5.ParameterizedRunnerToParameterized")
-////activeRecipe("org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates")
-////activeRecipe("org.openrewrite.java.testing.junit5.RemoveObsoleteRunners")
-////activeRecipe("org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks")
-////activeRecipe("org.openrewrite.java.testing.junit5.RunnerToExtension")
-////activeRecipe("org.openrewrite.java.testing.junit5.StaticImports")
-////activeRecipe("org.openrewrite.java.testing.junit5.TempDirNonFinal")
-////activeRecipe("org.openrewrite.java.testing.junit5.TemporaryFolderToTempDir")
-////activeRecipe("org.openrewrite.java.testing.junit5.TestRuleToTestInfo")
-////activeRecipe("org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable")
-////activeRecipe("org.openrewrite.java.testing.junit5.UpdateBeforeAfterAnnotations")
-////activeRecipe("org.openrewrite.java.testing.junit5.UpdateMockWebServer")
-////activeRecipe("org.openrewrite.java.testing.junit5.UpdateTestAnnotation")
-////activeRecipe("org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer")
-////activeRecipe("org.openrewrite.java.testing.junit5.UseHamcrestAssertThat")
-////activeRecipe("org.openrewrite.java.testing.junit5.UseMockitoExtension")
-////activeRecipe("org.openrewrite.java.testing.junit5.UseTestMethodOrder")
-////activeRecipe("org.openrewrite.java.testing.junit5.UseWiremockExtension")
-////activeRecipe("org.openrewrite.java.testing.junit5.UseXMLUnitLegacy")
-////activeRecipe("org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5")
-////activeRecipe("org.openrewrite.java.testing.mockito.AnyStringToNullable")
-////activeRecipe("org.openrewrite.java.testing.mockito.AnyToNullable")
-////activeRecipe("org.openrewrite.java.testing.mockito.CleanupMockitoImports")
-////activeRecipe("org.openrewrite.java.testing.mockito.Mockito1to3Migration")
-////activeRecipe("org.openrewrite.java.testing.mockito.Mockito1to4Migration")
-////activeRecipe("org.openrewrite.java.testing.mockito.MockitoJUnitRunnerSilentToExtension")
-////activeRecipe("org.openrewrite.java.testing.mockito.MockUtilsToStatic")
-////activeRecipe("org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito")
-////activeRecipe("org.openrewrite.java.testing.mockito.ReplacePowerMockito")
+// java.testing : cat recipes.txt|sort|grep "org.openrewrite.java.testing.*$"|awk '{print "//activeRecipe(\"" $0 "\")"}
+//activeRecipe("org.openrewrite.java.testing.assertj.AdoptAssertJDurationAssertions")
+//activeRecipe("org.openrewrite.java.testing.assertj.Assertj")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertEqualsToAssertThat")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertFalseToAssertThat")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertNotEqualsToAssertThat")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertNotNullToAssertThat")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertNullToAssertThat")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertSameToAssertThat")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertThrowsToAssertExceptionType")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitAssertTrueToAssertThat")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail")
+//activeRecipe("org.openrewrite.java.testing.assertj.JUnitToAssertj")
+//activeRecipe("org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion")
+//activeRecipe("org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions")
+//activeRecipe("org.openrewrite.java.testing.assertj.StaticImports")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertFalseEqualsToAssertNotEquals")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertFalseNegationToAssertTrue")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertFalseNullToAssertNotNull")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertionsArgumentOrder")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertTrueComparisonToAssertEquals")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertTrueEqualsToAssertEquals")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertTrueNegationToAssertFalse")
+//activeRecipe("org.openrewrite.java.testing.cleanup.AssertTrueNullToAssertNull")
+//activeRecipe("org.openrewrite.java.testing.cleanup.BestPractices")
+//activeRecipe("org.openrewrite.java.testing.cleanup.RemoveEmptyTests")
+//activeRecipe("org.openrewrite.java.testing.cleanup.RemoveTestPrefix")
+//activeRecipe("org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions")
+//activeRecipe("org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic")
+//activeRecipe("org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed")
+//activeRecipe("org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ")
+//activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestIsMatcherToAssertJ")
+//activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ")
+//activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestNotMatcherToAssertJ")
+//activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ")
+//activeRecipe("org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ")
+//activeRecipe("org.openrewrite.java.testing.hamcrest.RemoveIsMatcher")
+//activeRecipe("org.openrewrite.java.testing.junit5.AddMissingNested")
+//activeRecipe("org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation")
+//activeRecipe("org.openrewrite.java.testing.junit5.AssertToAssertions")
+//activeRecipe("org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf")
+//activeRecipe("org.openrewrite.java.testing.junit5.CategoryToTag")
+//activeRecipe("org.openrewrite.java.testing.junit5.CleanupAssertions")
+//activeRecipe("org.openrewrite.java.testing.junit5.CleanupJUnitImports")
+//activeRecipe("org.openrewrite.java.testing.junit5.EnclosedToNested")
+//activeRecipe("org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows")
+//activeRecipe("org.openrewrite.java.testing.junit5.IgnoreToDisabled")
+//activeRecipe("org.openrewrite.java.testing.junit5.JUnit4to5Migration")
+//activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
+//activeRecipe("org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized")
+//activeRecipe("org.openrewrite.java.testing.junit5.LifecycleNonPrivate")
+//activeRecipe("org.openrewrite.java.testing.junit5.MigrateAssumptions")
+//activeRecipe("org.openrewrite.java.testing.junit5.MigrateJUnitTestCase")
+//activeRecipe("org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension")
+//activeRecipe("org.openrewrite.java.testing.junit5.ParameterizedRunnerToParameterized")
+//activeRecipe("org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates")
+//activeRecipe("org.openrewrite.java.testing.junit5.RemoveObsoleteRunners")
+//activeRecipe("org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks")
+//activeRecipe("org.openrewrite.java.testing.junit5.RunnerToExtension")
+//activeRecipe("org.openrewrite.java.testing.junit5.StaticImports")
+//activeRecipe("org.openrewrite.java.testing.junit5.TempDirNonFinal")
+//activeRecipe("org.openrewrite.java.testing.junit5.TemporaryFolderToTempDir")
+//activeRecipe("org.openrewrite.java.testing.junit5.TestRuleToTestInfo")
+//activeRecipe("org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable")
+//activeRecipe("org.openrewrite.java.testing.junit5.UpdateBeforeAfterAnnotations")
+//activeRecipe("org.openrewrite.java.testing.junit5.UpdateMockWebServer")
+//activeRecipe("org.openrewrite.java.testing.junit5.UpdateTestAnnotation")
+//activeRecipe("org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer")
+//activeRecipe("org.openrewrite.java.testing.junit5.UseHamcrestAssertThat")
+//activeRecipe("org.openrewrite.java.testing.junit5.UseMockitoExtension")
+//activeRecipe("org.openrewrite.java.testing.junit5.UseTestMethodOrder")
+//activeRecipe("org.openrewrite.java.testing.junit5.UseWiremockExtension")
+//activeRecipe("org.openrewrite.java.testing.junit5.UseXMLUnitLegacy")
+//activeRecipe("org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5")
+//activeRecipe("org.openrewrite.java.testing.mockito.AnyStringToNullable")
+//activeRecipe("org.openrewrite.java.testing.mockito.AnyToNullable")
+//activeRecipe("org.openrewrite.java.testing.mockito.CleanupMockitoImports")
+//activeRecipe("org.openrewrite.java.testing.mockito.Mockito1to3Migration")
+//activeRecipe("org.openrewrite.java.testing.mockito.Mockito1to4Migration")
+//activeRecipe("org.openrewrite.java.testing.mockito.MockitoJUnitRunnerSilentToExtension")
+//activeRecipe("org.openrewrite.java.testing.mockito.MockUtilsToStatic")
+//activeRecipe("org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito")
+//activeRecipe("org.openrewrite.java.testing.mockito.ReplacePowerMockito")
 
 
-//// Spring (to test)
+//// java.spring : cat recipes.txt|sort|grep "org.openrewrite.java.spring.*$"|awk '{print "//activeRecipe(\"" $0 "\")"} ', TODO: to test
 ////activeRecipe("org.openrewrite.java.spring.AddSpringProperty")
 ////activeRecipe("org.openrewrite.java.spring.amqp.UseTlsAmqpConnectionString")
 ////activeRecipe("org.openrewrite.java.spring.batch.ImplementChunkListenerDirectly")
@@ -840,62 +878,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.spring.UpdateApiManifest")
 
 
-//// Security (to test)
-////activeRecipe("org.openrewrite.java.security.FindTextDirectionChanges")
-////activeRecipe("org.openrewrite.java.security.JavaSecurityBestPractices")
-////activeRecipe("org.openrewrite.java.security.marshalling.SecureJacksonDefaultTyping")
-////activeRecipe("org.openrewrite.java.security.marshalling.SecureSnakeYamlConstructor")
-////activeRecipe("org.openrewrite.java.security.OwaspA01")
-////activeRecipe("org.openrewrite.java.security.OwaspA02")
-////activeRecipe("org.openrewrite.java.security.OwaspA03")
-////activeRecipe("org.openrewrite.java.security.OwaspA05")
-////activeRecipe("org.openrewrite.java.security.OwaspA06")
-////activeRecipe("org.openrewrite.java.security.OwaspA08")
-////activeRecipe("org.openrewrite.java.security.OwaspA10")
-////activeRecipe("org.openrewrite.java.security.OwaspTopTen")
-////activeRecipe("org.openrewrite.java.security.PartialPathTraversalVulnerability")
-////activeRecipe("org.openrewrite.java.security.RegularExpressionDenialOfService")
-////activeRecipe("org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping")
-////activeRecipe("org.openrewrite.java.security.search.FindSensitiveApiEndpoints")
-////activeRecipe("org.openrewrite.java.security.search.FindVulnerableJacksonJsonTypeInfo")
-////activeRecipe("org.openrewrite.java.security.secrets.FindArtifactorySecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindAwsSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindAzureSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindDiscordSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindGenericSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindGitHubSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindGoogleSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindHerokuSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindJwtSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindMailChimpSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindMailgunSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindNpmSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindPasswordInUrlSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindPayPalSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindPgpSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindPicaticSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindRsaSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindSecretsByPattern")
-////activeRecipe("org.openrewrite.java.security.secrets.FindSendGridSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindSlackSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindSquareSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindSshSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindStripeSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindTelegramSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindTwilioSecrets")
-////activeRecipe("org.openrewrite.java.security.secrets.FindTwitterSecrets")
-////activeRecipe("org.openrewrite.java.security.SecureRandom")
-////activeRecipe("org.openrewrite.java.security.SecureRandomPrefersDefaultSeed")
-////activeRecipe("org.openrewrite.java.security.SecureTempFileCreation")
-////activeRecipe("org.openrewrite.java.security.spring.CsrfProtection")
-////activeRecipe("org.openrewrite.java.security.spring.PreventClickjacking")
-////activeRecipe("org.openrewrite.java.security.UseFilesCreateTempDirectory")
-////activeRecipe("org.openrewrite.java.security.XmlParserXXEVulnerability")
-////activeRecipe("org.openrewrite.java.security.ZipSlip")
-
-
-//// Migrate hibernate (to test)
+//// java.apache.httpclient : cat recipes.txt|sort|grep "org.openrewrite.java.apache.httpclient.*$"|awk '{print "//activeRecipe(\"" $0 "\")"} ', TODO: to test
 ////activeRecipe("org.openrewrite.hibernate.MigrateToHibernate61")
 ////activeRecipe("org.openrewrite.hibernate.MigrateToHibernate62")
 ////activeRecipe("org.openrewrite.hibernate.MigrateToHibernateDependencies61")
@@ -904,8 +887,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.hibernate.TypeAnnotationParameter")
 ////activeRecipe("org.openrewrite.hibernate.TypeDescriptorToType")
 
-
-//// Migrate httpclient (to test)
+//// java.apache.httpclient : cat recipes.txt|sort|grep "org.openrewrite.java.apache.httpclient.*$"|awk '{print "//activeRecipe(\"" $0 "\")"} ', TODO: to test
 ////activeRecipe("org.openrewrite.java.apache.httpclient4.MappingDeprecatedClasses")
 ////activeRecipe("org.openrewrite.java.apache.httpclient4.MigrateDefaultHttpClient")
 ////activeRecipe("org.openrewrite.java.apache.httpclient4.UpgradeApacheHttpClient_4_5")
@@ -918,7 +900,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit")
 
 
-//// Recipes
+//// java.apache.recipes : cat recipes.txt|sort|grep "org.openrewrite.java.recipes.*$"|awk '{print "//activeRecipe(\"" $0 "\")"} ', TODO: to test
 ////activeRecipe("org.openrewrite.java.recipes.ExecutionContextParameterName")
 ////activeRecipe("org.openrewrite.java.recipes.FindRecipes")
 ////activeRecipe("org.openrewrite.java.recipes.MigrateJavaTemplateToRewrite8")
