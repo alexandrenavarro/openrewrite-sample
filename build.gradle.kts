@@ -1,9 +1,9 @@
 plugins {
     java
     checkstyle
-    id("org.openrewrite.rewrite") version "6.3.18"
+    id("org.openrewrite.rewrite") version "6.4.0"
     id("org.sonarqube") version "4.4.1.3373"
-    id("com.github.ben-manes.versions") version "0.48.0"
+    id("com.github.ben-manes.versions") version "0.49.0"
 }
 
 group = "com.github.alexandrenavarro"
@@ -26,8 +26,8 @@ dependencies {
 
     compileOnly("jakarta.validation:jakarta.validation-api:3.0.2")
 
-    rewrite(platform("org.openrewrite:rewrite-bom:8.7.2"))
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.3.1"))
+    rewrite(platform("org.openrewrite:rewrite-bom:8.8.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.4.0"))
 
     rewrite("org.openrewrite:rewrite-core")
     rewrite("org.openrewrite:rewrite-gradle")
@@ -37,6 +37,7 @@ dependencies {
     rewrite("org.openrewrite:rewrite-java-8")
     rewrite("org.openrewrite:rewrite-java-11")
     rewrite("org.openrewrite:rewrite-java-17")
+    rewrite("org.openrewrite:rewrite-java-21")
     rewrite("org.openrewrite:rewrite-java-tck")
     rewrite("org.openrewrite:rewrite-java-test")
     rewrite("org.openrewrite:rewrite-json")
@@ -238,6 +239,8 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.ChangeStaticFieldToMethod")                                                                  // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.ChangeType")                                                                                 // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.DeleteMethodArgument")                                                                       // ,java, not yet, 0, ?, ?,
+////activeRecipe("org.openrewrite.java.GoogleJavaFormat")                                                                           // ,java, not yet (new), 0, ?, ?,
+////activeRecipe("org.openrewrite.java.IntelliJ")                                                                                   // ,java, not yet (new), 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.NoStaticImport")                                                                             // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.OrderImports")                                                                               // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.RandomizeId")                                                                                // ,java, not yet, 0, ?, ?,
@@ -252,6 +255,7 @@ rewrite {
 ////activeRecipe("org.openrewrite.java.ReplaceStringLiteralWithConstant")                                                           // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.ShortenFullyQualifiedTypeReferences")                                                        // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.SimplifyMethodChain")                                                                        // ,java, not yet, 0, ?, ?,
+////activeRecipe("org.openrewrite.java.SpringFormat")                                                                               // ,java, not yet (new), 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.UpdateSourcePositions")                                                                      // ,java, not yet, 0, ?, ?,
 ////activeRecipe("org.openrewrite.java.UseStaticImport")                                                                            // ,java, not yet, 0, ?, ?,
 

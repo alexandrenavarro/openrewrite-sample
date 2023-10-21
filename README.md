@@ -3,15 +3,13 @@ openrewrite-sample
 
 Extract recipe and generate config for build.gradle.kts
     
-    ./gradlew rewriteDiscover > recipes.txt
-
-Clean begin and end files.
+    ./gradlew rewriteDiscover | sort | grep -e "^    .*" | cut -c5- > recipes.txt
     
-    cat recipes.txt|sort|awk '{print "////activeRecipe(\"" $0 "\")"} '
+    cat recipes.txt|awk '{print "////activeRecipe(\"" $0 "\")"} '
 
 Only recipes with org.openrewrite.java.*
 
-    cat recipes.txt|sort|grep "org.openrewrite.java\.[^\.]*$"|awk '{print "////activeRecipe(\"" $0 "\")"} '
+    cat recipes.txt|grep "org.openrewrite.java\.[^\.]*$"|awk '{print "////activeRecipe(\"" $0 "\")"} '
 
 First activate the recipe in the build.gradle.kts and then run the rewrite
 
