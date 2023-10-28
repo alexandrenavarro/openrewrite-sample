@@ -1,7 +1,7 @@
 plugins {
     java
     checkstyle
-    id("org.openrewrite.rewrite") version "6.4.0"
+    id("org.openrewrite.rewrite") version "6.4.2"
     id("org.sonarqube") version "4.4.1.3373"
     id("com.github.ben-manes.versions") version "0.49.0"
 }
@@ -26,7 +26,7 @@ dependencies {
 
     compileOnly("jakarta.validation:jakarta.validation-api:3.0.2")
 
-    rewrite(platform("org.openrewrite:rewrite-bom:8.8.0"))
+    rewrite(platform("org.openrewrite:rewrite-bom:8.8.3"))
     rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.4.0"))
 
     rewrite("org.openrewrite:rewrite-core")
