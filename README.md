@@ -3,7 +3,7 @@ openrewrite-sample
 
 Extract recipe and generate config for build.gradle.kts
     
-    ./gradlew rewriteDiscover | sort | grep -e "^    .*" | cut -c5- > recipes.txt
+    ./gradlew rewriteDiscover | sort | grep -e "^    .*" | cut -c5- > recipes-sortedtxt
     
     cat recipes.txt|awk '{print "////activeRecipe(\"" $0 "\")"} '
 

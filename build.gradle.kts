@@ -64,6 +64,7 @@ dependencies {
 }
 
 rewrite {
+    activeRecipe("com.github.alexandrenavarro.AllUsefullRecipes")
 
 
 // See https://github.com/openrewrite/rewrite-docs/blob/master/SUMMARY.md
